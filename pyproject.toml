@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "car-scraper"
+version = "0.1.0"
+description = "Car scraper for otomoto.pl with time series tracking"
+authors = ["Szymon Piskorz <sim.piskorz@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+beautifulsoup4 = "^4.12.0"
+click = "^8.1.0"
+httpx = "^0.25.0"
+pandas = "^2.0.0"
+matplotlib = "^3.6.0"
+lxml = "^4.9.0"
+
+[tool.poetry.scripts]
+car-scraper = "src.main:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
