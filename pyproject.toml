@@ -28,7 +28,7 @@ mypy = "^1.5.0"
 flake8 = "^6.0.0"
 
 [tool.poetry.scripts]
-car-scraper = "src.main:cli"
+car-scraper = "main:cli"
 
 [tool.black]
 line-length = 88

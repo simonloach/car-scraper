@@ -1,0 +1,261 @@
+name: 🚗 Daily Car Scraper
+
+on:
+  schedule:
+    # Run daily at 6:00 AM UTC (8:00 AM CEST)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+    inputs:
+      models:
+        description: 'Comma-separated list of models to scrape'
+        required: false
+        default: 'lexus-lc'
+      max_pages:
+        description: 'Maximum pages to scrape per model'
+        required: false
+        default: '5'
+
+env:
+  PYTHON_VERSION: '3.10'
+
+jobs:
+  scrape-and-analyze:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Allow pushing back to repo
+      
+    steps:
+    - name: 🔄 Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for proper git operations
+        
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: 📦 Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: 🔍 Load cached dependencies
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('**/poetry.lock') }}
+        
+    - name: 📥 Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-ansi
+      
+    - name: 🏗️ Install package
+      run: poetry run pip install -e .
+      
+    - name: 📁 Create data directories
+      run: |
+        mkdir -p data/individual_listings
+        mkdir -p data/time_series
+        mkdir -p data/plots
+        
+    - name: 🔍 Scrape car listings
+      run: |
+        # Default models to scrape
+        MODELS="${{ github.event.inputs.models || 'lexus-lc,bmw-i8,audi-r8' }}"
+        MAX_PAGES="${{ github.event.inputs.max_pages || '5' }}"
+        
+        echo "🚗 Starting daily scraping for models: $MODELS"
+        echo "📄 Maximum pages per model: $MAX_PAGES"
+        
+        # Split models by comma and scrape each
+        IFS=',' read -ra MODEL_ARRAY <<< "$MODELS"
+        for model in "${MODEL_ARRAY[@]}"; do
+          model=$(echo "$model" | xargs)  # Trim whitespace
+          echo "🔍 Scraping model: $model"
+          
+          # Define URLs for common models
+          case "$model" in
+            "lexus-lc")
+              URL="https://www.otomoto.pl/osobowe/lexus/lc"
+              ;;
+            "bmw-i8")
+              URL="https://www.otomoto.pl/osobowe/bmw/i8"
+              ;;
+            "audi-r8")
+              URL="https://www.otomoto.pl/osobowe/audi/r8"
+              ;;
+            "porsche-911")
+              URL="https://www.otomoto.pl/osobowe/porsche/911"
+              ;;
+            *)
+              echo "⚠️  Unknown model: $model, skipping"
+              continue
+              ;;
+          esac
+          
+          # Scrape with retry logic
+          for attempt in 1 2 3; do
+            echo "📡 Attempt $attempt for $model..."
+            if poetry run car-scraper scrape \
+              --url "$URL" \
+              --model "$model" \
+              --max-pages "$MAX_PAGES" \
+              --delay 2.0 \
+              --format json; then
+              echo "✅ Successfully scraped $model"
+              break
+            else
+              echo "❌ Attempt $attempt failed for $model"
+              if [ $attempt -eq 3 ]; then
+                echo "🚨 All attempts failed for $model"
+              else
+                echo "⏳ Waiting 30 seconds before retry..."
+                sleep 30
+              fi
+            fi
+          done
+          
+          # Wait between models to be respectful
+          echo "⏳ Waiting 10 seconds before next model..."
+          sleep 10
+        done
+        
+    - name: 📊 Generate plots and analysis
+      run: |
+        echo "📊 Generating plots and analysis..."
+        
+        # Generate plots for all models that have data
+        for csv_file in data/*.csv; do
+          if [ -f "$csv_file" ]; then
+            model=$(basename "$csv_file" .csv)
+            echo "📈 Generating plots for $model"
+            
+            poetry run car-scraper plot \
+              --model "$model" \
+              --plot-type "all" || echo "⚠️  Plot generation failed for $model"
+          fi
+        done
+        
+    - name: 📋 Generate status report
+      run: |
+        echo "📋 Generating status report..."
+        
+        # Create a status report
+        cat > data/status_report.md << 'EOF'
+        # 🚗 Daily Scraping Report
+        
+        **Date**: $(date '+%Y-%m-%d %H:%M:%S UTC')
+        **Workflow**: Daily Car Scraper
+        **Commit**: ${{ github.sha }}
+        
+        ## 📊 Data Status
+        
+        EOF
+        
+        # Add status information
+        poetry run car-scraper status >> data/status_report.md || echo "Status command failed"
+        
+        # Add summary statistics
+        echo "" >> data/status_report.md
+        echo "## 📈 Summary Statistics" >> data/status_report.md
+        echo "" >> data/status_report.md
+        
+        total_records=0
+        for csv_file in data/*.csv; do
+          if [ -f "$csv_file" ]; then
+            model=$(basename "$csv_file" .csv)
+            count=$(tail -n +2 "$csv_file" | wc -l)
+            total_records=$((total_records + count))
+            echo "- **$model**: $count listings" >> data/status_report.md
+          fi
+        done
+        
+        echo "- **Total**: $total_records listings across all models" >> data/status_report.md
+        echo "" >> data/status_report.md
+        echo "## 🖼️ Generated Plots" >> data/status_report.md
+        echo "" >> data/status_report.md
+        
+        for plot_file in data/plots/*.png; do
+          if [ -f "$plot_file" ]; then
+            plot_name=$(basename "$plot_file")
+            echo "- [$plot_name](data/plots/$plot_name)" >> data/status_report.md
+          fi
+        done
+        
+    - name: 📝 Commit and push results
+      run: |
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Add all new data files
+        git add data/
+        git add -A
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "📝 No changes to commit"
+        else
+          # Create commit message with timestamp and summary
+          TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S UTC')
+          
+          # Count new records
+          TOTAL_RECORDS=0
+          for csv_file in data/*.csv; do
+            if [ -f "$csv_file" ]; then
+              count=$(tail -n +2 "$csv_file" | wc -l)
+              TOTAL_RECORDS=$((TOTAL_RECORDS + count))
+            fi
+          done
+          
+          COMMIT_MSG="🚗 Daily scrape: $TIMESTAMP
+          
+          - Total listings: $TOTAL_RECORDS
+          - Generated plots and analysis
+          - Updated data and visualizations
+          
+          Automated by GitHub Actions"
+          
+          git commit -m "$COMMIT_MSG"
+          git push
+          
+          echo "✅ Successfully committed and pushed results"
+        fi
+        
+    - name: 🎯 Create workflow summary
+      run: |
+        echo "## 🚗 Daily Car Scraper Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Date**: $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Add data summary
+        echo "### 📊 Data Summary" >> $GITHUB_STEP_SUMMARY
+        total_records=0
+        for csv_file in data/*.csv; do
+          if [ -f "$csv_file" ]; then
+            model=$(basename "$csv_file" .csv)
+            count=$(tail -n +2 "$csv_file" | wc -l)
+            total_records=$((total_records + count))
+            echo "- **$model**: $count listings" >> $GITHUB_STEP_SUMMARY
+          fi
+        done
+        echo "- **Total**: $total_records listings" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Add plots summary
+        echo "### 🖼️ Generated Plots" >> $GITHUB_STEP_SUMMARY
+        plot_count=$(find data/plots -name "*.png" -type f | wc -l)
+        echo "- Generated $plot_count visualization plots" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        echo "### 🔗 Quick Links" >> $GITHUB_STEP_SUMMARY
+        echo "- [Data Files](./data/)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Generated Plots](./data/plots/)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Status Report](./data/status_report.md)" >> $GITHUB_STEP_SUMMARY
