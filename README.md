@@ -20,6 +20,20 @@ A modern, professional CLI application for scraping car listings from otomoto.pl
 - **Docker Support**: Containerized deployment ready
 - **GitHub Actions**: Automated daily scraping and reporting
 
+## 📊 Live Analysis & Graphs
+
+🔥 **[View Live Analysis Graphs →](GRAPHS.md)** 
+
+Our automated system generates comprehensive visualizations updated daily:
+
+| Graph Type | Description | Latest |
+|------------|-------------|---------|
+| 🔍 **Individual Trends** | Track price changes for specific vehicles over time | ![](data/plots/individual_listings_trends_lexus-lc.png) |
+| 📅 **Year Analysis** | Market composition by manufacturing year | ![](data/plots/year_analysis_lexus-lc.png) |
+| 💰 **Price vs Mileage** | Value correlation and depreciation patterns | ![](data/plots/price_vs_mileage_lexus-lc.png) |
+
+*All graphs are automatically updated daily via GitHub Actions. [→ See full analysis report](GRAPHS.md)*
+
 ## 🚀 Installation
 
 ### Poetry (Recommended)
