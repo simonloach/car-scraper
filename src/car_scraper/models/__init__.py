@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, HttpUrl
 
 class CarListing(BaseModel):
     """Represents a single car listing."""
-    
+
     id: str = Field(..., description="Unique listing identifier")
     title: str = Field(..., description="Car title/description")
     price: int = Field(..., ge=0, description="Price in PLN")
@@ -22,7 +22,7 @@ class CarListing(BaseModel):
 
 class CarListingHistory(CarListing):
     """Car listing with historical tracking information."""
-    
+
     date: str = Field(..., description="Date in YYYY-MM-DD format")
     price_change: int = Field(0, description="Price change from previous scrape")
     price_change_percent: float = Field(0.0, description="Price change percentage")
@@ -31,17 +31,19 @@ class CarListingHistory(CarListing):
 
 class ScrapingResults(BaseModel):
     """Results from a scraping session."""
-    
+
     total_found: int = Field(..., ge=0, description="Total links found")
     successful_fetches: int = Field(..., ge=0, description="Successful fetches")
     failed_fetches: int = Field(..., ge=0, description="Failed fetches")
     filtered_out: int = Field(..., ge=0, description="Links filtered out")
-    listings: list[CarListing] = Field(default_factory=list, description="Scraped listings")
+    listings: list[CarListing] = Field(
+        default_factory=list, description="Scraped listings"
+    )
 
 
 class YearAnalysisData(BaseModel):
     """Year-based analysis data."""
-    
+
     year: int = Field(..., description="Production year")
     count: int = Field(..., ge=0, description="Number of unique cars")
     avg_price: float = Field(..., ge=0, description="Average price")

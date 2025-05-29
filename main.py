@@ -81,24 +81,16 @@ def scrape(url: str, model: str, data_dir: str, max_pages: int,
     logger.info(f"Output format: {output_format}")
     
     try:
-        # Update scraping config with user parameters
-        config.scraping.page_delay = delay
-        
         # Initialize scraper
-        scraper = CarScraper(data_dir, config.scraping)
+        scraper = CarScraper(data_dir)
         
         # Scrape the model
-        results: ScrapingResults = scraper.scrape_model(url, model, max_pages)
+        scraper.scrape_model(url, model, max_pages)
         
-        # Log results
+        # Log completion
         logger.success(f"Scraping completed successfully!")
-        logger.info(f"Total ads scraped: {results.total_ads}")
-        logger.info(f"Successful: {results.successful_ads}")
-        logger.info(f"Failed: {results.failed_ads}")
-        logger.info(f"Individual listings tracked: {results.individual_listings_tracked}")
-        
-        if results.failed_ads > 0:
-            logger.warning(f"{results.failed_ads} ads failed to scrape")
+        click.echo(f"✅ Scraping completed for model: {model}")
+        click.echo(f"📁 Data saved to: {data_dir}")
             
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
@@ -131,18 +123,18 @@ def plot(model: str, data_dir: str, plot_type: str, output_dir: str):
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         
         if plot_type in ['all', 'individual']:
-            plotter = IndividualListingsPlotter(data_dir, output_dir)
-            plotter.generate_plots(model)
+            plotter = IndividualListingsPlotter(data_dir)
+            plotter.generate_individual_listing_plots(model)
             logger.success("Individual listing plots generated")
             
         if plot_type in ['all', 'year']:
-            plotter = YearAnalysisPlotter(data_dir, output_dir)
-            plotter.generate_plots(model)
+            plotter = YearAnalysisPlotter(data_dir)
+            plotter.generate_year_analysis_plots(model)
             logger.success("Year analysis plots generated")
             
         if plot_type in ['all', 'legacy']:
-            plotter = LegacyPlotter(data_dir, output_dir)
-            plotter.generate_plots(model)
+            plotter = LegacyPlotter(data_dir)
+            plotter.generate_legacy_plots(model)
             logger.success("Legacy plots generated")
             
         logger.success(f"All {plot_type} plots generated successfully!")

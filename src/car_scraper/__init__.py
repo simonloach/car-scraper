@@ -15,10 +15,23 @@ __email__ = "sim.piskorz@gmail.com"
 
 # Main exports
 from src.car_scraper.config import Config
-from src.car_scraper.models import CarListing, CarListingHistory, ScrapingResults, YearAnalysisData
-from src.car_scraper.scrapers import CarScraper, AdvertisementFetcher
-from src.car_scraper.storage import IndividualListingsStorage, TimeSeriesStorage, IdMappingStorage
-from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter, LegacyPlotter
+from src.car_scraper.models import (
+    CarListing,
+    CarListingHistory,
+    ScrapingResults,
+    YearAnalysisData,
+)
+from src.car_scraper.plotters import (
+    IndividualListingsPlotter,
+    LegacyPlotter,
+    YearAnalysisPlotter,
+)
+from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
+from src.car_scraper.storage import (
+    IdMappingStorage,
+    IndividualListingsStorage,
+    TimeSeriesStorage,
+)
 from src.car_scraper.utils import DataProcessor, DemoRunner
 
 __all__ = [
@@ -26,23 +39,19 @@ __all__ = [
     "Config",
     "CarScraper",
     "AdvertisementFetcher",
-    
     # Data models
     "CarListing",
-    "CarListingHistory", 
+    "CarListingHistory",
     "ScrapingResults",
     "YearAnalysisData",
-    
     # Storage
     "IndividualListingsStorage",
     "TimeSeriesStorage",
     "IdMappingStorage",
-    
     # Plotting
     "IndividualListingsPlotter",
-    "YearAnalysisPlotter", 
+    "YearAnalysisPlotter",
     "LegacyPlotter",
-    
     # Utilities
     "DataProcessor",
     "DemoRunner",
