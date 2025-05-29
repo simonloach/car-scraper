@@ -27,25 +27,18 @@ jobs:
       uses: snok/install-poetry@v1
       with:
         version: latest
-        virtualenvs-create: true
-        virtualenvs-in-project: true
+        virtualenvs-create: false
         
-    - name: 📥 Install dependencies
-      run: poetry install --no-interaction --no-ansi
+    - name: 🔄 Update lock file and install dependencies
+      run: |
+        poetry lock --no-update
+        poetry install --no-interaction --no-ansi
       
     - name: 🔍 Scrape Lexus LC listings
-      run: |
-        poetry run car-scraper scrape \
-          --url "https://www.otomoto.pl/osobowe/lexus/lc" \
-          --model "lexus-lc" \
-          --max-pages 5 \
-          --delay 2.0
+      run: poetry run car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexus-lc"
         
     - name: 📊 Generate plots
-      run: |
-        poetry run car-scraper plot \
-          --model "lexus-lc" \
-          --plot-type "all"
+      run: poetry run car-scraper plot --model "lexus-lc" --plot-type "all"
         
     - name: 📝 Commit and push results
       run: |
