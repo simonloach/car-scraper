@@ -32,7 +32,7 @@ class DataProcessor:
         status = {
             "model_files": [],
             "time_series_files": [],
-            "individual_listings": {},
+            "simplified_listings": {},
             "plots": [],
         }
 
@@ -76,45 +76,42 @@ class DataProcessor:
                     {"name": file_path.name, "size": file_path.stat().st_size}
                 )
 
-        # Individual listings data
-        listings_dir = self.data_dir / "individual_listings"
-        if listings_dir.exists():
-            history_csv = listings_dir / "listings_history.csv"
-            history_json = listings_dir / "listings_history.json"
-            id_mapping = listings_dir / "id_mapping.json"
+        # Simplified listings data (new format)
+        for model_dir in self.data_dir.iterdir():
+            if model_dir.is_dir() and not model_dir.name.startswith("."):
+                model_file = model_dir / f"{model_dir.name}.json"
+                if model_file.exists():
+                    try:
+                        with open(model_file, "r") as f:
+                            data = json.load(f)
 
-            if history_csv.exists():
-                try:
-                    df = pd.read_csv(history_csv)
-                    status["individual_listings"]["history_csv"] = {
-                        "entries": len(df),
-                        "unique_listings": (
-                            df["id"].nunique() if "id" in df.columns else 0
-                        ),
-                    }
-                except Exception as e:
-                    status["individual_listings"]["history_csv"] = {"error": str(e)}
+                        # Handle both old format (list) and new format (dict with 'listings' key)
+                        if isinstance(data, list):
+                            # Old format - just count the listings
+                            total_listings = len(data)
+                            price_readings = 0  # Old format doesn't have price readings
+                            last_updated = "unknown (old format)"
+                        else:
+                            # New format
+                            total_listings = len(data.get("listings", {}))
+                            price_readings = sum(
+                                len(listing.get("price_readings", []))
+                                for listing in data.get("listings", {}).values()
+                            )
+                            last_updated = data.get("metadata", {}).get(
+                                "last_updated", "unknown"
+                            )
 
-            if history_json.exists():
-                try:
-                    with open(history_json, "r") as f:
-                        data = json.load(f)
-                    status["individual_listings"]["history_json"] = {
-                        "entries": len(data),
-                        "size": history_json.stat().st_size,
-                    }
-                except Exception as e:
-                    status["individual_listings"]["history_json"] = {"error": str(e)}
-
-            if id_mapping.exists():
-                try:
-                    with open(id_mapping, "r") as f:
-                        mapping = json.load(f)
-                    status["individual_listings"]["id_mapping"] = {
-                        "unique_listings": len(mapping)
-                    }
-                except Exception as e:
-                    status["individual_listings"]["id_mapping"] = {"error": str(e)}
+                        status["simplified_listings"][model_dir.name] = {
+                            "total_listings": total_listings,
+                            "total_price_readings": price_readings,
+                            "file_size": model_file.stat().st_size,
+                            "last_updated": last_updated,
+                        }
+                    except Exception as e:
+                        status["simplified_listings"][model_dir.name] = {
+                            "error": str(e)
+                        }
 
         # Plots
         plots_dir = self.data_dir / "plots"
@@ -150,26 +147,18 @@ class DataProcessor:
             for file_info in status["time_series_files"]:
                 click.echo(f"  {file_info['name']}")
 
-        # Individual listings
-        if status["individual_listings"]:
-            click.echo(f"\nIndividual listings data:")
-            if "history_csv" in status["individual_listings"]:
-                hist_info = status["individual_listings"]["history_csv"]
-                if "error" not in hist_info:
+        # Simplified listings data
+        if status["simplified_listings"]:
+            click.echo(f"\nSimplified listings data:")
+            for model, model_info in status["simplified_listings"].items():
+                if "error" not in model_info:
                     click.echo(
-                        f"  History CSV: {hist_info['entries']} entries, {hist_info['unique_listings']} unique listings"
+                        f"  {model}: {model_info['total_listings']} listings, "
+                        f"{model_info['total_price_readings']} price readings, "
+                        f"last updated: {model_info['last_updated']}"
                     )
                 else:
-                    click.echo(f"  History CSV: Error - {hist_info['error']}")
-
-            if "id_mapping" in status["individual_listings"]:
-                mapping_info = status["individual_listings"]["id_mapping"]
-                if "error" not in mapping_info:
-                    click.echo(
-                        f"  ID Mapping: {mapping_info['unique_listings']} unique listings tracked"
-                    )
-                else:
-                    click.echo(f"  ID Mapping: Error - {mapping_info['error']}")
+                    click.echo(f"  {model}: Error - {model_info['error']}")
 
         # Plots
         if status["plots"]:
@@ -187,8 +176,8 @@ class DataProcessor:
         """
         logger.info(f"Cleaning data (dry_run={dry_run})")
 
-        # Clean individual listings duplicates
-        self._clean_individual_listings(dry_run)
+        # Clean simplified listings duplicates
+        self._clean_simplified_listings(dry_run)
 
         # Clean time series duplicates
         self._clean_time_series(dry_run)
@@ -198,56 +187,63 @@ class DataProcessor:
                 "\nDry run completed. Use --dry-run=false to actually clean data."
             )
 
-    def _clean_individual_listings(self, dry_run: bool) -> None:
-        """Clean individual listings data"""
-        listings_dir = self.data_dir / "individual_listings"
-        if not listings_dir.exists():
-            return
+    def _clean_simplified_listings(self, dry_run: bool) -> None:
+        """Clean simplified listings data"""
+        for model_dir in self.data_dir.iterdir():
+            if not model_dir.is_dir() or model_dir.name.startswith("."):
+                continue
 
-        for file_name in ["listings_history.csv", "listings_history.json"]:
-            file_path = listings_dir / file_name
-            if not file_path.exists():
+            model_file = model_dir / f"{model_dir.name}.json"
+            if not model_file.exists():
                 continue
 
             try:
-                if file_name.endswith(".json"):
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                    df = pd.DataFrame(data)
-                else:
-                    df = pd.read_csv(file_path)
+                with open(model_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-                original_count = len(df)
+                listings = data.get("listings", {})
+                total_before = sum(
+                    len(listing.get("price_readings", []))
+                    for listing in listings.values()
+                )
 
-                # Remove duplicates based on id and date
-                df_clean = df.drop_duplicates(subset=["id", "date"], keep="last")
-                removed_count = original_count - len(df_clean)
+                # Clean duplicate price readings for each listing
+                cleaned_count = 0
+                for listing_id, listing in listings.items():
+                    price_readings = listing.get("price_readings", [])
+                    if not price_readings:
+                        continue
 
-                if removed_count > 0:
+                    # Remove duplicate readings based on date
+                    seen_dates = set()
+                    clean_readings = []
+                    for reading in price_readings:
+                        date = reading.get("date")
+                        if date not in seen_dates:
+                            clean_readings.append(reading)
+                            seen_dates.add(date)
+                        else:
+                            cleaned_count += 1
+
+                    listings[listing_id]["price_readings"] = clean_readings
+
+                if cleaned_count > 0:
                     if dry_run:
                         click.echo(
-                            f"Would remove {removed_count} duplicate entries from {file_name}"
+                            f"Would remove {cleaned_count} duplicate price readings from {model_file.name}"
                         )
                     else:
-                        if file_name.endswith(".json"):
-                            with open(file_path, "w", encoding="utf-8") as f:
-                                json.dump(
-                                    df_clean.to_dict("records"),
-                                    f,
-                                    indent=2,
-                                    ensure_ascii=False,
-                                )
-                        else:
-                            df_clean.to_csv(file_path, index=False)
+                        with open(model_file, "w", encoding="utf-8") as f:
+                            json.dump(data, f, indent=2, ensure_ascii=False)
                         click.echo(
-                            f"Removed {removed_count} duplicate entries from {file_name}"
+                            f"Removed {cleaned_count} duplicate price readings from {model_file.name}"
                         )
                 else:
-                    click.echo(f"No duplicates found in {file_name}")
+                    click.echo(f"No duplicates found in {model_file.name}")
 
             except Exception as e:
-                logger.error(f"Error cleaning {file_name}: {str(e)}")
-                click.echo(f"Error cleaning {file_name}: {str(e)}")
+                logger.error(f"Error cleaning {model_file}: {str(e)}")
+                click.echo(f"Error cleaning {model_file}: {str(e)}")
 
     def _clean_time_series(self, dry_run: bool) -> None:
         """Clean time series data"""
@@ -326,20 +322,16 @@ class DataProcessor:
     def _export_individual_listings(
         self, exports_dir: Path, format: str, model: Optional[str]
     ) -> None:
-        """Export individual listings data"""
-        listings_dir = self.data_dir / "individual_listings"
-        history_file = listings_dir / "listings_history.csv"
-
-        if not history_file.exists():
-            return
-
+        """Export individual listings data from simplified storage"""
         try:
-            df = pd.read_csv(history_file)
+            from ..storage.simplified_listings import SimplifiedListingsStorage
 
-            if model:
-                df = df[df["model"] == model]
-                if len(df) == 0:
-                    return
+            storage = SimplifiedListingsStorage(str(self.data_dir))
+            df = storage.get_historical_data(model)
+
+            if len(df) == 0:
+                click.echo("No data found to export")
+                return
 
             filename = f"individual_listings{'_' + model.replace('/', '_') if model else ''}.{format}"
             output_file = exports_dir / filename
@@ -361,9 +353,9 @@ class DataProcessor:
     ) -> None:
         """Export aggregated statistical data"""
         try:
-            from ..storage.individual_listings import IndividualListingsStorage
+            from ..storage.simplified_listings import SimplifiedListingsStorage
 
-            storage = IndividualListingsStorage(str(self.data_dir))
+            storage = SimplifiedListingsStorage(str(self.data_dir))
             df = storage.get_historical_data(model)
 
             # Create aggregated statistics
@@ -396,3 +388,65 @@ class DataProcessor:
 
         except Exception as e:
             logger.error(f"Error exporting aggregated data: {str(e)}")
+
+    def export_to_csv(self, model: str, output_file: str) -> pd.DataFrame:
+        """
+        Export data for a specific model to CSV format
+
+        Args:
+            model: Model name to export
+            output_file: Output file path
+
+        Returns:
+            DataFrame with the exported data
+        """
+        try:
+            from ..storage.simplified_listings import SimplifiedListingsStorage
+
+            storage = SimplifiedListingsStorage(str(self.data_dir))
+            df = storage.get_historical_data(model)
+
+            if len(df) == 0:
+                logger.warning(f"No data found for model: {model}")
+                return pd.DataFrame()
+
+            # Export to CSV
+            df.to_csv(output_file, index=False)
+            logger.info(f"Exported {len(df)} records to {output_file}")
+
+            return df
+
+        except Exception as e:
+            logger.error(f"Error exporting to CSV: {str(e)}")
+            raise
+
+    def export_to_json(self, model: str, output_file: str) -> pd.DataFrame:
+        """
+        Export data for a specific model to JSON format
+
+        Args:
+            model: Model name to export
+            output_file: Output file path
+
+        Returns:
+            DataFrame with the exported data
+        """
+        try:
+            from ..storage.simplified_listings import SimplifiedListingsStorage
+
+            storage = SimplifiedListingsStorage(str(self.data_dir))
+            df = storage.get_historical_data(model)
+
+            if len(df) == 0:
+                logger.warning(f"No data found for model: {model}")
+                return pd.DataFrame()
+
+            # Export to JSON
+            df.to_json(output_file, orient="records", indent=2)
+            logger.info(f"Exported {len(df)} records to {output_file}")
+
+            return df
+
+        except Exception as e:
+            logger.error(f"Error exporting to JSON: {str(e)}")
+            raise

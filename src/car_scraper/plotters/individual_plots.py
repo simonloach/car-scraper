@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.car_scraper.storage.individual_listings import IndividualListingsStorage
 from src.car_scraper.utils.logger import logger
 
 
@@ -26,15 +25,19 @@ class IndividualListingsPlotter:
         # Use root-level plots directory instead of data/plots
         self.plots_dir = self.data_dir.parent / "plots"
         self.plots_dir.mkdir(exist_ok=True)
-        self.storage = IndividualListingsStorage(str(self.data_dir))
+
+        # Import and initialize simplified storage
+        from ..storage.simplified_listings import SimplifiedListingsStorage
+
+        self.storage = SimplifiedListingsStorage(str(self.data_dir))
 
     def _get_model_plots_dir(self, model: Optional[str]) -> Path:
         """
         Get the plots directory for a specific model
-        
+
         Args:
             model: Model name (e.g., 'bmw-i8')
-            
+
         Returns:
             Path to model-specific plots directory
         """
@@ -128,7 +131,7 @@ class IndividualListingsPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        plot_file = model_plots_dir / f'individual_listings_trends.png'
+        plot_file = model_plots_dir / f"individual_listings_trends.png"
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -150,6 +153,13 @@ class IndividualListingsPlotter:
         """
         # Get latest data for each listing
         latest_data = df.groupby("id").last().reset_index()
+
+        # Check if price_change column exists (new format) or create it (old format)
+        if "price_change" not in latest_data.columns:
+            # For old format data, we can't analyze price changes as there's no historical data
+            logger.info("No price change data available (old data format)")
+            click.echo("No price change data available (old data format)")
+            return
 
         # Filter listings with price changes
         price_changes = latest_data[
@@ -209,7 +219,7 @@ class IndividualListingsPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        plot_file = model_plots_dir / f'price_changes.png'
+        plot_file = model_plots_dir / f"price_changes.png"
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -344,7 +354,7 @@ class IndividualListingsPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        enhanced_plot_file = model_plots_dir / f'enhanced_individual_trends.png'
+        enhanced_plot_file = model_plots_dir / f"enhanced_individual_trends.png"
         plt.savefig(enhanced_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 

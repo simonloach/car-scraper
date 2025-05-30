@@ -29,14 +29,12 @@ from src.car_scraper.models import (
     ScrapingResults,
     YearAnalysisData,
 )
-from src.car_scraper.plotters import (
-    IndividualListingsPlotter,
-    YearAnalysisPlotter,
-)
+from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
 from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
 from src.car_scraper.storage import (
     IdMappingStorage,
     IndividualListingsStorage,
+    SimplifiedListingsStorage,
 )
 from src.car_scraper.utils import DataProcessor, DemoRunner
 
@@ -53,6 +51,7 @@ __all__ = [
     # Storage
     "IndividualListingsStorage",
     "IdMappingStorage",
+    "SimplifiedListingsStorage",
     # Plotting
     "IndividualListingsPlotter",
     "YearAnalysisPlotter",

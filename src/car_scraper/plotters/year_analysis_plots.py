@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.car_scraper.storage.individual_listings import IndividualListingsStorage
 from src.car_scraper.utils.logger import logger
 
 
@@ -26,15 +25,19 @@ class YearAnalysisPlotter:
         # Use root-level plots directory instead of data/plots
         self.plots_dir = self.data_dir.parent / "plots"
         self.plots_dir.mkdir(exist_ok=True)
-        self.storage = IndividualListingsStorage(str(self.data_dir))
+
+        # Import and initialize simplified storage
+        from ..storage.simplified_listings import SimplifiedListingsStorage
+
+        self.storage = SimplifiedListingsStorage(str(self.data_dir))
 
     def _get_model_plots_dir(self, model: Optional[str]) -> Path:
         """
         Get the plots directory for a specific model
-        
+
         Args:
             model: Model name (e.g., 'bmw-i8')
-            
+
         Returns:
             Path to model-specific plots directory
         """
@@ -226,7 +229,7 @@ class YearAnalysisPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        year_plot_file = model_plots_dir / f'year_analysis.png'
+        year_plot_file = model_plots_dir / f"year_analysis.png"
         plt.savefig(year_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -294,7 +297,7 @@ class YearAnalysisPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        year_scatter_file = model_plots_dir / f'listings_by_year.png'
+        year_scatter_file = model_plots_dir / f"listings_by_year.png"
         plt.savefig(year_scatter_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -340,7 +343,7 @@ class YearAnalysisPlotter:
             plt.tight_layout()
 
             model_plots_dir = self._get_model_plots_dir(model)
-            price_mileage_file = model_plots_dir / f'price_vs_mileage.png'
+            price_mileage_file = model_plots_dir / f"price_vs_mileage.png"
             plt.savefig(price_mileage_file, dpi=300, bbox_inches="tight")
             plt.close()
 

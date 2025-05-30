@@ -4,9 +4,9 @@ This document contains all the automatically generated visualization graphs from
 
 ## 📈 Latest Analysis Report
 
-**Last Updated**: Automatically updated by GitHub Actions  
-**Data Source**: Otomoto.pl car listings  
-**Current Model**: Lexus LC  
+**Last Updated**: Automatically updated by GitHub Actions
+**Data Source**: Otomoto.pl car listings
+**Current Model**: Lexus LC
 
 ---
 
@@ -77,7 +77,7 @@ These graphs are automatically generated and updated by our GitHub Actions workf
 
 ### Graph Types
 - **Line Charts**: Time-based trends and evolution
-- **Scatter Plots**: Correlation and relationship analysis  
+- **Scatter Plots**: Correlation and relationship analysis
 - **Bar Charts**: Distribution and categorical comparisons
 - **Heatmaps**: Density and concentration patterns
 
