@@ -348,18 +348,8 @@ class AdvertisementFetcher:
         with open(json_file, "w", encoding="utf-8") as f:
             json.dump(model_ads, f, indent=2, ensure_ascii=False)
 
-        # Also save to root directory for backward compatibility
-        root_csv_file = self.data_directory / f'{model.replace("/", "_")}.csv'
-        df.to_csv(root_csv_file, index=False)
-        
-        root_json_file = self.data_directory / f'{model.replace("/", "_")}.json'
-        with open(root_json_file, "w", encoding="utf-8") as f:
-            json.dump(model_ads, f, indent=2, ensure_ascii=False)
-
         logger.info(f"Saved {len(model_ads)} ads for {model}")
         click.echo(f"Saved {len(model_ads)} ads for {model}")
         click.echo(f"  Model Directory: {model_dir}")
         click.echo(f"  CSV: {csv_file}")
         click.echo(f"  JSON: {json_file}")
-        click.echo(f"  Legacy CSV: {root_csv_file}")
-        click.echo(f"  Legacy JSON: {root_json_file}")

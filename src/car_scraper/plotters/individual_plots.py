@@ -47,7 +47,7 @@ class IndividualListingsPlotter:
             return self.plots_dir
 
     def generate_individual_listing_plots(
-        self, model: Optional[str] = None, min_data_points: int = 2
+        self, model: Optional[str] = None, min_data_points: int = 1
     ) -> None:
         """
         Generate plots showing individual listing price trends over time
@@ -81,10 +81,10 @@ class IndividualListingsPlotter:
 
         if not valid_listings:
             logger.warning(
-                f"No listings found with at least {min_data_points} data points."
+                f"No listings found with at least {min_data_points} data points for trend analysis."
             )
             click.echo(
-                f"No listings found with at least {min_data_points} data points."
+                f"No listings found with at least {min_data_points} data points for trend analysis."
             )
             return
 
@@ -244,7 +244,7 @@ class IndividualListingsPlotter:
             )
 
     def generate_enhanced_individual_plots(
-        self, model: Optional[str] = None, min_data_points: int = 2
+        self, model: Optional[str] = None, min_data_points: int = 1
     ) -> None:
         """
         Enhanced version of individual listing plots with year-based markers
