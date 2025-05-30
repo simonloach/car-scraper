@@ -23,9 +23,28 @@ class YearAnalysisPlotter:
             data_dir: Base data directory
         """
         self.data_dir = Path(data_dir)
-        self.plots_dir = self.data_dir / "plots"
+        # Use root-level plots directory instead of data/plots
+        self.plots_dir = self.data_dir.parent / "plots"
         self.plots_dir.mkdir(exist_ok=True)
         self.storage = IndividualListingsStorage(str(self.data_dir))
+
+    def _get_model_plots_dir(self, model: Optional[str]) -> Path:
+        """
+        Get the plots directory for a specific model
+        
+        Args:
+            model: Model name (e.g., 'bmw-i8')
+            
+        Returns:
+            Path to model-specific plots directory
+        """
+        if model:
+            # Create plots directory structure: plots/bmw-i8/
+            model_plots_dir = self.plots_dir / model.replace("/", "_")
+            model_plots_dir.mkdir(parents=True, exist_ok=True)
+            return model_plots_dir
+        else:
+            return self.plots_dir
 
     def generate_year_analysis_plots(self, model: Optional[str] = None) -> None:
         """
@@ -206,10 +225,8 @@ class YearAnalysisPlotter:
 
         plt.tight_layout()
 
-        year_plot_file = (
-            self.plots_dir
-            / f'year_analysis{"_" + model.replace("/", "_") if model else ""}.png'
-        )
+        model_plots_dir = self._get_model_plots_dir(model)
+        year_plot_file = model_plots_dir / f'year_analysis.png'
         plt.savefig(year_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -276,10 +293,8 @@ class YearAnalysisPlotter:
 
         plt.tight_layout()
 
-        year_scatter_file = (
-            self.plots_dir
-            / f'listings_by_year{"_" + model.replace("/", "_") if model else ""}.png'
-        )
+        model_plots_dir = self._get_model_plots_dir(model)
+        year_scatter_file = model_plots_dir / f'listings_by_year.png'
         plt.savefig(year_scatter_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -324,10 +339,8 @@ class YearAnalysisPlotter:
 
             plt.tight_layout()
 
-            price_mileage_file = (
-                self.plots_dir
-                / f'price_vs_mileage{"_" + model.replace("/", "_") if model else ""}.png'
-            )
+            model_plots_dir = self._get_model_plots_dir(model)
+            price_mileage_file = model_plots_dir / f'price_vs_mileage.png'
             plt.savefig(price_mileage_file, dpi=300, bbox_inches="tight")
             plt.close()
 

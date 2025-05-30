@@ -1,5 +1,13 @@
 """
-Car scraper package for otomoto.pl.
+Car scraper packagefrom src.car_scraper.plotters import (
+    IndividualListingsPlotter,
+    YearAnalysisPlotter,
+)
+from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
+from src.car_scraper.storage import (
+    IdMappingStorage,
+    IndividualListingsStorage,
+)o.pl.
 
 A professional car listing scraper with comprehensive features:
 - Individual listing price tracking over time
@@ -23,14 +31,12 @@ from src.car_scraper.models import (
 )
 from src.car_scraper.plotters import (
     IndividualListingsPlotter,
-    LegacyPlotter,
     YearAnalysisPlotter,
 )
 from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
 from src.car_scraper.storage import (
     IdMappingStorage,
     IndividualListingsStorage,
-    TimeSeriesStorage,
 )
 from src.car_scraper.utils import DataProcessor, DemoRunner
 
@@ -46,12 +52,10 @@ __all__ = [
     "YearAnalysisData",
     # Storage
     "IndividualListingsStorage",
-    "TimeSeriesStorage",
     "IdMappingStorage",
     # Plotting
     "IndividualListingsPlotter",
     "YearAnalysisPlotter",
-    "LegacyPlotter",
     # Utilities
     "DataProcessor",
     "DemoRunner",

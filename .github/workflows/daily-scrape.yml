@@ -2,7 +2,7 @@ name: 🚗 Daily Car Scraper
 
 on:
   schedule:
-    # Run daily at 6:00 AM UTC (8:00 AM CEST)
+    # Run daily at 6:00 AM UTC
     - cron: '0 6 * * *'
   workflow_dispatch:
     # Allow manual trigger
@@ -43,9 +43,9 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/
+        git add data/ plots/
         
         if ! git diff --staged --quiet; then
-          git commit -m "🚗 Daily scrape: $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "chore: 🚗 Daily scrape: $(date '+%Y-%m-%d %H:%M:%S UTC')"
           git push
         fi

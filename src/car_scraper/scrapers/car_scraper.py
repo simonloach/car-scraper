@@ -20,15 +20,19 @@ class CarScraper:
 
     Args:
         data_directory: path to directory where data will be saved
+        make: Car make (e.g., 'lexus', 'bmw', 'audi')
+        model: Car model (e.g., 'lc', 'i8', 'r8')
     """
 
-    def __init__(self, data_directory: str) -> None:
-        logger.info("Initializing Car scraper")
-        click.echo("Initializing Car scraper")
+    def __init__(self, data_directory: str, make: str = None, model: str = None) -> None:
+        logger.info(f"Initializing Car scraper for {make} {model}")
+        click.echo(f"Initializing Car scraper for {make} {model}")
 
         self.data_directory = Path(data_directory)
         self.data_directory.mkdir(parents=True, exist_ok=True)
-        self.ad_fetcher = AdvertisementFetcher(str(self.data_directory))
+        self.make = make
+        self.model = model
+        self.ad_fetcher = AdvertisementFetcher(str(self.data_directory), make, model)
 
     def get_cars_in_page(self, path: str, page_num: int) -> List[str]:
         """

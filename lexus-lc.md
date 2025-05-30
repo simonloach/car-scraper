@@ -6,7 +6,21 @@ This document contains all the automatically generated visualization graphs from
 
 **Last Updated**: Automatically updated by GitHub Actions  
 **Data Source**: Otomoto.pl car listings  
-**Current Model**: Lexus LC  
+**Current Model**: Lexus LC
+
+---
+
+## 🔍 Individual Listings Analysis
+
+### Price Trends Over Time
+Track how individual car listings change in price over time, helping identify market patterns and seller behavior.
+
+![Individual Listings Trends](data/plots/individual_listings_trends_bmw-i8.png)
+
+### Enhanced Individual Trends
+Advanced analysis of individual listings with additional trend indicators and statistical overlays.
+
+![Enhanced Individual Trends](data/plots/enhanced_individual_trends_bmw-i8.png)
 
 ---
 
@@ -15,12 +29,12 @@ This document contains all the automatically generated visualization graphs from
 ### Listings Distribution by Manufacturing Year
 Understand the market composition based on vehicle manufacturing years.
 
-![Listings by Year](plots/lexus-lc/listings_by_year.png)
+![Listings by Year](data/plots/listings_by_year_bmw-i8.png)
 
 ### Comprehensive Year Analysis
 Detailed breakdown of price distributions, mileage patterns, and market availability by year.
 
-![Year Analysis](plots/lexus-lc/year_analysis.png)
+![Year Analysis](data/plots/year_analysis_bmw-i8.png)
 
 ---
 
@@ -29,21 +43,21 @@ Detailed breakdown of price distributions, mileage patterns, and market availabi
 ### Price vs Mileage Correlation
 Analyze the relationship between vehicle mileage and asking price to identify market value patterns.
 
-![Price vs Mileage](plots/lexus-lc/price_vs_mileage.png)
+![Price vs Mileage](data/plots/price_vs_mileage_bmw-i8.png)
 
 ---
 
 ## 📊 Graph Descriptions
 
+### 🔍 Individual Listings Trends
+- **Purpose**: Track price changes for specific vehicles over time
+- **Insights**: Identify price drops, market adjustments, and seller strategies
+- **Key Metrics**: Price evolution, listing duration, price volatility
+
 ### 📅 Year Analysis
 - **Purpose**: Compare market segments by manufacturing year
 - **Insights**: Depreciation patterns, popular model years, age-based pricing
 - **Key Metrics**: Average prices by year, listing counts, price ranges
-
-### 📊 Listings by Year
-- **Purpose**: Visualize distribution of available vehicles by manufacturing year
-- **Insights**: Market availability, popular production years, inventory composition
-- **Key Metrics**: Count distribution, year concentration, market coverage
 
 ### 💰 Price vs Mileage
 - **Purpose**: Understand value depreciation based on usage
@@ -89,7 +103,7 @@ These graphs are automatically generated and updated by our GitHub Actions workf
 |--------|--------|
 | Last Scrape | ![GitHub Workflow Status](https://github.com/yourusername/car-scraper/workflows/Daily%20Car%20Scraper/badge.svg) |
 | Data Points | Check latest commit for count |
-| Models Tracked | Lexus LC (primary), BMW i8 (historical) |
+| Models Tracked | BMW i8 (expandable) |
 | Update Frequency | Daily at 6:00 AM UTC |
 
 ---

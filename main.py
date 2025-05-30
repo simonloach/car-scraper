@@ -26,8 +26,8 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 from src.car_scraper.config import Config
 from src.car_scraper.models import ScrapingResults
 from src.car_scraper.scrapers import CarScraper
-from src.car_scraper.storage import IndividualListingsStorage, TimeSeriesStorage
-from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter, LegacyPlotter
+from src.car_scraper.storage import IndividualListingsStorage
+from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
 from src.car_scraper.utils import DataProcessor, DemoRunner
 from src.car_scraper.utils.logger import setup_logger
 
@@ -57,7 +57,7 @@ def cli(verbose: bool, log_level: str):
 
 @cli.command()
 @click.option('--url', required=True, help='Search URL from otomoto.pl')
-@click.option('--model', required=True, help='Model name to save data as')
+@click.option('--model', required=True, help='Model name to save data as (format: make-model, e.g., bmw-i8)')
 @click.option('--data-dir', default='./data', help='Directory to save data')
 @click.option('--max-pages', default=10, help='Maximum number of pages to scrape')
 @click.option('--format', 'output_format', default='csv', 
@@ -72,7 +72,7 @@ def scrape(url: str, model: str, data_dir: str, max_pages: int,
     Automatically tracks individual listings over time for price analysis.
     
     Example:
-        python main.py scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexus-lc"
+        python main.py scrape --url "https://www.otomoto.pl/osobowe/bmw/i8" --model "bmw-i8"
     """
     logger.info(f"Starting scrape for model: {model}")
     logger.info(f"URL: {url}")
@@ -81,8 +81,23 @@ def scrape(url: str, model: str, data_dir: str, max_pages: int,
     logger.info(f"Output format: {output_format}")
     
     try:
-        # Initialize scraper
-        scraper = CarScraper(data_dir)
+        # Parse make and model from the model parameter
+        if '-' in model:
+            make, car_model = model.split('-', 1)
+        else:
+            # Try to extract from URL as fallback
+            import re
+            url_parts = re.findall(r'/osobowe/([^/]+)/([^/?]+)', url)
+            if url_parts:
+                make, car_model = url_parts[0]
+            else:
+                # Default fallback
+                make, car_model = 'unknown', model
+        
+        logger.info(f"Parsed make: {make}, model: {car_model}")
+        
+        # Initialize scraper with make and model
+        scraper = CarScraper(data_dir, make, car_model)
         
         # Scrape the model
         scraper.scrape_model(url, model, max_pages)
@@ -101,7 +116,7 @@ def scrape(url: str, model: str, data_dir: str, max_pages: int,
 @click.option('--model', required=True, help='Model name to generate plots for')
 @click.option('--data-dir', default='./data', help='Directory containing data')
 @click.option('--plot-type', default='all', 
-              type=click.Choice(['all', 'individual', 'year', 'legacy']),
+              type=click.Choice(['all', 'individual', 'year']),
               help='Type of plots to generate')
 @click.option('--output-dir', default='./plots', help='Directory to save plots')
 def plot(model: str, data_dir: str, plot_type: str, output_dir: str):
@@ -112,7 +127,7 @@ def plot(model: str, data_dir: str, plot_type: str, output_dir: str):
     year-based analysis, and individual listing tracking.
     
     Example:
-        python main.py plot --model "lexus-lc" --plot-type "all"
+        python main.py plot --model "bmw-i8" --plot-type "all"
     """
     logger.info(f"Generating {plot_type} plots for model: {model}")
     logger.info(f"Data directory: {data_dir}")
@@ -131,11 +146,6 @@ def plot(model: str, data_dir: str, plot_type: str, output_dir: str):
             plotter = YearAnalysisPlotter(data_dir)
             plotter.generate_year_analysis_plots(model)
             logger.success("Year analysis plots generated")
-            
-        if plot_type in ['all', 'legacy']:
-            plotter = LegacyPlotter(data_dir)
-            plotter.generate_legacy_plots(model)
-            logger.success("Legacy plots generated")
             
         logger.success(f"All {plot_type} plots generated successfully!")
         

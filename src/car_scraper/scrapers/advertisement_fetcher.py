@@ -22,17 +22,21 @@ class AdvertisementFetcher:
     Fetches advertisements from otomoto.pl
     """
 
-    def __init__(self, data_directory: str) -> None:
+    def __init__(self, data_directory: str, make: str = None, model: str = None) -> None:
         """
         Initialize the advertisement fetcher
 
         Args:
             data_directory: Directory to save scraped data
+            make: Car make (e.g., 'lexus', 'bmw', 'audi')
+            model: Car model (e.g., 'lc', 'i8', 'r8')
         """
         self.data_directory = Path(data_directory)
+        self.make = make.lower() if make else None
+        self.model = model.lower() if model else None
         self.ads: List[Dict] = []
         logger.info(
-            f"Initialized AdvertisementFetcher with data directory: {data_directory}"
+            f"Initialized AdvertisementFetcher with data directory: {data_directory}, make: {make}, model: {model}"
         )
 
     def setup_fetcher(self) -> None:
@@ -40,27 +44,31 @@ class AdvertisementFetcher:
         self.ads = []
         logger.info("Reset ads list for new scraping session")
 
-    def _is_lexus_lc_link(self, link: str) -> bool:
+    def _is_valid_car_link(self, link: str) -> bool:
         """
-        Check if a link is for a Lexus LC model
+        Check if a link is for the specified car make and model
 
         Args:
             link: URL to check
 
         Returns:
-            bool: True if link is for Lexus LC model
+            bool: True if link matches the specified make and model
         """
-        # Check if the link contains both 'lexus' and 'lc' in the right pattern
-        # Pattern should match URLs like: .../oferta/lexus-lc-...
+        # If no make/model specified, accept any otomoto link
+        if not self.make or not self.model:
+            return "/oferta/" in link
+
+        # Check if the link contains the make and model in the right pattern
+        # Pattern should match URLs like: .../oferta/make-model-...
         if "/oferta/" not in link:
             return False
 
         # Extract the part after /oferta/
         oferta_part = link.split("/oferta/")[-1].lower()
 
-        # Check if it starts with lexus-lc pattern
-        lexus_lc_pattern = r"^lexus[-\s]lc[-\s]"
-        if re.match(lexus_lc_pattern, oferta_part):
+        # Check if it starts with make-model pattern
+        car_pattern = rf"^{re.escape(self.make)}[-\s]{re.escape(self.model)}[-\s]"
+        if re.match(car_pattern, oferta_part):
             return True
 
         return False
@@ -80,8 +88,8 @@ class AdvertisementFetcher:
         logger.info(f"Starting to fetch {len(links)} ads for model: {model}")
 
         for link in links:
-            # Filter for Lexus LC models only
-            if not self._is_lexus_lc_link(link):
+            # Filter for valid car model links only
+            if not self._is_valid_car_link(link):
                 filtered_out += 1
                 continue
 
@@ -117,10 +125,10 @@ class AdvertisementFetcher:
                 continue
 
         logger.info(
-            f"Fetch summary: {successful_fetches} successful, {failed_fetches} failed, {filtered_out} filtered out (not LC models)"
+            f"Fetch summary: {successful_fetches} successful, {failed_fetches} failed, {filtered_out} filtered out (not matching model)"
         )
         click.echo(
-            f"Fetch summary: {successful_fetches} successful, {failed_fetches} failed, {filtered_out} filtered out (not LC models)"
+            f"Fetch summary: {successful_fetches} successful, {failed_fetches} failed, {filtered_out} filtered out (not matching model)"
         )
 
     def _extract_car_data(
@@ -308,7 +316,7 @@ class AdvertisementFetcher:
 
     def save_ads(self, model: str) -> None:
         """
-        Save ads to CSV and JSON
+        Save ads to CSV and JSON in model-specific directory
 
         Args:
             model: car model to save
@@ -325,21 +333,33 @@ class AdvertisementFetcher:
             click.echo(f"No ads found for model {model}")
             return
 
-        # Ensure data directory exists
-        self.data_directory.mkdir(parents=True, exist_ok=True)
+        # Create model-specific directory
+        model_dir = self.data_directory / model.replace("/", "_")
+        model_dir.mkdir(parents=True, exist_ok=True)
 
         df = pd.DataFrame(model_ads)
 
-        # Save to CSV
-        csv_file = self.data_directory / f'{model.replace("/", "_")}.csv'
+        # Save to CSV in model directory
+        csv_file = model_dir / f'{model.replace("/", "_")}.csv'
         df.to_csv(csv_file, index=False)
 
-        # Save to JSON
-        json_file = self.data_directory / f'{model.replace("/", "_")}.json'
+        # Save to JSON in model directory
+        json_file = model_dir / f'{model.replace("/", "_")}.json'
         with open(json_file, "w", encoding="utf-8") as f:
+            json.dump(model_ads, f, indent=2, ensure_ascii=False)
+
+        # Also save to root directory for backward compatibility
+        root_csv_file = self.data_directory / f'{model.replace("/", "_")}.csv'
+        df.to_csv(root_csv_file, index=False)
+        
+        root_json_file = self.data_directory / f'{model.replace("/", "_")}.json'
+        with open(root_json_file, "w", encoding="utf-8") as f:
             json.dump(model_ads, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Saved {len(model_ads)} ads for {model}")
         click.echo(f"Saved {len(model_ads)} ads for {model}")
+        click.echo(f"  Model Directory: {model_dir}")
         click.echo(f"  CSV: {csv_file}")
         click.echo(f"  JSON: {json_file}")
+        click.echo(f"  Legacy CSV: {root_csv_file}")
+        click.echo(f"  Legacy JSON: {root_json_file}")

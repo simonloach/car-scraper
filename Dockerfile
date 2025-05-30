@@ -26,4 +26,4 @@ COPY src/ ./src/
 RUN mkdir -p /app/data
 
 # Set the entry point
-ENTRYPOINT ["python", "-m", "src.main"]
+ENTRYPOINT ["python", "main.py"]

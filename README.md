@@ -1,17 +1,20 @@
 # 🚗 Car Scraper for Otomoto.pl
 
-[![Daily Scraper](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml)
+[![Daily Scraper](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/simonloach/car-scraper/actions/w3. Optionally customize:
+   - **Models**: Comma-separated list (e.g., `lexus-lc,audi-r8`)
+   - **Max Pages**: Number of pages to scrape per model (default: 5)flows/daily-scrape.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Poetry](https://img.shields.io/badge/dependency--management-poetry-blue)](https://python-poetry.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A modern, professional CLI application for scraping car listings from otomoto.pl with comprehensive time series tracking, analysis, and visualization capabilities.
+A modern, professional CLI application for scraping car listings from otomoto.pl with comprehensive time series tracking, analysis, and visualization capabilities. Currently tracking **Lexus LC** with model-specific data organization and automated daily analysis.
 
 ## ✨ Features
 
+- **Model-Specific Organization**: Separate data directories and plots for each car model
 - **Advanced Scraping**: Extract car listings with prices, specifications, and metadata
 - **Time Series Tracking**: Monitor individual listings over time for price analysis
-- **Rich Visualizations**: Generate comprehensive plots and analysis charts
+- **Rich Visualizations**: Generate comprehensive plots and analysis charts organized by model
 - **Multiple Data Formats**: Support for both CSV and JSON data formats
 - **Professional CLI**: Modern Click-based command-line interface
 - **Modular Architecture**: Clean, maintainable codebase following PEP standards
@@ -28,9 +31,9 @@ Our automated system generates comprehensive visualizations updated daily:
 
 | Graph Type | Description | Latest |
 |------------|-------------|---------|
-| 🔍 **Individual Trends** | Track price changes for specific vehicles over time | ![](data/plots/individual_listings_trends_lexus-lc.png) |
-| 📅 **Year Analysis** | Market composition by manufacturing year | ![](data/plots/year_analysis_lexus-lc.png) |
-| 💰 **Price vs Mileage** | Value correlation and depreciation patterns | ![](data/plots/price_vs_mileage_lexus-lc.png) |
+| 📅 **Year Analysis** | Market composition by manufacturing year | ![](plots/lexus-lc/year_analysis.png) |
+| 💰 **Price vs Mileage** | Value correlation and depreciation patterns | ![](plots/lexus-lc/price_vs_mileage.png) |
+| 📊 **Listings by Year** | Distribution of listings across manufacturing years | ![](plots/lexus-lc/listings_by_year.png) |
 
 *All graphs are automatically updated daily via GitHub Actions. [→ See full analysis report](GRAPHS.md)*
 
@@ -141,11 +144,19 @@ car-scraper/
 │   ├── storage/               # Data persistence
 │   ├── plotters/              # Visualization modules
 │   └── utils/                 # Utilities and helpers
-├── data/                      # Scraped data storage
-│   ├── *.csv, *.json         # Raw listings data
-│   ├── individual_listings/   # Price tracking data
-│   ├── plots/                 # Generated visualizations
-│   └── time_series/           # Historical data
+├── data/                      # Model-specific data storage
+│   ├── {model}/               # Per-model directories
+│   │   ├── {model}.csv        # Raw listings data (CSV)
+│   │   ├── {model}.json       # Raw listings data (JSON) 
+│   │   ├── listings_history.json # Historical price tracking
+│   │   └── individual_listings/   # ID mappings and tracking
+│   └── ...                    # Additional models
+├── plots/                     # Model-specific visualizations
+│   ├── {model}/               # Per-model plot directories
+│   │   ├── year_analysis.png  # Year-based analysis
+│   │   ├── price_vs_mileage.png # Value correlation
+│   │   └── listings_by_year.png # Distribution plots
+│   └── ...                    # Additional models
 ├── tests/                     # Test suite
 ├── .github/workflows/         # GitHub Actions
 └── main.py                    # CLI entry point
@@ -167,10 +178,7 @@ This project includes a powerful GitHub Action that automatically scrapes car li
 ### Supported Models
 
 The action includes pre-configured URLs for popular models:
-- `lexus-lc` - Lexus LC
-- `bmw-i8` - BMW i8  
-- `audi-r8` - Audi R8
-- `porsche-911` - Porsche 911
+- `lexus-lc` - Lexus LC (primary tracked model)
 
 ### Manual Execution
 
@@ -180,7 +188,7 @@ You can manually trigger the action with custom parameters:
 2. Select **"🚗 Daily Car Scraper"** workflow
 3. Click **"Run workflow"**
 4. Optionally customize:
-   - **Models**: Comma-separated list (e.g., `lexus-lc,bmw-i8`)
+   - **Models**: Comma-separated list (e.g., `lexus-lc,audi-r8`)
    - **Max Pages**: Number of pages to scrape per model (default: 5)
 
 ### Workflow Output
@@ -244,8 +252,8 @@ car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexu
 
 # Advanced options
 car-scraper scrape \
-  --url "https://www.otomoto.pl/osobowe/bmw/i8" \
-  --model "bmw-i8" \
+  --url "https://www.otomoto.pl/osobowe/lexus/lc" \
+  --model "lexus-lc" \
   --max-pages 3 \
   --delay 2.0 \
   --format json
@@ -308,17 +316,21 @@ Runs a complete demonstration including data analysis and visualization.
 ### Raw Data Files
 ```
 data/
-├── {model}.csv           # Raw scraped listings (CSV format)
-├── {model}.json          # Raw scraped listings (JSON format)
-├── individual_listings/  # Price tracking data
-│   ├── id_mapping.json   # Internal ID mappings
-│   └── listings_history.csv # Historical price changes
-├── time_series/          # Time series data (future enhancement)
-└── plots/                # Generated visualizations
-    ├── individual_listings_trends_{model}.png
-    ├── year_analysis_{model}.png
-    ├── listings_by_year_{model}.png
-    └── price_vs_mileage_{model}.png
+├── {model}/                  # Model-specific directories
+│   ├── {model}.csv          # Raw scraped listings (CSV format)
+│   ├── {model}.json         # Raw scraped listings (JSON format)
+│   ├── listings_history.json # Historical price tracking
+│   └── individual_listings/ # ID mappings and tracking data
+│       └── id_mapping.json  # Internal ID mappings
+└── ...                      # Additional models
+
+plots/
+├── {model}/                 # Model-specific plot directories
+│   ├── year_analysis.png    # Comprehensive year analysis
+│   ├── price_vs_mileage.png # Price-mileage correlation
+│   ├── listings_by_year.png # Distribution by year
+│   └── ...                  # Additional plot types
+└── ...                      # Additional models
 ```
 
 ### Data Fields

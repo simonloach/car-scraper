@@ -147,7 +147,7 @@ class DemoRunner:
             logger.error(f"Error saving simulated data: {str(e)}")
             return False
 
-    def create_sample_data(self, model: str = "lexus-lc", count: int = 10) -> bool:
+    def create_sample_data(self, model: str = "bmw-i8", count: int = 10) -> bool:
         """
         Create sample data for demonstration purposes.
 
@@ -172,7 +172,7 @@ class DemoRunner:
 
             listing_data = {
                 "id": listing_id,
-                "title": f"Lexus LC {year} Sample Listing {i+1}",
+                "title": f"BMW i8 {year} Sample Listing {i+1}",
                 "price": base_price,
                 "year": year,
                 "mileage": mileage,
@@ -249,7 +249,7 @@ class DemoRunner:
             # Step 2: Create sample data if needed
             if not status_info.get("model_files"):
                 logger.info("💾 Step 2: Creating sample data for demonstration")
-                self.create_sample_data("lexus-lc", 10)
+                self.create_sample_data("bmw-i8", 10)
 
             # Step 3: Simulate price changes
             logger.info("💰 Step 3: Simulating price changes")

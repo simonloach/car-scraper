@@ -1,0 +1,233 @@
+[
+  {
+    "id": "bmw-i8-ID6HoSAx.html",
+    "internal_id": 1,
+    "title": "BMW i8",
+    "price": 259000,
+    "year": 2017,
+    "mileage": 152580,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-ID6HoSAx.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-374-km-kamera-360-laser-lights-hud-najmniejszy-przebieg-w-pl-ID6Hmv9O.html",
+    "internal_id": 2,
+    "title": "BMW i8",
+    "price": 429000,
+    "year": 2019,
+    "mileage": 29700,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-374-km-kamera-360-laser-lights-hud-najmniejszy-przebieg-w-pl-ID6Hmv9O.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-ID6Hjxjn.html",
+    "internal_id": 3,
+    "title": "BMW i8 Coupe",
+    "price": 209000,
+    "year": 2015,
+    "mileage": 64000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-ID6Hjxjn.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-bmw-i8-head-up-nawigacja-maly-przebieg-stan-idealny-ID6HquE1.html",
+    "internal_id": 4,
+    "title": "BMW i8 Standard",
+    "price": 223000,
+    "year": 2015,
+    "mileage": 53000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-bmw-i8-head-up-nawigacja-maly-przebieg-stan-idealny-ID6HquE1.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-najmocniejsze-bmw-i8-w-polsce-ID6Hne7k.html",
+    "internal_id": 5,
+    "title": "BMW i8",
+    "price": 222000,
+    "year": 2015,
+    "mileage": 72000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-najmocniejsze-bmw-i8-w-polsce-ID6Hne7k.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-bmw-i8-salon-radstar-ID6Gpll0.html",
+    "internal_id": 6,
+    "title": "BMW i8",
+    "price": 444257,
+    "year": 2018,
+    "mileage": 64000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-bmw-i8-salon-radstar-ID6Gpll0.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 45257,
+    "price_history": [
+      {
+        "date": "2025-05-30",
+        "price": 444257,
+        "price_change": 45257,
+        "scrape_timestamp": 1748600780
+      }
+    ]
+  },
+  {
+    "id": "bmw-i8-bmw-i8-ID6GYWQw.html",
+    "internal_id": 7,
+    "title": "BMW i8 Standard",
+    "price": 145486,
+    "year": 2014,
+    "mileage": 120000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-bmw-i8-ID6GYWQw.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": -25514,
+    "price_history": [
+      {
+        "date": "2025-05-30",
+        "price": 145486,
+        "price_change": -25514,
+        "scrape_timestamp": 1748600780
+      }
+    ]
+  },
+  {
+    "id": "bmw-i8-ID6HpxXl.html",
+    "internal_id": 8,
+    "title": "BMW i8 Coupe",
+    "price": 167460,
+    "year": 2015,
+    "mileage": 89000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-ID6HpxXl.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": -34540,
+    "price_history": [
+      {
+        "date": "2025-05-30",
+        "price": 167460,
+        "price_change": -34540,
+        "scrape_timestamp": 1748600780
+      }
+    ]
+  },
+  {
+    "id": "bmw-i8-polski-salon-kamera-360-carbon-head-up-ID6Gwo4C.html",
+    "internal_id": 9,
+    "title": "BMW i8 Standard",
+    "price": 225000,
+    "year": 2014,
+    "mileage": 85600,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-polski-salon-kamera-360-carbon-head-up-ID6Gwo4C.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-362hp-hud-navi-4xkamera-harman-kardon-85-861km-hybryda-ID6Hqpvf.html",
+    "internal_id": 10,
+    "title": "BMW i8 Coupe",
+    "price": 249000,
+    "year": 2015,
+    "mileage": 85861,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-362hp-hud-navi-4xkamera-harman-kardon-85-861km-hybryda-ID6Hqpvf.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-protonic-frozen-yellow-edition-limitowana-2-wl-salon-polska-ID6GHHOz.html",
+    "internal_id": 11,
+    "title": "BMW i8",
+    "price": 379502,
+    "year": 2017,
+    "mileage": 54000,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-protonic-frozen-yellow-edition-limitowana-2-wl-salon-polska-ID6GHHOz.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 4292,
+    "price_history": [
+      {
+        "date": "2025-05-30",
+        "price": 379502,
+        "price_change": 4292,
+        "scrape_timestamp": 1748600780
+      }
+    ]
+  },
+  {
+    "id": "bmw-i8-plug-in-xdrive-4x4-navi-head-up-led-tempomat-full-opcja-faktura-ID6B7iuz.html",
+    "internal_id": 12,
+    "title": "BMW i8",
+    "price": 242637,
+    "year": 2015,
+    "mileage": 28279,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-plug-in-xdrive-4x4-navi-head-up-led-tempomat-full-opcja-faktura-ID6B7iuz.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": -56363,
+    "price_history": [
+      {
+        "date": "2025-05-30",
+        "price": 242637,
+        "price_change": -56363,
+        "scrape_timestamp": 1748600780
+      }
+    ]
+  },
+  {
+    "id": "bmw-i8-salon-polska-faktura-vat-23-ID6H7LOL.html",
+    "internal_id": 13,
+    "title": "BMW i8 Standard",
+    "price": 244770,
+    "year": 2015,
+    "mileage": 208019,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-salon-polska-faktura-vat-23-ID6H7LOL.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  },
+  {
+    "id": "bmw-i8-lift-rej-pl-gwarancja-12-miesiecy-ID6G5esq.html",
+    "internal_id": 14,
+    "title": "BMW i8",
+    "price": 249900,
+    "year": 2017,
+    "mileage": 45807,
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-i8-lift-rej-pl-gwarancja-12-miesiecy-ID6G5esq.html",
+    "model": "bmw-i8",
+    "date": "2025-05-30",
+    "scrape_timestamp": 1748600195,
+    "price_change": 0,
+    "price_history": []
+  }
+]

@@ -23,9 +23,28 @@ class IndividualListingsPlotter:
             data_dir: Base data directory
         """
         self.data_dir = Path(data_dir)
-        self.plots_dir = self.data_dir / "plots"
+        # Use root-level plots directory instead of data/plots
+        self.plots_dir = self.data_dir.parent / "plots"
         self.plots_dir.mkdir(exist_ok=True)
         self.storage = IndividualListingsStorage(str(self.data_dir))
+
+    def _get_model_plots_dir(self, model: Optional[str]) -> Path:
+        """
+        Get the plots directory for a specific model
+        
+        Args:
+            model: Model name (e.g., 'bmw-i8')
+            
+        Returns:
+            Path to model-specific plots directory
+        """
+        if model:
+            # Create plots directory structure: plots/bmw-i8/
+            model_plots_dir = self.plots_dir / model.replace("/", "_")
+            model_plots_dir.mkdir(parents=True, exist_ok=True)
+            return model_plots_dir
+        else:
+            return self.plots_dir
 
     def generate_individual_listing_plots(
         self, model: Optional[str] = None, min_data_points: int = 2
@@ -108,10 +127,8 @@ class IndividualListingsPlotter:
         plt.grid(True, alpha=0.3)
         plt.tight_layout()
 
-        plot_file = (
-            self.plots_dir
-            / f'individual_listings_trends{"_" + model.replace("/", "_") if model else ""}.png'
-        )
+        model_plots_dir = self._get_model_plots_dir(model)
+        plot_file = model_plots_dir / f'individual_listings_trends.png'
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -191,10 +208,8 @@ class IndividualListingsPlotter:
 
         plt.tight_layout()
 
-        plot_file = (
-            self.plots_dir
-            / f'price_changes{"_" + model.replace("/", "_") if model else ""}.png'
-        )
+        model_plots_dir = self._get_model_plots_dir(model)
+        plot_file = model_plots_dir / f'price_changes.png'
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -328,10 +343,8 @@ class IndividualListingsPlotter:
         plt.grid(True, alpha=0.3)
         plt.tight_layout()
 
-        enhanced_plot_file = (
-            self.plots_dir
-            / f'enhanced_individual_trends{"_" + model.replace("/", "_") if model else ""}.png'
-        )
+        model_plots_dir = self._get_model_plots_dir(model)
+        enhanced_plot_file = model_plots_dir / f'enhanced_individual_trends.png'
         plt.savefig(enhanced_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
