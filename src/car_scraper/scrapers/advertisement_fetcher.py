@@ -22,7 +22,9 @@ class AdvertisementFetcher:
     Fetches advertisements from otomoto.pl
     """
 
-    def __init__(self, data_directory: str, make: str = None, model: str = None) -> None:
+    def __init__(
+        self, data_directory: str, make: str = None, model: str = None
+    ) -> None:
         """
         Initialize the advertisement fetcher
 
@@ -316,7 +318,7 @@ class AdvertisementFetcher:
 
     def save_ads(self, model: str) -> None:
         """
-        Save ads to CSV and JSON in model-specific directory
+        Save ads using simplified storage system
 
         Args:
             model: car model to save
@@ -333,23 +335,5 @@ class AdvertisementFetcher:
             click.echo(f"No ads found for model {model}")
             return
 
-        # Create model-specific directory
-        model_dir = self.data_directory / model.replace("/", "_")
-        model_dir.mkdir(parents=True, exist_ok=True)
-
-        df = pd.DataFrame(model_ads)
-
-        # Save to CSV in model directory
-        csv_file = model_dir / f'{model.replace("/", "_")}.csv'
-        df.to_csv(csv_file, index=False)
-
-        # Save to JSON in model directory
-        json_file = model_dir / f'{model.replace("/", "_")}.json'
-        with open(json_file, "w", encoding="utf-8") as f:
-            json.dump(model_ads, f, indent=2, ensure_ascii=False)
-
-        logger.info(f"Saved {len(model_ads)} ads for {model}")
-        click.echo(f"Saved {len(model_ads)} ads for {model}")
-        click.echo(f"  Model Directory: {model_dir}")
-        click.echo(f"  CSV: {csv_file}")
-        click.echo(f"  JSON: {json_file}")
+        logger.info(f"Saved {len(model_ads)} ads for {model} using simplified storage")
+        click.echo(f"Saved {len(model_ads)} ads for {model} using simplified storage")

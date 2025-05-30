@@ -24,7 +24,9 @@ class CarScraper:
         model: Car model (e.g., 'lc', 'i8', 'r8')
     """
 
-    def __init__(self, data_directory: str, make: str = None, model: str = None) -> None:
+    def __init__(
+        self, data_directory: str, make: str = None, model: str = None
+    ) -> None:
         logger.info(f"Initializing Car scraper for {make} {model}")
         click.echo(f"Initializing Car scraper for {make} {model}")
 

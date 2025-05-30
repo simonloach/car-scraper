@@ -25,7 +25,7 @@ A modern, professional CLI application for scraping car listings from otomoto.pl
 
 ## 📊 Live Analysis & Graphs
 
-🔥 **[View Live Analysis Graphs →](GRAPHS.md)** 
+🔥 **[View Live Analysis Graphs →](GRAPHS.md)**
 
 Our automated system generates comprehensive visualizations updated daily:
 
@@ -165,10 +165,7 @@ car-scraper/
 │   └── utils/                 # Utilities and helpers
 ├── data/                      # Model-specific data storage
 │   ├── {model}/               # Per-model directories
-│   │   ├── {model}.csv        # Raw listings data (CSV)
-│   │   ├── {model}.json       # Raw listings data (JSON) 
-│   │   ├── listings_history.json # Historical price tracking
-│   │   └── individual_listings/   # ID mappings and tracking
+│   │   └── {model}.json       # Unified data file with listings and price history
 │   └── ...                    # Additional models
 ├── plots/                     # Model-specific visualizations
 │   ├── {model}/               # Per-model plot directories
@@ -258,7 +255,7 @@ car-scraper scrape [OPTIONS]
 
 **Options:**
 - `--url TEXT` - Search URL from otomoto.pl (required)
-- `--model TEXT` - Model name to save data as (required)  
+- `--model TEXT` - Model name to save data as (required)
 - `--data-dir TEXT` - Directory to save data (default: ./data)
 - `--max-pages INTEGER` - Maximum number of pages to scrape (default: 10)
 - `--format [csv|json]` - Output format (default: csv)
@@ -316,7 +313,7 @@ car-scraper status [OPTIONS]
 
 **Output:**
 - Models found and record counts
-- File sizes and last update times  
+- File sizes and last update times
 - Data directory structure overview
 
 ### 🎪 `demo` - Full Demo Workflow
@@ -336,11 +333,7 @@ Runs a complete demonstration including data analysis and visualization.
 ```
 data/
 ├── {model}/                  # Model-specific directories
-│   ├── {model}.csv          # Raw scraped listings (CSV format)
-│   ├── {model}.json         # Raw scraped listings (JSON format)
-│   ├── listings_history.json # Historical price tracking
-│   └── individual_listings/ # ID mappings and tracking data
-│       └── id_mapping.json  # Internal ID mappings
+│   └── {model}.json         # Unified data file with listings, price history, and metadata
 └── ...                      # Additional models
 
 plots/
@@ -364,6 +357,47 @@ Each scraped listing contains:
 - `model` - Model name (as specified during scraping)
 - `scrape_date` - Date of scraping (YYYY-MM-DD)
 - `scrape_timestamp` - Unix timestamp of scraping
+
+### Simplified Storage Format
+
+The new simplified storage system uses a single JSON file per model with the following structure:
+
+```json
+{
+  "metadata": {
+    "model": "lexus-lc",
+    "last_updated": "2025-05-31",
+    "total_listings": 45,
+    "total_price_readings": 123
+  },
+  "listings": {
+    "listing_id_1": {
+      "id": "listing_id_1",
+      "title": "Lexus LC 500 2021",
+      "current_price": 450000,
+      "year": 2021,
+      "mileage": 15000,
+      "url": "https://...",
+      "model": "lexus-lc",
+      "first_seen": "2025-05-31",
+      "last_seen": "2025-05-31",
+      "price_readings": [
+        {
+          "price": 450000,
+          "date": "2025-05-31",
+          "timestamp": 1732890123
+        }
+      ]
+    }
+  }
+}
+```
+
+This format provides:
+- **Integrated price tracking** - All price history within each listing
+- **Simplified file structure** - Single JSON file per model
+- **Metadata tracking** - Summary statistics and model information
+- **Historical preservation** - Maintains listings even when they're no longer active
 
 ## 🛠️ Technical Details
 

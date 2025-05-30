@@ -172,3 +172,14 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# E2E test artifacts and temporary directories
+data_test_e2e/
+data_backup_*/
+backup_old_format_*/
+test_data_generator.py
+export_test.*
+
+# Development scripts output
+scripts/output/
+scripts/logs/
