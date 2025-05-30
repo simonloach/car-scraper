@@ -1,464 +1,855 @@
-[
-  {
-    "id": "lexus-lc-inspiration-series-ID6HjhwJ.html",
-    "title": "Lexus LC 500",
-    "price": 517000,
-    "year": 2021,
-    "mileage": 30000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-inspiration-series-ID6HjhwJ.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:43.680472",
-    "scrape_timestamp": 1748607943
+{
+  "metadata": {
+    "last_updated": "2025-05-30T23:59:02.182155",
+    "total_listings": 44,
+    "model": "lexus-lc"
   },
-  {
-    "id": "lexus-lc-2020-lexus-lc-500-5-0-benzyna-automat-rwd-ID6HoRPs.html",
-    "title": "Lexus LC",
-    "price": 179000,
-    "year": 2021,
-    "mileage": 54056,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2020-lexus-lc-500-5-0-benzyna-automat-rwd-ID6HoRPs.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:45.327224",
-    "scrape_timestamp": 1748607945
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-ultimate-edition-nr-69-165-ID6HojsO.html",
-    "title": "Lexus LC",
-    "price": 515000,
-    "year": 2024,
-    "mileage": 16000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ultimate-edition-nr-69-165-ID6HojsO.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:46.326638",
-    "scrape_timestamp": 1748607946
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-przebieg-62000-pojemnosc-4969-ID6HoSeA.html",
-    "title": "Lexus LC 500 Carbon",
-    "price": 339000,
-    "year": 2018,
-    "mileage": 62000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-przebieg-62000-pojemnosc-4969-ID6HoSeA.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:47.381888",
-    "scrape_timestamp": 1748607947
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-superturismo-salon-polska-folia-ppf-cesja-idealny-ID6HnI9T.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 645111,
-    "year": 2024,
-    "mileage": 5800,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-superturismo-salon-polska-folia-ppf-cesja-idealny-ID6HnI9T.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:48.148157",
-    "scrape_timestamp": 1748607948
-  },
-  {
-    "id": "lexus-lc-wyjatkowy-egzemplarz-pierwszy-wlasciciel-ID6HobKQ.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 522000,
-    "year": 2022,
-    "mileage": 38250,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-wyjatkowy-egzemplarz-pierwszy-wlasciciel-ID6HobKQ.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:49.754362",
-    "scrape_timestamp": 1748607949
-  },
-  {
-    "id": "lexus-lc-ID6HdIQZ.html",
-    "title": "Lexus LC",
-    "price": 695000,
-    "year": 2023,
-    "mileage": 7950,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HdIQZ.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:50.299337",
-    "scrape_timestamp": 1748607950
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-ultimate-edition-2024-salon-pl-fv23-ID6HqktL.html",
-    "title": "Lexus LC 500 Ultimate Edition",
-    "price": 769900,
-    "year": 2024,
-    "mileage": 167,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ultimate-edition-2024-salon-pl-fv23-ID6HqktL.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:51.306367",
-    "scrape_timestamp": 1748607951
-  },
-  {
-    "id": "lexus-lc-500-carbon-hud-bezwypadkowyi-mozliwosc-finansowania-ID6HbWI4.html",
-    "title": "Lexus LC 500 Club Edition",
-    "price": 299000,
-    "year": 2017,
-    "mileage": 44940,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-carbon-hud-bezwypadkowyi-mozliwosc-finansowania-ID6HbWI4.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:52.066190",
-    "scrape_timestamp": 1748607952
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-prestige-5-0-v8-bezwypadkowy-salon-pl-serwis-aso-ID6Hny6R.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 399000,
-    "year": 2019,
-    "mileage": 51000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-prestige-5-0-v8-bezwypadkowy-salon-pl-serwis-aso-ID6Hny6R.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:53.088451",
-    "scrape_timestamp": 1748607953
-  },
-  {
-    "id": "lexus-lc-lc-500-ID6GWkT8.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 299000,
-    "year": 2018,
-    "mileage": 33000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500-ID6GWkT8.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:53.837988",
-    "scrape_timestamp": 1748607953
-  },
-  {
-    "id": "lexus-lc-lc500-cabrio-carbon-v8-ID6HfV4F.html",
-    "title": "Lexus LC 500 Carbon",
-    "price": 525000,
-    "year": 2022,
-    "mileage": 20000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500-cabrio-carbon-v8-ID6HfV4F.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:54.662017",
-    "scrape_timestamp": 1748607954
-  },
-  {
-    "id": "lexus-lc-salon-faktura-vat-23-ID6Hok4g.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 320000,
-    "year": 2018,
-    "mileage": 33706,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-salon-faktura-vat-23-ID6Hok4g.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:55.623898",
-    "scrape_timestamp": 1748607955
-  },
-  {
-    "id": "lexus-lc-500-prestige-salon-pl-fv23-mark-levinson-ID6HoDVK.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 339900,
-    "year": 2018,
-    "mileage": 65433,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-prestige-salon-pl-fv23-mark-levinson-ID6HoDVK.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:56.625500",
-    "scrape_timestamp": 1748607956
-  },
-  {
-    "id": "lexus-lc-5-0-v8-477-km-karbon-full-opcja-cena-do-negocjacji-ID6HhJsZ.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 318000,
-    "year": 2018,
-    "mileage": 34500,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-5-0-v8-477-km-karbon-full-opcja-cena-do-negocjacji-ID6HhJsZ.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:57.372892",
-    "scrape_timestamp": 1748607957
-  },
-  {
-    "id": "lexus-lc-lc500-cabrio-nowy-model-lift-zar-w-pl-jak-nowy-tylko-400-kilometrow-ID6HnvoR.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 610000,
-    "year": 2024,
-    "mileage": 405,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500-cabrio-nowy-model-lift-zar-w-pl-jak-nowy-tylko-400-kilometrow-ID6HnvoR.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:58.150951",
-    "scrape_timestamp": 1748607958
-  },
-  {
-    "id": "lexus-lc-2018-lexus-lc-500-benzyna-tyl-naped-automat-ID6HmsIh.html",
-    "title": "Lexus LC",
-    "price": 125000,
-    "year": 2018,
-    "mileage": 117504,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2018-lexus-lc-500-benzyna-tyl-naped-automat-ID6HmsIh.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:58.875672",
-    "scrape_timestamp": 1748607958
-  },
-  {
-    "id": "lexus-lc-lexus-lc500-krajowy-wersja-superturismo-stan-idealny-ID6GOnFk.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 370000,
-    "year": 2019,
-    "mileage": 8800,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-krajowy-wersja-superturismo-stan-idealny-ID6GOnFk.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:25:59.817784",
-    "scrape_timestamp": 1748607959
-  },
-  {
-    "id": "lexus-lc-500-v8-477km-krajowy-aso-gwarancja-vat23-ID6H539X.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 319900,
-    "year": 2019,
-    "mileage": 155898,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-v8-477km-krajowy-aso-gwarancja-vat23-ID6H539X.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:00.925716",
-    "scrape_timestamp": 1748607960
-  },
-  {
-    "id": "lexus-lc-stan-idealny-salon-polska-limited-edition-ID6HoulE.html",
-    "title": "Lexus LC 500h Limited Edition",
-    "price": 363900,
-    "year": 2017,
-    "mileage": 99000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-stan-idealny-salon-polska-limited-edition-ID6HoulE.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:02.225445",
-    "scrape_timestamp": 1748607962
-  },
-  {
-    "id": "lexus-lc-lexus-lc-500-5-0-v8-2019-24-000-km-carfactor-ID6HqFvR.html",
-    "title": "Lexus LC 500 Club Edition",
-    "price": 349000,
-    "year": 2019,
-    "mileage": 24000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-5-0-v8-2019-24-000-km-carfactor-ID6HqFvR.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:02.949348",
-    "scrape_timestamp": 1748607962
-  },
-  {
-    "id": "lexus-lc-pierwszy-wlasciciel-serwisowany-stan-bardzo-dobry-ID6HjtrX.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 370000,
-    "year": 2017,
-    "mileage": 102512,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-pierwszy-wlasciciel-serwisowany-stan-bardzo-dobry-ID6HjtrX.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:04.082018",
-    "scrape_timestamp": 1748607964
-  },
-  {
-    "id": "lexus-lc-500-drugi-wlasciciel-auto-codzienne-nie-wyscigowe-ID6GQKyw.html",
-    "title": "Lexus LC 500 Carbon",
-    "price": 418200,
-    "year": 2017,
-    "mileage": 90200,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-drugi-wlasciciel-auto-codzienne-nie-wyscigowe-ID6GQKyw.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:04.999352",
-    "scrape_timestamp": 1748607964
-  },
-  {
-    "id": "lexus-lc-lc500h-automat-maly-przebieg-ID6Hoha5.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 162899,
-    "year": 2017,
-    "mileage": 62000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500h-automat-maly-przebieg-ID6Hoha5.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:05.733996",
-    "scrape_timestamp": 1748607965
-  },
-  {
-    "id": "lexus-lc-lexus-lc500-cv-ID6GN51S.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 779999,
-    "year": 2024,
-    "mileage": 5,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-cv-ID6GN51S.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:07.052333",
-    "scrape_timestamp": 1748607967
-  },
-  {
-    "id": "lexus-lc-5-0-v8-cabrio-ID6HmqCb.html",
-    "title": "Lexus LC 500 Club Edition",
-    "price": 460000,
-    "year": 2021,
-    "mileage": 16800,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-5-0-v8-cabrio-ID6HmqCb.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:08.239799",
-    "scrape_timestamp": 1748607968
-  },
-  {
-    "id": "lexus-lc-lc-500-superturismo-ID6GZxGq.html",
-    "title": "Lexus LC",
-    "price": 649900,
-    "year": 2022,
-    "mileage": 15491,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500-superturismo-ID6GZxGq.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:09.359151",
-    "scrape_timestamp": 1748607969
-  },
-  {
-    "id": "lexus-lc-pierwszy-wlasciciel-bezwypadkow-ID6FJMhk.html",
-    "title": "Lexus LC 500 Prestige",
-    "price": 270000,
-    "year": 2017,
-    "mileage": 50000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-pierwszy-wlasciciel-bezwypadkow-ID6FJMhk.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:10.202285",
-    "scrape_timestamp": 1748607970
-  },
-  {
-    "id": "lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-ID6Hmrtn.html",
-    "title": "Lexus LC 500h Superturismo",
-    "price": 333000,
-    "year": 2018,
-    "mileage": 83000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-ID6Hmrtn.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:10.991698",
-    "scrape_timestamp": 1748607970
-  },
-  {
-    "id": "lexus-lc-500-superturismo-salon-polska-aso-vat-23-lexus-leszno-ID6He4S3.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 395000,
-    "year": 2018,
-    "mileage": 33780,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-salon-polska-aso-vat-23-lexus-leszno-ID6He4S3.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:12.372506",
-    "scrape_timestamp": 1748607972
-  },
-  {
-    "id": "lexus-lc-lc-500h-prestige-pierwszy-wlasc-super-stan-dodatkowe-kola-zimowe-ID6GuODd.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 339900,
-    "year": 2017,
-    "mileage": 25500,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500h-prestige-pierwszy-wlasc-super-stan-dodatkowe-kola-zimowe-ID6GuODd.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:13.371391",
-    "scrape_timestamp": 1748607973
-  },
-  {
-    "id": "lexus-lc-lexus-lc500h-superturismo-salon-pl-vat-marza-serwis-aso-ID6HfDh4.html",
-    "title": "Lexus LC",
-    "price": 299999,
-    "year": 2017,
-    "mileage": 110614,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500h-superturismo-salon-pl-vat-marza-serwis-aso-ID6HfDh4.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:14.116883",
-    "scrape_timestamp": 1748607974
-  },
-  {
-    "id": "lexus-lc-500h-v6-359-km-salon-pl-bezwypadkowy-stan-idealny-fv23-ID6Hbu6V.html",
-    "title": "Lexus LC",
-    "price": 365310,
-    "year": 2019,
-    "mileage": 57094,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-v6-359-km-salon-pl-bezwypadkowy-stan-idealny-fv23-ID6Hbu6V.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:16.900868",
-    "scrape_timestamp": 1748607976
-  },
-  {
-    "id": "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1PE.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 780000,
-    "year": 2023,
-    "mileage": 20,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1PE.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:17.456699",
-    "scrape_timestamp": 1748607977
-  },
-  {
-    "id": "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1P9.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 780000,
-    "year": 2023,
-    "mileage": 20,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1P9.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:18.308086",
-    "scrape_timestamp": 1748607978
-  },
-  {
-    "id": "lexus-lc-500h-prestige-przebieg-1328km-krajowy-idealny-stan-gwarancja-vat23-ID6GRzUo.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 559900,
-    "year": 2022,
-    "mileage": 1328,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-przebieg-1328km-krajowy-idealny-stan-gwarancja-vat23-ID6GRzUo.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:19.223989",
-    "scrape_timestamp": 1748607979
-  },
-  {
-    "id": "lexus-lc-500-superturismo-luxury-navi-ID6GV62J.html",
-    "title": "Lexus LC",
-    "price": 465000,
-    "year": 2021,
-    "mileage": 89381,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-luxury-navi-ID6GV62J.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:19.913438",
-    "scrape_timestamp": 1748607979
-  },
-  {
-    "id": "lexus-lc-bezwypadkowy-faktura-vat-23-zjawiskowy-ID6GWjop.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 289000,
-    "year": 2017,
-    "mileage": 126000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-bezwypadkowy-faktura-vat-23-zjawiskowy-ID6GWjop.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:21.374746",
-    "scrape_timestamp": 1748607981
-  },
-  {
-    "id": "lexus-lc-500-limited-edition-fv-23-nowy-gwarancja-ID6H7RiE.html",
-    "title": "Lexus LC 500 Superturismo",
-    "price": 800000,
-    "year": 2024,
-    "mileage": 10,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-limited-edition-fv-23-nowy-gwarancja-ID6H7RiE.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:22.406043",
-    "scrape_timestamp": 1748607982
-  },
-  {
-    "id": "lexus-lc-lexus-lc500h-superturismo-fv23-salon-pl-serwis-aso-ID6H6bzi.html",
-    "title": "Lexus LC 500h Superturismo",
-    "price": 339900,
-    "year": 2017,
-    "mileage": 85000,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500h-superturismo-fv23-salon-pl-serwis-aso-ID6H6bzi.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:23.178180",
-    "scrape_timestamp": 1748607983
-  },
-  {
-    "id": "lexus-lc-lc-500h-hybrid-prestige-vat-marza-serwis-aso-lexus-lawica-ID6Gyfxi.html",
-    "title": "Lexus LC",
-    "price": 295900,
-    "year": 2019,
-    "mileage": 30852,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500h-hybrid-prestige-vat-marza-serwis-aso-lexus-lawica-ID6Gyfxi.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:23.993383",
-    "scrape_timestamp": 1748607983
-  },
-  {
-    "id": "lexus-lc-500h-prestige-salon-polska-gwarancja-aso-ID6HooqC.html",
-    "title": "Lexus LC 500h Prestige",
-    "price": 309900,
-    "year": 2017,
-    "mileage": 111203,
-    "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-salon-polska-gwarancja-aso-ID6HooqC.html",
-    "model": "lexus-lc",
-    "scrape_date": "2025-05-30T12:26:25.079074",
-    "scrape_timestamp": 1748607985
+  "listings": {
+    "lexus-lc-inspiration-series-ID6HjhwJ.html": {
+      "id": "lexus-lc-inspiration-series-ID6HjhwJ.html",
+      "title": "Lexus LC 500",
+      "price": 517000,
+      "year": 2021,
+      "mileage": 30000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-inspiration-series-ID6HjhwJ.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:43.680472",
+      "scrape_timestamp": 1748607943,
+      "current_price": 517000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          517000
+        ]
+      ],
+      "price_change": 517000
+    },
+    "lexus-lc-2020-lexus-lc-500-5-0-benzyna-automat-rwd-ID6HoRPs.html": {
+      "id": "lexus-lc-2020-lexus-lc-500-5-0-benzyna-automat-rwd-ID6HoRPs.html",
+      "title": "Lexus LC",
+      "price": 179000,
+      "year": 2021,
+      "mileage": 54056,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2020-lexus-lc-500-5-0-benzyna-automat-rwd-ID6HoRPs.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:45.327224",
+      "scrape_timestamp": 1748607945,
+      "current_price": 179000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          179000
+        ]
+      ],
+      "price_change": 179000
+    },
+    "lexus-lc-lexus-lc-500-ultimate-edition-nr-69-165-ID6HojsO.html": {
+      "id": "lexus-lc-lexus-lc-500-ultimate-edition-nr-69-165-ID6HojsO.html",
+      "title": "Lexus LC",
+      "price": 515000,
+      "year": 2024,
+      "mileage": 16000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ultimate-edition-nr-69-165-ID6HojsO.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:46.326638",
+      "scrape_timestamp": 1748607946,
+      "current_price": 515000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          515000
+        ]
+      ],
+      "price_change": 515000
+    },
+    "lexus-lc-lexus-lc-500-przebieg-62000-pojemnosc-4969-ID6HoSeA.html": {
+      "id": "lexus-lc-lexus-lc-500-przebieg-62000-pojemnosc-4969-ID6HoSeA.html",
+      "title": "Lexus LC 500 Carbon",
+      "price": 339000,
+      "year": 2018,
+      "mileage": 62000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-przebieg-62000-pojemnosc-4969-ID6HoSeA.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:47.381888",
+      "scrape_timestamp": 1748607947,
+      "current_price": 339000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          339000
+        ]
+      ],
+      "price_change": 339000
+    },
+    "lexus-lc-lexus-lc-500-superturismo-salon-polska-folia-ppf-cesja-idealny-ID6HnI9T.html": {
+      "id": "lexus-lc-lexus-lc-500-superturismo-salon-polska-folia-ppf-cesja-idealny-ID6HnI9T.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 645111,
+      "year": 2024,
+      "mileage": 5800,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-superturismo-salon-polska-folia-ppf-cesja-idealny-ID6HnI9T.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:48.148157",
+      "scrape_timestamp": 1748607948,
+      "current_price": 645111,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          645111
+        ]
+      ],
+      "price_change": 645111
+    },
+    "lexus-lc-wyjatkowy-egzemplarz-pierwszy-wlasciciel-ID6HobKQ.html": {
+      "id": "lexus-lc-wyjatkowy-egzemplarz-pierwszy-wlasciciel-ID6HobKQ.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 522000,
+      "year": 2022,
+      "mileage": 38250,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-wyjatkowy-egzemplarz-pierwszy-wlasciciel-ID6HobKQ.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:49.754362",
+      "scrape_timestamp": 1748607949,
+      "current_price": 522000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          522000
+        ]
+      ],
+      "price_change": 522000
+    },
+    "lexus-lc-ID6HdIQZ.html": {
+      "id": "lexus-lc-ID6HdIQZ.html",
+      "title": "Lexus LC",
+      "price": 695000,
+      "year": 2023,
+      "mileage": 7950,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HdIQZ.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:50.299337",
+      "scrape_timestamp": 1748607950,
+      "current_price": 695000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          695000
+        ]
+      ],
+      "price_change": 695000
+    },
+    "lexus-lc-lexus-lc-500-ultimate-edition-2024-salon-pl-fv23-ID6HqktL.html": {
+      "id": "lexus-lc-lexus-lc-500-ultimate-edition-2024-salon-pl-fv23-ID6HqktL.html",
+      "title": "Lexus LC 500 Ultimate Edition",
+      "price": 769900,
+      "year": 2024,
+      "mileage": 167,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ultimate-edition-2024-salon-pl-fv23-ID6HqktL.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:51.306367",
+      "scrape_timestamp": 1748607951,
+      "current_price": 769900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          769900
+        ]
+      ],
+      "price_change": 769900
+    },
+    "lexus-lc-500-carbon-hud-bezwypadkowyi-mozliwosc-finansowania-ID6HbWI4.html": {
+      "id": "lexus-lc-500-carbon-hud-bezwypadkowyi-mozliwosc-finansowania-ID6HbWI4.html",
+      "title": "Lexus LC 500 Club Edition",
+      "price": 299000,
+      "year": 2017,
+      "mileage": 44940,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-carbon-hud-bezwypadkowyi-mozliwosc-finansowania-ID6HbWI4.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:52.066190",
+      "scrape_timestamp": 1748607952,
+      "current_price": 299000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          299000
+        ]
+      ],
+      "price_change": 299000
+    },
+    "lexus-lc-lexus-lc-500-prestige-5-0-v8-bezwypadkowy-salon-pl-serwis-aso-ID6Hny6R.html": {
+      "id": "lexus-lc-lexus-lc-500-prestige-5-0-v8-bezwypadkowy-salon-pl-serwis-aso-ID6Hny6R.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 399000,
+      "year": 2019,
+      "mileage": 51000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-prestige-5-0-v8-bezwypadkowy-salon-pl-serwis-aso-ID6Hny6R.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:53.088451",
+      "scrape_timestamp": 1748607953,
+      "current_price": 399000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          399000
+        ]
+      ],
+      "price_change": 399000
+    },
+    "lexus-lc-lc-500-ID6GWkT8.html": {
+      "id": "lexus-lc-lc-500-ID6GWkT8.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 299000,
+      "year": 2018,
+      "mileage": 33000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500-ID6GWkT8.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:53.837988",
+      "scrape_timestamp": 1748607953
+    },
+    "lexus-lc-lc500-cabrio-carbon-v8-ID6HfV4F.html": {
+      "id": "lexus-lc-lc500-cabrio-carbon-v8-ID6HfV4F.html",
+      "title": "Lexus LC 500 Carbon",
+      "price": 525000,
+      "year": 2022,
+      "mileage": 20000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500-cabrio-carbon-v8-ID6HfV4F.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:54.662017",
+      "scrape_timestamp": 1748607954
+    },
+    "lexus-lc-salon-faktura-vat-23-ID6Hok4g.html": {
+      "id": "lexus-lc-salon-faktura-vat-23-ID6Hok4g.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 320000,
+      "year": 2018,
+      "mileage": 33706,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-salon-faktura-vat-23-ID6Hok4g.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:55.623898",
+      "scrape_timestamp": 1748607955,
+      "current_price": 320000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          320000
+        ]
+      ],
+      "price_change": 320000
+    },
+    "lexus-lc-500-prestige-salon-pl-fv23-mark-levinson-ID6HoDVK.html": {
+      "id": "lexus-lc-500-prestige-salon-pl-fv23-mark-levinson-ID6HoDVK.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 339900,
+      "year": 2018,
+      "mileage": 65433,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-prestige-salon-pl-fv23-mark-levinson-ID6HoDVK.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:56.625500",
+      "scrape_timestamp": 1748607956,
+      "current_price": 339900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          339900
+        ]
+      ],
+      "price_change": 339900
+    },
+    "lexus-lc-5-0-v8-477-km-karbon-full-opcja-cena-do-negocjacji-ID6HhJsZ.html": {
+      "id": "lexus-lc-5-0-v8-477-km-karbon-full-opcja-cena-do-negocjacji-ID6HhJsZ.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 318000,
+      "year": 2018,
+      "mileage": 34500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-5-0-v8-477-km-karbon-full-opcja-cena-do-negocjacji-ID6HhJsZ.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:57.372892",
+      "scrape_timestamp": 1748607957,
+      "current_price": 318000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          318000
+        ]
+      ],
+      "price_change": 318000
+    },
+    "lexus-lc-lc500-cabrio-nowy-model-lift-zar-w-pl-jak-nowy-tylko-400-kilometrow-ID6HnvoR.html": {
+      "id": "lexus-lc-lc500-cabrio-nowy-model-lift-zar-w-pl-jak-nowy-tylko-400-kilometrow-ID6HnvoR.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 610000,
+      "year": 2024,
+      "mileage": 405,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500-cabrio-nowy-model-lift-zar-w-pl-jak-nowy-tylko-400-kilometrow-ID6HnvoR.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:58.150951",
+      "scrape_timestamp": 1748607958,
+      "current_price": 610000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          610000
+        ]
+      ],
+      "price_change": 610000
+    },
+    "lexus-lc-2018-lexus-lc-500-benzyna-tyl-naped-automat-ID6HmsIh.html": {
+      "id": "lexus-lc-2018-lexus-lc-500-benzyna-tyl-naped-automat-ID6HmsIh.html",
+      "title": "Lexus LC",
+      "price": 125000,
+      "year": 2018,
+      "mileage": 117504,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2018-lexus-lc-500-benzyna-tyl-naped-automat-ID6HmsIh.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:58.875672",
+      "scrape_timestamp": 1748607958
+    },
+    "lexus-lc-lexus-lc500-krajowy-wersja-superturismo-stan-idealny-ID6GOnFk.html": {
+      "id": "lexus-lc-lexus-lc500-krajowy-wersja-superturismo-stan-idealny-ID6GOnFk.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 370000,
+      "year": 2019,
+      "mileage": 8800,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-krajowy-wersja-superturismo-stan-idealny-ID6GOnFk.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:25:59.817784",
+      "scrape_timestamp": 1748607959,
+      "current_price": 370000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          370000
+        ]
+      ],
+      "price_change": 370000
+    },
+    "lexus-lc-500-v8-477km-krajowy-aso-gwarancja-vat23-ID6H539X.html": {
+      "id": "lexus-lc-500-v8-477km-krajowy-aso-gwarancja-vat23-ID6H539X.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 319900,
+      "year": 2019,
+      "mileage": 155898,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-v8-477km-krajowy-aso-gwarancja-vat23-ID6H539X.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:00.925716",
+      "scrape_timestamp": 1748607960,
+      "current_price": 319900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          319900
+        ]
+      ],
+      "price_change": 319900
+    },
+    "lexus-lc-stan-idealny-salon-polska-limited-edition-ID6HoulE.html": {
+      "id": "lexus-lc-stan-idealny-salon-polska-limited-edition-ID6HoulE.html",
+      "title": "Lexus LC 500h Limited Edition",
+      "price": 363900,
+      "year": 2017,
+      "mileage": 99000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-stan-idealny-salon-polska-limited-edition-ID6HoulE.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:02.225445",
+      "scrape_timestamp": 1748607962,
+      "current_price": 363900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          363900
+        ]
+      ],
+      "price_change": 363900
+    },
+    "lexus-lc-lexus-lc-500-5-0-v8-2019-24-000-km-carfactor-ID6HqFvR.html": {
+      "id": "lexus-lc-lexus-lc-500-5-0-v8-2019-24-000-km-carfactor-ID6HqFvR.html",
+      "title": "Lexus LC 500 Club Edition",
+      "price": 349000,
+      "year": 2019,
+      "mileage": 24000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-5-0-v8-2019-24-000-km-carfactor-ID6HqFvR.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:02.949348",
+      "scrape_timestamp": 1748607962,
+      "current_price": 349000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          349000
+        ]
+      ],
+      "price_change": 349000
+    },
+    "lexus-lc-pierwszy-wlasciciel-serwisowany-stan-bardzo-dobry-ID6HjtrX.html": {
+      "id": "lexus-lc-pierwszy-wlasciciel-serwisowany-stan-bardzo-dobry-ID6HjtrX.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 370000,
+      "year": 2017,
+      "mileage": 102512,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-pierwszy-wlasciciel-serwisowany-stan-bardzo-dobry-ID6HjtrX.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:04.082018",
+      "scrape_timestamp": 1748607964
+    },
+    "lexus-lc-500-drugi-wlasciciel-auto-codzienne-nie-wyscigowe-ID6GQKyw.html": {
+      "id": "lexus-lc-500-drugi-wlasciciel-auto-codzienne-nie-wyscigowe-ID6GQKyw.html",
+      "title": "Lexus LC 500 Carbon",
+      "price": 418200,
+      "year": 2017,
+      "mileage": 90200,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-drugi-wlasciciel-auto-codzienne-nie-wyscigowe-ID6GQKyw.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:04.999352",
+      "scrape_timestamp": 1748607964
+    },
+    "lexus-lc-lc500h-automat-maly-przebieg-ID6Hoha5.html": {
+      "id": "lexus-lc-lc500h-automat-maly-przebieg-ID6Hoha5.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 162899,
+      "year": 2017,
+      "mileage": 62000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc500h-automat-maly-przebieg-ID6Hoha5.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:05.733996",
+      "scrape_timestamp": 1748607965,
+      "current_price": 162899,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          162899
+        ]
+      ],
+      "price_change": 162899
+    },
+    "lexus-lc-lexus-lc500-cv-ID6GN51S.html": {
+      "id": "lexus-lc-lexus-lc500-cv-ID6GN51S.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 779999,
+      "year": 2024,
+      "mileage": 5,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-cv-ID6GN51S.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:07.052333",
+      "scrape_timestamp": 1748607967,
+      "current_price": 769999,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          769999
+        ]
+      ],
+      "price_change": 769999
+    },
+    "lexus-lc-5-0-v8-cabrio-ID6HmqCb.html": {
+      "id": "lexus-lc-5-0-v8-cabrio-ID6HmqCb.html",
+      "title": "Lexus LC 500 Club Edition",
+      "price": 460000,
+      "year": 2021,
+      "mileage": 16800,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-5-0-v8-cabrio-ID6HmqCb.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:08.239799",
+      "scrape_timestamp": 1748607968
+    },
+    "lexus-lc-lc-500-superturismo-ID6GZxGq.html": {
+      "id": "lexus-lc-lc-500-superturismo-ID6GZxGq.html",
+      "title": "Lexus LC",
+      "price": 649900,
+      "year": 2022,
+      "mileage": 15491,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500-superturismo-ID6GZxGq.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:09.359151",
+      "scrape_timestamp": 1748607969,
+      "current_price": 649900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          649900
+        ]
+      ],
+      "price_change": 649900
+    },
+    "lexus-lc-pierwszy-wlasciciel-bezwypadkow-ID6FJMhk.html": {
+      "id": "lexus-lc-pierwszy-wlasciciel-bezwypadkow-ID6FJMhk.html",
+      "title": "Lexus LC 500 Prestige",
+      "price": 270000,
+      "year": 2017,
+      "mileage": 50000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-pierwszy-wlasciciel-bezwypadkow-ID6FJMhk.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:10.202285",
+      "scrape_timestamp": 1748607970,
+      "current_price": 270000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          270000
+        ]
+      ],
+      "price_change": 270000
+    },
+    "lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-ID6Hmrtn.html": {
+      "id": "lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-ID6Hmrtn.html",
+      "title": "Lexus LC 500h Superturismo",
+      "price": 333000,
+      "year": 2018,
+      "mileage": 83000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-ID6Hmrtn.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:10.991698",
+      "scrape_timestamp": 1748607970
+    },
+    "lexus-lc-500-superturismo-salon-polska-aso-vat-23-lexus-leszno-ID6He4S3.html": {
+      "id": "lexus-lc-500-superturismo-salon-polska-aso-vat-23-lexus-leszno-ID6He4S3.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 395000,
+      "year": 2018,
+      "mileage": 33780,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-salon-polska-aso-vat-23-lexus-leszno-ID6He4S3.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:12.372506",
+      "scrape_timestamp": 1748607972
+    },
+    "lexus-lc-lc-500h-prestige-pierwszy-wlasc-super-stan-dodatkowe-kola-zimowe-ID6GuODd.html": {
+      "id": "lexus-lc-lc-500h-prestige-pierwszy-wlasc-super-stan-dodatkowe-kola-zimowe-ID6GuODd.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 339900,
+      "year": 2017,
+      "mileage": 25500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500h-prestige-pierwszy-wlasc-super-stan-dodatkowe-kola-zimowe-ID6GuODd.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:13.371391",
+      "scrape_timestamp": 1748607973,
+      "current_price": 339900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          339900
+        ]
+      ],
+      "price_change": 339900
+    },
+    "lexus-lc-lexus-lc500h-superturismo-salon-pl-vat-marza-serwis-aso-ID6HfDh4.html": {
+      "id": "lexus-lc-lexus-lc500h-superturismo-salon-pl-vat-marza-serwis-aso-ID6HfDh4.html",
+      "title": "Lexus LC",
+      "price": 299999,
+      "year": 2017,
+      "mileage": 110614,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500h-superturismo-salon-pl-vat-marza-serwis-aso-ID6HfDh4.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:14.116883",
+      "scrape_timestamp": 1748607974,
+      "current_price": 299999,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          299999
+        ]
+      ],
+      "price_change": 299999
+    },
+    "lexus-lc-500h-v6-359-km-salon-pl-bezwypadkowy-stan-idealny-fv23-ID6Hbu6V.html": {
+      "id": "lexus-lc-500h-v6-359-km-salon-pl-bezwypadkowy-stan-idealny-fv23-ID6Hbu6V.html",
+      "title": "Lexus LC",
+      "price": 365310,
+      "year": 2019,
+      "mileage": 57094,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-v6-359-km-salon-pl-bezwypadkowy-stan-idealny-fv23-ID6Hbu6V.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:16.900868",
+      "scrape_timestamp": 1748607976,
+      "current_price": 365310,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          365310
+        ]
+      ],
+      "price_change": 365310
+    },
+    "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1PE.html": {
+      "id": "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1PE.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 780000,
+      "year": 2023,
+      "mileage": 20,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1PE.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:17.456699",
+      "scrape_timestamp": 1748607977,
+      "current_price": 780000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          780000
+        ]
+      ],
+      "price_change": 780000
+    },
+    "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1P9.html": {
+      "id": "lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1P9.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 780000,
+      "year": 2023,
+      "mileage": 20,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-fv-23-nowy-gwarancja-ID6Hj1P9.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:18.308086",
+      "scrape_timestamp": 1748607978,
+      "current_price": 780000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          780000
+        ]
+      ],
+      "price_change": 780000
+    },
+    "lexus-lc-500h-prestige-przebieg-1328km-krajowy-idealny-stan-gwarancja-vat23-ID6GRzUo.html": {
+      "id": "lexus-lc-500h-prestige-przebieg-1328km-krajowy-idealny-stan-gwarancja-vat23-ID6GRzUo.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 559900,
+      "year": 2022,
+      "mileage": 1328,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-przebieg-1328km-krajowy-idealny-stan-gwarancja-vat23-ID6GRzUo.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:19.223989",
+      "scrape_timestamp": 1748607979,
+      "current_price": 559900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          559900
+        ]
+      ],
+      "price_change": 559900
+    },
+    "lexus-lc-500-superturismo-luxury-navi-ID6GV62J.html": {
+      "id": "lexus-lc-500-superturismo-luxury-navi-ID6GV62J.html",
+      "title": "Lexus LC",
+      "price": 465000,
+      "year": 2021,
+      "mileage": 89381,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-superturismo-luxury-navi-ID6GV62J.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:19.913438",
+      "scrape_timestamp": 1748607979,
+      "current_price": 465000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          465000
+        ]
+      ],
+      "price_change": 465000
+    },
+    "lexus-lc-bezwypadkowy-faktura-vat-23-zjawiskowy-ID6GWjop.html": {
+      "id": "lexus-lc-bezwypadkowy-faktura-vat-23-zjawiskowy-ID6GWjop.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 289000,
+      "year": 2017,
+      "mileage": 126000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-bezwypadkowy-faktura-vat-23-zjawiskowy-ID6GWjop.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:21.374746",
+      "scrape_timestamp": 1748607981,
+      "current_price": 289000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          289000
+        ]
+      ],
+      "price_change": 289000
+    },
+    "lexus-lc-500-limited-edition-fv-23-nowy-gwarancja-ID6H7RiE.html": {
+      "id": "lexus-lc-500-limited-edition-fv-23-nowy-gwarancja-ID6H7RiE.html",
+      "title": "Lexus LC 500 Superturismo",
+      "price": 800000,
+      "year": 2024,
+      "mileage": 10,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-limited-edition-fv-23-nowy-gwarancja-ID6H7RiE.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:22.406043",
+      "scrape_timestamp": 1748607982,
+      "current_price": 800000,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          800000
+        ]
+      ],
+      "price_change": 800000
+    },
+    "lexus-lc-lexus-lc500h-superturismo-fv23-salon-pl-serwis-aso-ID6H6bzi.html": {
+      "id": "lexus-lc-lexus-lc500h-superturismo-fv23-salon-pl-serwis-aso-ID6H6bzi.html",
+      "title": "Lexus LC 500h Superturismo",
+      "price": 339900,
+      "year": 2017,
+      "mileage": 85000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500h-superturismo-fv23-salon-pl-serwis-aso-ID6H6bzi.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:23.178180",
+      "scrape_timestamp": 1748607983,
+      "current_price": 339900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          339900
+        ]
+      ],
+      "price_change": 339900
+    },
+    "lexus-lc-lc-500h-hybrid-prestige-vat-marza-serwis-aso-lexus-lawica-ID6Gyfxi.html": {
+      "id": "lexus-lc-lc-500h-hybrid-prestige-vat-marza-serwis-aso-lexus-lawica-ID6Gyfxi.html",
+      "title": "Lexus LC",
+      "price": 295900,
+      "year": 2019,
+      "mileage": 30852,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lc-500h-hybrid-prestige-vat-marza-serwis-aso-lexus-lawica-ID6Gyfxi.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:23.993383",
+      "scrape_timestamp": 1748607983,
+      "current_price": 295900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          295900
+        ]
+      ],
+      "price_change": 295900
+    },
+    "lexus-lc-500h-prestige-salon-polska-gwarancja-aso-ID6HooqC.html": {
+      "id": "lexus-lc-500h-prestige-salon-polska-gwarancja-aso-ID6HooqC.html",
+      "title": "Lexus LC 500h Prestige",
+      "price": 309900,
+      "year": 2017,
+      "mileage": 111203,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-salon-polska-gwarancja-aso-ID6HooqC.html",
+      "model": "lexus-lc",
+      "scrape_date": "2025-05-30T12:26:25.079074",
+      "scrape_timestamp": 1748607985,
+      "current_price": 309900,
+      "last_seen": "2025-05-30",
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          309900
+        ]
+      ],
+      "price_change": 309900
+    },
+    "lexus-lc-ID6GPVDH.html": {
+      "id": "lexus-lc-ID6GPVDH.html",
+      "internal_id": 1,
+      "title": "Lexus LC 500 Club Edition",
+      "initial_price": 329000,
+      "current_price": 329000,
+      "year": 2019,
+      "mileage": 29500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GPVDH.html",
+      "model": "lexus-lc",
+      "first_seen": "2025-05-30",
+      "last_seen": "2025-05-30",
+      "first_scrape_timestamp": 1748649542,
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          329000
+        ]
+      ],
+      "price_change": 0
+    },
+    "lexus-lc-lexus-lc500-superturismo-ID6HlPGo.html": {
+      "id": "lexus-lc-lexus-lc500-superturismo-ID6HlPGo.html",
+      "internal_id": 1,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 350000,
+      "current_price": 350000,
+      "year": 2017,
+      "mileage": 100000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-superturismo-ID6HlPGo.html",
+      "model": "lexus-lc",
+      "first_seen": "2025-05-30",
+      "last_seen": "2025-05-30",
+      "first_scrape_timestamp": 1748649542,
+      "last_scrape_timestamp": 1748649542,
+      "price_readings": [
+        [
+          1748649542,
+          350000
+        ]
+      ],
+      "price_change": 0
+    }
   }
-]
+}
