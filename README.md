@@ -85,8 +85,11 @@ docker run -v $(pwd)/data:/app/data car-scraper --help
 ### Quick Start
 
 ```bash
-# Scrape Lexus LC models (2 pages)
-car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexus-lc" --max-pages 2
+# Simple mode - specify manufacturer and model
+car-scraper scrape --manufacturer lexus --model lc --max-pages 2
+
+# Advanced mode - use URL for specific queries
+car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc?custom=filters" --max-pages 2
 
 # Generate all plots
 car-scraper plot --model "lexus-lc" --plot-type "all"
@@ -99,17 +102,33 @@ car-scraper status
 
 #### 🔍 Scraping
 
+The scraper supports two modes for flexibility:
+
+**Simple Mode** - Auto-generates URL from manufacturer and model:
 ```bash
 # Basic scraping
-car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexus-lc"
+car-scraper scrape --manufacturer lexus --model lc
 
-# Advanced scraping with options
+# With options
 car-scraper scrape \
-    --url "https://www.otomoto.pl/osobowe/lexus/lc" \
-    --model "lexus-lc" \
+    --manufacturer bmw \
+    --model i8 \
     --max-pages 5 \
     --delay 2.0 \
     --format json
+```
+
+**Advanced Mode** - Use custom URLs for specific queries:
+```bash
+# Custom URL (auto-detects manufacturer/model)
+car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc?specific=filters"
+
+# URL with overrides
+car-scraper scrape \
+    --url "https://www.otomoto.pl/osobowe/lexus/lc" \
+    --manufacturer lexus \
+    --model lc-special \
+    --max-pages 3
 ```
 
 #### 📊 Plotting

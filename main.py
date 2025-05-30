@@ -56,14 +56,15 @@ def cli(verbose: bool, log_level: str):
 
 
 @cli.command()
-@click.option('--url', required=True, help='Search URL from otomoto.pl')
-@click.option('--model', required=True, help='Model name to save data as (format: make-model, e.g., bmw-i8)')
+@click.option('--url', help='Search URL from otomoto.pl (for advanced queries)')
+@click.option('--manufacturer', '--make', help='Car manufacturer (e.g., lexus, bmw, audi)')
+@click.option('--model', help='Car model (e.g., lc, i8, r8)')
 @click.option('--data-dir', default='./data', help='Directory to save data')
 @click.option('--max-pages', default=10, help='Maximum number of pages to scrape')
 @click.option('--format', 'output_format', default='csv', 
               type=click.Choice(['csv', 'json']), help='Output format')
 @click.option('--delay', default=1.0, help='Delay between requests (seconds)')
-def scrape(url: str, model: str, data_dir: str, max_pages: int, 
+def scrape(url: str, manufacturer: str, model: str, data_dir: str, max_pages: int, 
            output_format: str, delay: float):
     """
     🔍 Scrape car listings from otomoto.pl
@@ -71,44 +72,96 @@ def scrape(url: str, model: str, data_dir: str, max_pages: int,
     Extract car listings with prices, specifications, and metadata.
     Automatically tracks individual listings over time for price analysis.
     
-    Example:
-        python main.py scrape --url "https://www.otomoto.pl/osobowe/bmw/i8" --model "bmw-i8"
+    Two modes:
+    1. Simple: --manufacturer lexus --model lc
+    2. Advanced: --url "https://www.otomoto.pl/osobowe/lexus/lc?specific=query"
+    
+    Examples:
+        python main.py scrape --manufacturer lexus --model lc
+        python main.py scrape --url "https://www.otomoto.pl/osobowe/bmw/i8"
     """
-    logger.info(f"Starting scrape for model: {model}")
+    
+    # Validate input - must have either URL or manufacturer+model
+    if not url and not (manufacturer and model):
+        raise click.UsageError(
+            "Must provide either --url OR both --manufacturer and --model"
+        )
+    
+    # Mode 1: Simple mode - generate URL from manufacturer and model
+    if manufacturer and model and not url:
+        url = f"https://www.otomoto.pl/osobowe/{manufacturer.lower()}/{model.lower()}"
+        make = manufacturer.lower()
+        car_model = model.lower()
+        model_key = f"{make}-{car_model}"
+        logger.info(f"Simple mode: Generated URL from manufacturer and model")
+        
+    # Mode 2: Advanced mode - extract from URL, allow overrides
+    elif url:
+        # Extract manufacturer and model from URL
+        import re
+        url_parts = re.findall(r'/osobowe/([^/]+)/([^/?]+)', url)
+        if url_parts:
+            url_make, url_model = url_parts[0]
+        else:
+            raise click.UsageError(
+                "Cannot extract manufacturer/model from URL. "
+                "Please provide --manufacturer and --model explicitly."
+            )
+            
+        # Use provided manufacturer/model or fall back to URL extraction
+        make = manufacturer.lower() if manufacturer else url_make.lower()
+        car_model = model.lower() if model else url_model.lower()
+        model_key = f"{make}-{car_model}"
+        
+        if manufacturer or model:
+            logger.info(f"Advanced mode: Using URL with manufacturer/model override")
+        else:
+            logger.info(f"Advanced mode: Extracted manufacturer/model from URL")
+    
+    logger.info(f"Starting scrape for: {make} {car_model}")
     logger.info(f"URL: {url}")
+    logger.info(f"Model key: {model_key}")
     logger.info(f"Data directory: {data_dir}")
     logger.info(f"Max pages: {max_pages}")
     logger.info(f"Output format: {output_format}")
     
     try:
-        # Parse make and model from the model parameter
-        if '-' in model:
-            make, car_model = model.split('-', 1)
-        else:
-            # Try to extract from URL as fallback
-            import re
-            url_parts = re.findall(r'/osobowe/([^/]+)/([^/?]+)', url)
-            if url_parts:
-                make, car_model = url_parts[0]
-            else:
-                # Default fallback
-                make, car_model = 'unknown', model
-        
-        logger.info(f"Parsed make: {make}, model: {car_model}")
-        
         # Initialize scraper with make and model
         scraper = CarScraper(data_dir, make, car_model)
         
         # Scrape the model
-        scraper.scrape_model(url, model, max_pages)
+        scraper.scrape_model(url, model_key, max_pages)
+        
+        # Initialize individual listings storage for historical tracking
+        storage = IndividualListingsStorage(data_dir)
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        
+        # Load the scraped data and trigger individual listings storage
+        logger.info(f"Processing individual listings data for {model_key}")
+        click.echo(f"📊 Processing individual listings data for {model_key}")
+        
+        # Read the scraped data from the model directory
+        model_dir = Path(data_dir) / model_key.replace("/", "_")
+        model_json_file = model_dir / f"{model_key.replace('/', '_')}.json"
+        
+        if model_json_file.exists():
+            import json
+            with open(model_json_file, "r", encoding="utf-8") as f:
+                scraped_data = json.load(f)
+            
+            # Store in individual listings tracking system
+            storage.store_model_listings_data(model_key, scraped_data, current_date, "json")
+        else:
+            logger.warning(f"No scraped data file found for {model_key}")
         
         # Log completion
         logger.success(f"Scraping completed successfully!")
-        click.echo(f"✅ Scraping completed for model: {model}")
+        click.echo(f"✅ Scraping completed for: {make} {car_model}")
         click.echo(f"📁 Data saved to: {data_dir}")
             
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
+        raise click.ClickException(f"Scraping failed: {e}")
         sys.exit(1)
 
 

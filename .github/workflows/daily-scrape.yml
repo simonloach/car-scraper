@@ -34,7 +34,7 @@ jobs:
         poetry install --no-interaction --no-ansi
       
     - name: 🔍 Scrape Lexus LC listings
-      run: poetry run car-scraper scrape --url "https://www.otomoto.pl/osobowe/lexus/lc" --model "lexus-lc"
+      run: poetry run car-scraper scrape --manufacturer lexus --model lc
         
     - name: 📊 Generate plots
       run: poetry run car-scraper plot --model "lexus-lc" --plot-type "all"
