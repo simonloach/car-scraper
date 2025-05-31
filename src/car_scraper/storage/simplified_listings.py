@@ -66,12 +66,18 @@ class SimplifiedListingsStorage:
         max_internal_id = 0
         for listing in existing_data:
             internal_id = listing.get("internal_id", 0)
+            # Ensure internal_id is an integer
+            try:
+                internal_id = int(internal_id) if internal_id else 0
+            except (ValueError, TypeError):
+                internal_id = 0
+
             if internal_id > max_internal_id:
                 max_internal_id = internal_id
 
         return max_internal_id + 1
 
-    def store_listings_data(
+    def store_listings_data(  # noqa: C901
         self, model: str, listings_data: List[Dict], date_str: str
     ) -> None:
         """
@@ -155,20 +161,18 @@ class SimplifiedListingsStorage:
                         ),
                         "url": listing_data.get("url", existing_listing.get("url", "")),
                         "model": model,
-                        "current_price": current_price,
                         "last_seen": date_str,
                         "last_scrape_timestamp": current_timestamp,
                     }
                 )
 
+                # Initialize price_readings if not exists
+                if "price_readings" not in existing_listing:
+                    existing_listing["price_readings"] = []
+
                 # Check for price change
                 if current_price != last_price:
                     price_change = current_price - last_price
-
-                    # Add to price readings
-                    if "price_readings" not in existing_listing:
-                        existing_listing["price_readings"] = []
-
                     existing_listing["price_readings"].append(
                         [current_timestamp, current_price]
                     )
@@ -179,12 +183,21 @@ class SimplifiedListingsStorage:
                         f"Price change detected for {listing_id}: {last_price} → {current_price} ({price_change:+d})"
                     )
 
+                # Always ensure current_price matches the last price reading
+                if existing_listing["price_readings"]:
+                    existing_listing["current_price"] = existing_listing[
+                        "price_readings"
+                    ][-1][1]
+                else:
+                    existing_listing["current_price"] = current_price
+
                 updated_data.append(existing_listing)
             else:
                 # Listing not in current scrape - preserve it as historical
                 updated_data.append(existing_listing)
 
         # Process new listings that weren't in existing data
+        next_internal_id = None  # Track next available internal ID for this batch
         for listing_data in listings_data:
             listing_id = listing_data.get("id")
             if not listing_id:
@@ -195,10 +208,26 @@ class SimplifiedListingsStorage:
                 continue
 
             if listing_id not in existing_lookup:
+                # Calculate next internal ID if not done yet
+                if next_internal_id is None:
+                    # Find the highest existing internal ID from all current data
+                    max_internal_id = 0
+                    for listing in existing_data + updated_data:
+                        internal_id = listing.get("internal_id", 0)
+                        try:
+                            internal_id = int(internal_id) if internal_id else 0
+                        except (ValueError, TypeError):
+                            internal_id = 0
+
+                        if internal_id > max_internal_id:
+                            max_internal_id = internal_id
+
+                    next_internal_id = max_internal_id + 1
+
                 # New listing
                 new_listing = {
                     "id": listing_id,
-                    "internal_id": self._assign_internal_id(existing_data, listing_id),
+                    "internal_id": next_internal_id,
                     "title": listing_data.get("title", ""),
                     "initial_price": current_price,
                     "current_price": current_price,
@@ -215,6 +244,7 @@ class SimplifiedListingsStorage:
                 }
                 updated_data.append(new_listing)
                 new_listings += 1
+                next_internal_id += 1  # Increment for next new listing
 
         # Save updated data in new format
         try:
@@ -280,8 +310,8 @@ class SimplifiedListingsStorage:
                         entry = {
                             "id": listing["id"],
                             "internal_id": listing.get(
-                                "id", listing["id"]
-                            ),  # Use id as internal_id for old format
+                                "internal_id", 0
+                            ),  # Use internal_id if exists, otherwise 0
                             "title": listing["title"],
                             "price": listing["price"],
                             "year": listing["year"],
@@ -304,7 +334,9 @@ class SimplifiedListingsStorage:
                         # Add the current entry (latest data point)
                         main_entry = {
                             "id": listing["id"],
-                            "internal_id": listing["internal_id"],
+                            "internal_id": listing.get(
+                                "internal_id", 0
+                            ),  # Use internal_id if exists, otherwise 0
                             "title": listing["title"],
                             "price": listing["current_price"],
                             "year": listing["year"],
