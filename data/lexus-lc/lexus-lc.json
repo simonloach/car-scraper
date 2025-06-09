@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-06-08T06:20:01.215623",
+    "last_updated": "2025-06-09T06:22:09.462091",
     "total_listings": 47,
     "model": "lexus-lc"
   },
@@ -17,8 +17,8 @@
       "scrape_date": "2025-05-30T12:25:43.680472",
       "scrape_timestamp": 1748607943,
       "current_price": 517000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -39,8 +39,8 @@
       "scrape_date": "2025-05-30T12:25:45.327224",
       "scrape_timestamp": 1748607945,
       "current_price": 179000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -61,8 +61,8 @@
       "scrape_date": "2025-05-30T12:25:46.326638",
       "scrape_timestamp": 1748607946,
       "current_price": 500000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -87,8 +87,8 @@
       "scrape_date": "2025-05-30T12:25:47.381888",
       "scrape_timestamp": 1748607947,
       "current_price": 339000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -109,8 +109,8 @@
       "scrape_date": "2025-05-30T12:25:48.148157",
       "scrape_timestamp": 1748607948,
       "current_price": 645111,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -175,8 +175,8 @@
       "scrape_date": "2025-05-30T12:25:51.306367",
       "scrape_timestamp": 1748607951,
       "current_price": 769900,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -197,8 +197,8 @@
       "scrape_date": "2025-05-30T12:25:52.066190",
       "scrape_timestamp": 1748607952,
       "current_price": 299000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -263,8 +263,8 @@
       "scrape_date": "2025-05-30T12:25:54.662017",
       "scrape_timestamp": 1748607954,
       "current_price": 525000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748607954,
@@ -285,8 +285,8 @@
       "scrape_date": "2025-05-30T12:25:55.623898",
       "scrape_timestamp": 1748607955,
       "current_price": 320000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -307,8 +307,8 @@
       "scrape_date": "2025-05-30T12:25:56.625500",
       "scrape_timestamp": 1748607956,
       "current_price": 339900,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -329,8 +329,8 @@
       "scrape_date": "2025-05-30T12:25:57.372892",
       "scrape_timestamp": 1748607957,
       "current_price": 318000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -351,8 +351,8 @@
       "scrape_date": "2025-05-30T12:25:58.150951",
       "scrape_timestamp": 1748607958,
       "current_price": 599000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -399,8 +399,8 @@
       "scrape_date": "2025-05-30T12:25:59.817784",
       "scrape_timestamp": 1748607959,
       "current_price": 370000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -421,8 +421,8 @@
       "scrape_date": "2025-05-30T12:26:00.925716",
       "scrape_timestamp": 1748607960,
       "current_price": 319900,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -443,8 +443,8 @@
       "scrape_date": "2025-05-30T12:26:02.225445",
       "scrape_timestamp": 1748607962,
       "current_price": 363900,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -465,8 +465,8 @@
       "scrape_date": "2025-05-30T12:26:02.949348",
       "scrape_timestamp": 1748607962,
       "current_price": 349000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -487,8 +487,8 @@
       "scrape_date": "2025-05-30T12:26:04.082018",
       "scrape_timestamp": 1748607964,
       "current_price": 370000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748607964,
@@ -597,8 +597,8 @@
       "scrape_date": "2025-05-30T12:26:09.359151",
       "scrape_timestamp": 1748607969,
       "current_price": 649900,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -663,8 +663,8 @@
       "scrape_date": "2025-05-30T12:26:12.372506",
       "scrape_timestamp": 1748607972,
       "current_price": 395000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748607972,
@@ -707,8 +707,8 @@
       "scrape_date": "2025-05-30T12:26:14.116883",
       "scrape_timestamp": 1748607974,
       "current_price": 299999,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -729,8 +729,8 @@
       "scrape_date": "2025-05-30T12:26:16.900868",
       "scrape_timestamp": 1748607976,
       "current_price": 359000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -799,8 +799,8 @@
       "scrape_date": "2025-05-30T12:26:19.223989",
       "scrape_timestamp": 1748607979,
       "current_price": 559900,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -821,8 +821,8 @@
       "scrape_date": "2025-05-30T12:26:19.913438",
       "scrape_timestamp": 1748607979,
       "current_price": 465000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -843,8 +843,8 @@
       "scrape_date": "2025-05-30T12:26:21.374746",
       "scrape_timestamp": 1748607981,
       "current_price": 289000,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -865,8 +865,8 @@
       "scrape_date": "2025-05-30T12:26:22.406043",
       "scrape_timestamp": 1748607982,
       "current_price": 800000,
-      "last_seen": "2025-06-08",
-      "last_scrape_timestamp": 1749363601,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -887,8 +887,8 @@
       "scrape_date": "2025-05-30T12:26:23.178180",
       "scrape_timestamp": 1748607983,
       "current_price": 339900,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -909,8 +909,8 @@
       "scrape_date": "2025-05-30T12:26:23.993383",
       "scrape_timestamp": 1748607983,
       "current_price": 295900,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -931,8 +931,8 @@
       "scrape_date": "2025-05-30T12:26:25.079074",
       "scrape_timestamp": 1748607985,
       "current_price": 309900,
-      "last_seen": "2025-06-07",
-      "last_scrape_timestamp": 1749277122,
+      "last_seen": "2025-06-09",
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -952,9 +952,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GPVDH.html",
       "model": "lexus-lc",
       "first_seen": "2025-05-30",
-      "last_seen": "2025-06-08",
+      "last_seen": "2025-06-09",
       "first_scrape_timestamp": 1748649542,
-      "last_scrape_timestamp": 1749363601,
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -974,9 +974,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc500-superturismo-ID6HlPGo.html",
       "model": "lexus-lc",
       "first_seen": "2025-05-30",
-      "last_seen": "2025-06-08",
+      "last_seen": "2025-06-09",
       "first_scrape_timestamp": 1748649542,
-      "last_scrape_timestamp": 1749363601,
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748649542,
@@ -996,9 +996,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ID6FFdee.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-01",
-      "last_seen": "2025-06-08",
+      "last_seen": "2025-06-09",
       "first_scrape_timestamp": 1748758774,
-      "last_scrape_timestamp": 1749363601,
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1748758774,
@@ -1018,9 +1018,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-i-wlasciciel-salon-pl-faktura-vat-marza-ID6HrHJD.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-06",
-      "last_seen": "2025-06-07",
+      "last_seen": "2025-06-09",
       "first_scrape_timestamp": 1749190881,
-      "last_scrape_timestamp": 1749277122,
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1749190881,
@@ -1040,9 +1040,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-bespoke-ID6HrNNu.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-07",
-      "last_seen": "2025-06-08",
+      "last_seen": "2025-06-09",
       "first_scrape_timestamp": 1749277122,
-      "last_scrape_timestamp": 1749363601,
+      "last_scrape_timestamp": 1749450129,
       "price_readings": [
         [
           1749277122,
