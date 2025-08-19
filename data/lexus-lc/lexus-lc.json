@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-08-18T06:23:53.640130",
+    "last_updated": "2025-08-19T06:21:19.011709",
     "total_listings": 81,
     "model": "lexus-lc"
   },
@@ -17,8 +17,8 @@
       "scrape_date": "2025-05-30T12:25:43.680472",
       "scrape_timestamp": 1748607943,
       "current_price": 507900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -121,8 +121,8 @@
       "scrape_date": "2025-05-30T12:25:48.148157",
       "scrape_timestamp": 1748607948,
       "current_price": 548400,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -269,8 +269,8 @@
       "scrape_date": "2025-05-30T12:25:53.837988",
       "scrape_timestamp": 1748607953,
       "current_price": 299000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748607953,
@@ -361,8 +361,8 @@
       "scrape_date": "2025-05-30T12:25:57.372892",
       "scrape_timestamp": 1748607957,
       "current_price": 299000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -387,8 +387,8 @@
       "scrape_date": "2025-05-30T12:25:58.150951",
       "scrape_timestamp": 1748607958,
       "current_price": 530000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -619,8 +619,8 @@
       "scrape_date": "2025-05-30T12:26:05.733996",
       "scrape_timestamp": 1748607965,
       "current_price": 148899,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -697,8 +697,8 @@
       "scrape_date": "2025-05-30T12:26:09.359151",
       "scrape_timestamp": 1748607969,
       "current_price": 639900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -841,8 +841,8 @@
       "scrape_date": "2025-05-30T12:26:16.900868",
       "scrape_timestamp": 1748607976,
       "current_price": 343000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -887,8 +887,8 @@
       "scrape_date": "2025-05-30T12:26:17.456699",
       "scrape_timestamp": 1748607977,
       "current_price": 780000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -909,8 +909,8 @@
       "scrape_date": "2025-05-30T12:26:18.308086",
       "scrape_timestamp": 1748607978,
       "current_price": 780000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -953,8 +953,8 @@
       "scrape_date": "2025-05-30T12:26:19.913438",
       "scrape_timestamp": 1748607979,
       "current_price": 449900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -983,8 +983,8 @@
       "scrape_date": "2025-05-30T12:26:21.374746",
       "scrape_timestamp": 1748607981,
       "current_price": 289000,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -1005,8 +1005,8 @@
       "scrape_date": "2025-05-30T12:26:22.406043",
       "scrape_timestamp": 1748607982,
       "current_price": 799900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -1031,8 +1031,8 @@
       "scrape_date": "2025-05-30T12:26:23.178180",
       "scrape_timestamp": 1748607983,
       "current_price": 339900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -1053,8 +1053,8 @@
       "scrape_date": "2025-05-30T12:26:23.993383",
       "scrape_timestamp": 1748607983,
       "current_price": 249900,
-      "last_seen": "2025-08-18",
-      "last_scrape_timestamp": 1755498233,
+      "last_seen": "2025-08-19",
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1748649542,
@@ -1162,24 +1162,28 @@
     "lexus-lc-500h-prestige-i-wlasciciel-salon-pl-faktura-vat-marza-ID6HrHJD.html": {
       "id": "lexus-lc-500h-prestige-i-wlasciciel-salon-pl-faktura-vat-marza-ID6HrHJD.html",
       "internal_id": 46,
-      "title": "Lexus LC",
+      "title": "Lexus LC 500h Prestige",
       "initial_price": 332900,
-      "current_price": 332900,
+      "current_price": 324900,
       "year": 2017,
       "mileage": 26296,
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-i-wlasciciel-salon-pl-faktura-vat-marza-ID6HrHJD.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-06",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1749190881,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1749190881,
           332900
+        ],
+        [
+          1755584479,
+          324900
         ]
       ],
-      "price_change": 0
+      "price_change": -8000
     },
     "lexus-lc-lexus-lc-500-bespoke-ID6HrNNu.html": {
       "id": "lexus-lc-lexus-lc-500-bespoke-ID6HrNNu.html",
@@ -1236,9 +1240,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-od-reki-lexus-lc500-superturismo-blue-white-ID6Hs6xq.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-10",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1749536440,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1749536440,
@@ -1288,9 +1292,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-pierwszy-wlasciciel-wersja-europejska-ID6HlLsx.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-14",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1749881932,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1749881932,
@@ -1362,9 +1366,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-vat23-bezwypadkowy-1wl-salon-polska-ID6Htk6x.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-18",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1750227684,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1750227684,
@@ -1546,9 +1550,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500-wlasciciel-ii-auto-codzienne-nie-wyscigowe-fv23-ID6GQKyw.html",
       "model": "lexus-lc",
       "first_seen": "2025-06-30",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1751264540,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1751264540,
@@ -1598,9 +1602,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-salon-pl-pierwszy-wlasciciel-cesja-leasingu-ID6HwS30.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-10",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1752128556,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1752128556,
@@ -1624,9 +1628,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-prestige-salon-pl-vat-23-stan-kolekcjonerski-serwis-aso-lexus-ID6GRzUo.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-16",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1752646940,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1752646940,
@@ -1716,9 +1720,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-superturismo-carbon-ID6HxYhz.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-25",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1753424580,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1753424580,
@@ -1738,9 +1742,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-prestige-pakiet-maxton-design-ID6Hy4XD.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-26",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1753510841,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1753510841,
@@ -1782,9 +1786,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2017-lexus-lc-500-5-0-v8-benzyna-automat-rwd-ID6Hyp2V.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-30",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1753856676,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1753856676,
@@ -1804,9 +1808,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-2018-lexus-lc-500-mark-levinson-audio-ID6Hyy24.html",
       "model": "lexus-lc",
       "first_seen": "2025-07-31",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1753942990,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1753942990,
@@ -1870,9 +1874,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-stan-idealny-superturismo-v8-mozliwa-zamiana-ID6HxgOe.html",
       "model": "lexus-lc",
       "first_seen": "2025-08-07",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1754547850,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1754547850,
@@ -1914,9 +1918,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-lexus-lc-500-ID6HzDBd.html",
       "model": "lexus-lc",
       "first_seen": "2025-08-15",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1755238933,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1755238933,
@@ -1930,22 +1934,26 @@
       "internal_id": 81,
       "title": "Lexus LC 500 Prestige",
       "initial_price": 340000,
-      "current_price": 340000,
+      "current_price": 329000,
       "year": 2018,
       "mileage": 79000,
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-najladniejszy-lc500-w-eu-mega-doinwestowany-ID6HAwFz.html",
       "model": "lexus-lc",
       "first_seen": "2025-08-17",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1755411629,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1755411629,
           340000
+        ],
+        [
+          1755584479,
+          329000
         ]
       ],
-      "price_change": 0
+      "price_change": -11000
     },
     "lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-zamiana-ID6HAufu.html": {
       "id": "lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-zamiana-ID6HAufu.html",
@@ -1958,9 +1966,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-500h-hybrid-359km-najbogatsza-wersja-serwis-bezwypadkowy-zamiana-ID6HAufu.html",
       "model": "lexus-lc",
       "first_seen": "2025-08-17",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1755411629,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1755411629,
@@ -1980,9 +1988,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-polski-salon-pierwszy-wlasciciel-faktura-vat-gwarancja-ID6HzXKa.html",
       "model": "lexus-lc",
       "first_seen": "2025-08-18",
-      "last_seen": "2025-08-18",
+      "last_seen": "2025-08-19",
       "first_scrape_timestamp": 1755498233,
-      "last_scrape_timestamp": 1755498233,
+      "last_scrape_timestamp": 1755584479,
       "price_readings": [
         [
           1755498233,
