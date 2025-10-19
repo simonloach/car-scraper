@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-10-18T06:18:13.749472",
+    "last_updated": "2025-10-19T06:19:28.219990",
     "total_listings": 133,
     "model": "lexus-lc"
   },
@@ -2386,15 +2386,15 @@
       "internal_id": 99,
       "title": "Lexus LC 500 Prestige",
       "initial_price": 365000,
-      "current_price": 359000,
+      "current_price": 325000,
       "year": 2021,
       "mileage": 66100,
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HAV5a.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2403,9 +2403,13 @@
         [
           1758435538,
           359000
+        ],
+        [
+          1760854768,
+          325000
         ]
       ],
-      "price_change": -6000
+      "price_change": -34000
     },
     "lexus-lc-ID6HB0Dz.html": {
       "id": "lexus-lc-ID6HB0Dz.html",
@@ -2418,9 +2422,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HB0Dz.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2532,9 +2536,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GV62J.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2610,9 +2614,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Hbu6V.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2680,9 +2684,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GWjop.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2706,9 +2710,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GZxGq.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2750,9 +2754,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6H6bzi.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2772,9 +2776,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Htk6x.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2798,9 +2802,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GRzUo.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2824,9 +2828,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Hj1P9.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2846,9 +2850,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Hj1PE.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2868,9 +2872,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Hs6xq.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2890,9 +2894,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6H7RiE.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-10",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757485213,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757485213,
@@ -2968,9 +2972,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HDS0d.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-11",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1757571630,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1757571630,
@@ -3152,9 +3156,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HFjQD.html",
       "model": "lexus-lc",
       "first_seen": "2025-09-23",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1758608461,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1758608461,
@@ -3222,9 +3226,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HHpUU.html",
       "model": "lexus-lc",
       "first_seen": "2025-10-11",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1760163497,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1760163497,
@@ -3244,9 +3248,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HHvpC.html",
       "model": "lexus-lc",
       "first_seen": "2025-10-12",
-      "last_seen": "2025-10-18",
+      "last_seen": "2025-10-19",
       "first_scrape_timestamp": 1760249891,
-      "last_scrape_timestamp": 1760768293,
+      "last_scrape_timestamp": 1760854768,
       "price_readings": [
         [
           1760249891,
