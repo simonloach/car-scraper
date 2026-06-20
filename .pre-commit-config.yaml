@@ -1,5 +1,5 @@
 repos:
-  # Pre-commit hooks for general file maintenance
+  # General file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -12,34 +12,15 @@ repos:
       - id: check-case-conflict
       - id: check-added-large-files
         args: ['--maxkb=1000']
-      - id: check-docstring-first
       - id: debug-statements
 
-  # Python code formatting
-  - repo: https://github.com/psf/black
-    rev: 23.12.1
+  # Lint + format (replaces black, isort, flake8 and their plugins)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
     hooks:
-      - id: black
-        language_version: python3.10
-        args: [--line-length=88]
-
-  # Import sorting
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-        args: [--profile=black, --line-length=88]
-
-  # Python linting
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-docstrings>=1.7.0
-          - flake8-bugbear>=23.7.0
-          - flake8-simplify>=0.20.0
-          - flake8-comprehensions>=3.14.0
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
 
   # Security scanning
   - repo: https://github.com/pycqa/bandit
@@ -47,7 +28,9 @@ repos:
     hooks:
       - id: bandit
         args: [-c, pyproject.toml, -r, src/]
-        additional_dependencies: ["bandit[toml]"]
+        # bandit 1.7.5 imports pbr at runtime but doesn't pull it in the
+        # isolated hook env -> add it explicitly so the hook can start.
+        additional_dependencies: ["bandit[toml]", "pbr"]
 
   # Type checking
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -57,6 +40,7 @@ repos:
         additional_dependencies:
           - types-requests
           - types-beautifulsoup4
+          - pydantic  # required by plugins=["pydantic.mypy"] in pyproject
         args: [--config-file=pyproject.toml]
         exclude: ^tests/
 
@@ -66,12 +50,11 @@ default_language_version:
 exclude: |
   (?x)(
       ^data/|
+      ^plots/|
       ^\.git/|
       ^\.venv/|
       ^build/|
       ^dist/|
-      \.pyc$|
-      \.pyo$|
       \.egg-info/
   )
 

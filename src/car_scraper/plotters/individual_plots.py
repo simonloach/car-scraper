@@ -1,7 +1,6 @@
 """Individual listings plotting functionality"""
 
 from pathlib import Path
-from typing import Optional
 
 import click
 import matplotlib.pyplot as plt
@@ -31,7 +30,7 @@ class IndividualListingsPlotter:
 
         self.storage = SimplifiedListingsStorage(str(self.data_dir))
 
-    def _get_model_plots_dir(self, model: Optional[str]) -> Path:
+    def _get_model_plots_dir(self, model: str | None) -> Path:
         """
         Get the plots directory for a specific model
 
@@ -50,7 +49,7 @@ class IndividualListingsPlotter:
             return self.plots_dir
 
     def generate_individual_listing_plots(
-        self, model: Optional[str] = None, min_data_points: int = 1
+        self, model: str | None = None, min_data_points: int = 1
     ) -> None:
         """
         Generate plots showing individual listing price trends over time
@@ -94,7 +93,7 @@ class IndividualListingsPlotter:
         # Individual listing trends plot
         plt.figure(figsize=(15, 10))
 
-        colors = plt.cm.tab20(range(len(valid_listings)))
+        colors = plt.cm.tab20(range(len(valid_listings)))  # type: ignore[attr-defined]
 
         for idx, (listing_id, group) in enumerate(
             valid_listings[:20]
@@ -131,7 +130,7 @@ class IndividualListingsPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        plot_file = model_plots_dir / f"individual_listings_trends.png"
+        plot_file = model_plots_dir / "individual_listings_trends.png"
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -142,7 +141,7 @@ class IndividualListingsPlotter:
         self._analyze_price_changes(df, model)
 
     def _analyze_price_changes(
-        self, df: pd.DataFrame, model: Optional[str] = None
+        self, df: pd.DataFrame, model: str | None = None
     ) -> None:
         """
         Analyze and plot price changes for listings
@@ -213,13 +212,13 @@ class IndividualListingsPlotter:
             summary_text,
             transform=plt.gca().transAxes,
             verticalalignment="top",
-            bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.8),
+            bbox={"boxstyle": "round", "facecolor": "wheat", "alpha": 0.8},
         )
 
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        plot_file = model_plots_dir / f"price_changes.png"
+        plot_file = model_plots_dir / "price_changes.png"
         plt.savefig(plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -254,7 +253,7 @@ class IndividualListingsPlotter:
             )
 
     def generate_enhanced_individual_plots(
-        self, model: Optional[str] = None, min_data_points: int = 1
+        self, model: str | None = None, min_data_points: int = 1
     ) -> None:
         """
         Enhanced version of individual listing plots with year-based markers
@@ -301,8 +300,8 @@ class IndividualListingsPlotter:
 
         # Create year-based color and marker mapping
         all_years = df["year"].dropna().unique()
-        year_colors = plt.cm.tab20(np.linspace(0, 1, len(all_years)))
-        year_color_map = dict(zip(sorted(all_years), year_colors))
+        year_colors = plt.cm.tab20(np.linspace(0, 1, len(all_years)))  # type: ignore[attr-defined]
+        year_color_map = dict(zip(sorted(all_years), year_colors, strict=False))
 
         markers = ["o", "s", "^", "D", "v", "<", ">", "p", "*", "h"]
         year_markers = {}
@@ -354,7 +353,7 @@ class IndividualListingsPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        enhanced_plot_file = model_plots_dir / f"enhanced_individual_trends.png"
+        enhanced_plot_file = model_plots_dir / "enhanced_individual_trends.png"
         plt.savefig(enhanced_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 

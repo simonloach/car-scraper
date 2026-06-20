@@ -16,7 +16,6 @@ import contextlib
 import json
 import re
 import time
-from typing import Dict, List, Optional, Tuple
 
 import httpx
 
@@ -35,7 +34,7 @@ _HEADERS = {
 }
 
 
-def _find_search_result(obj: object) -> Optional[dict]:
+def _find_search_result(obj: object) -> dict | None:
     """Recursively locate the advertSearch result (has ``edges`` + ``pageInfo``)."""
     if isinstance(obj, dict):
         if "edges" in obj and isinstance(obj["edges"], list) and "pageInfo" in obj:
@@ -52,7 +51,7 @@ def _find_search_result(obj: object) -> Optional[dict]:
     return None
 
 
-def _node_to_listing(node: dict) -> Optional[Dict]:
+def _node_to_listing(node: dict) -> dict | None:
     """Convert a GraphQL Advert node into a flat listing dict."""
     listing_id = node.get("id")
     if not listing_id:
@@ -60,7 +59,7 @@ def _node_to_listing(node: dict) -> Optional[Dict]:
 
     params = {p.get("key"): p for p in node.get("parameters", []) if p.get("key")}
 
-    def num(key: str) -> Optional[int]:
+    def num(key: str) -> int | None:
         p = params.get(key)
         if not p:
             return None
@@ -69,7 +68,7 @@ def _node_to_listing(node: dict) -> Optional[Dict]:
         except (ValueError, TypeError, KeyError):
             return None
 
-    def val(key: str) -> Optional[str]:
+    def val(key: str) -> str | None:
         p = params.get(key)
         return p.get("value") if p else None
 
@@ -104,7 +103,7 @@ def _node_to_listing(node: dict) -> Optional[Dict]:
     }
 
 
-def parse_listings(html: str) -> Tuple[List[Dict], Optional[int]]:
+def parse_listings(html: str) -> tuple[list[dict], int | None]:
     """Parse listings + total count from a search page's HTML.
 
     Returns ``(listings, total_count)``. ``total_count`` is ``None`` if the
@@ -150,7 +149,7 @@ def parse_listings(html: str) -> Tuple[List[Dict], Optional[int]]:
     return listings, total_count
 
 
-def fetch_search_page(url: str, page: int, timeout: int = 30) -> Optional[str]:
+def fetch_search_page(url: str, page: int, timeout: int = 30) -> str | None:
     """Fetch one search results page (1-indexed)."""
     if page > 1:
         sep = "&" if "?" in url else "?"
@@ -169,7 +168,7 @@ def scrape_search(
     max_pages: int = 10,
     page_size: int = 32,
     delay: float = 0.5,
-) -> List[Dict]:
+) -> list[dict]:
     """Scrape all listings for a search URL across pages.
 
     Args:
@@ -187,12 +186,9 @@ def scrape_search(
         return []
 
     listings, total = parse_listings(html)
-    by_id: Dict[str, Dict] = {x["id"]: x for x in listings}
+    by_id: dict[str, dict] = {x["id"]: x for x in listings}
 
-    if total:
-        pages_needed = (total + page_size - 1) // page_size
-    else:
-        pages_needed = 1
+    pages_needed = (total + page_size - 1) // page_size if total else 1
     pages_needed = min(pages_needed, max_pages)
     logger.info(f"Found {total} listings (~{pages_needed} pages, cap {max_pages})")
 

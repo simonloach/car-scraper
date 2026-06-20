@@ -15,7 +15,6 @@ This application provides:
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
 
 import click
 from loguru import logger
@@ -25,7 +24,6 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
 from src.car_scraper.scrapers import CarScraper
-from src.car_scraper.utils import DataProcessor, DemoRunner
 from src.car_scraper.utils.logger import setup_logger
 
 
@@ -103,7 +101,7 @@ def scrape(
         make = manufacturer.lower()
         car_model = model.lower()
         model_key = f"{make}-{car_model}"
-        logger.info(f"Simple mode: Generated URL from manufacturer and model")
+        logger.info("Simple mode: Generated URL from manufacturer and model")
 
     # Mode 2: Advanced mode - extract from URL, allow overrides
     elif url:
@@ -125,9 +123,9 @@ def scrape(
         model_key = f"{make}-{car_model}"
 
         if manufacturer or model:
-            logger.info(f"Advanced mode: Using URL with manufacturer/model override")
+            logger.info("Advanced mode: Using URL with manufacturer/model override")
         else:
-            logger.info(f"Advanced mode: Extracted manufacturer/model from URL")
+            logger.info("Advanced mode: Extracted manufacturer/model from URL")
 
     logger.info(f"Starting scrape for: {make} {car_model}")
     logger.info(f"URL: {url}")
@@ -159,7 +157,7 @@ def scrape(
         result = storage.store_listings_data(model_key, scraper.listings, current_date)
 
         # Log completion
-        logger.success(f"Scraping completed successfully!")
+        logger.success("Scraping completed successfully!")
         click.echo(f"✅ Scraping completed for: {make} {car_model}")
         click.echo(
             f"   {result['total']} tracked, {len(result['new'])} new, "
@@ -169,7 +167,7 @@ def scrape(
 
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
-        raise click.ClickException(f"Scraping failed: {e}")
+        raise click.ClickException(f"Scraping failed: {e}") from e
 
 
 @cli.command()
@@ -265,29 +263,6 @@ def status(data_dir: str):
 
     except Exception as e:
         logger.error(f"Status check failed: {e}")
-        sys.exit(1)
-
-
-@cli.command()
-@click.option("--data-dir", default="./data", help="Directory containing data")
-def demo(data_dir: str):
-    """
-    🎪 Run full demo workflow
-
-    Execute a complete demonstration of the scraper capabilities
-    including data generation, analysis, and visualization.
-    """
-    logger.info("Starting demo workflow")
-    logger.info(f"Data directory: {data_dir}")
-
-    try:
-        demo_runner = DemoRunner(data_dir)
-        demo_runner.run_complete_demo()
-
-        logger.success("Demo completed successfully!")
-
-    except Exception as e:
-        logger.error(f"Demo failed: {e}")
         sys.exit(1)
 
 

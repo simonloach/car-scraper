@@ -36,16 +36,16 @@ def clean(data_file: Path, price_min: int, price_max: int, exclude: list[str]) -
     report: dict = {"removed_variant": [], "removed_no_price": [], "fixed_readings": []}
     kept = {}
 
-    for lid, l in listings.items():
-        title = (l.get("title") or "").lower()
+    for lid, car in listings.items():
+        title = (car.get("title") or "").lower()
         if any(x.lower() in title for x in exclude):
             report["removed_variant"].append(
-                (lid, l.get("title"), l.get("current_price"))
+                (lid, car.get("title"), car.get("current_price"))
             )
             continue
 
         # Sanitize price history.
-        readings = l.get("price_readings") or []
+        readings = car.get("price_readings") or []
         good = [
             r
             for r in readings
@@ -58,29 +58,31 @@ def clean(data_file: Path, price_min: int, price_max: int, exclude: list[str]) -
 
         if not good:
             # Fall back to current_price if it is itself sane (no readings case).
-            cp = l.get("current_price")
+            cp = car.get("current_price")
             if isinstance(cp, (int, float)) and price_min <= cp <= price_max:
                 ts = (
-                    l.get("last_scrape_timestamp")
-                    or l.get("first_scrape_timestamp")
+                    car.get("last_scrape_timestamp")
+                    or car.get("first_scrape_timestamp")
                     or 0
                 )
                 good = [[ts, cp]]
             else:
-                report["removed_no_price"].append((lid, l.get("title"), cp))
+                report["removed_no_price"].append((lid, car.get("title"), cp))
                 continue
 
         if dropped:
             report["fixed_readings"].append(
-                (lid, l.get("title"), [r[1] for r in dropped])
+                (lid, car.get("title"), [r[1] for r in dropped])
             )
 
         good.sort(key=lambda r: r[0])
-        l["price_readings"] = good
-        l["initial_price"] = good[0][1]
-        l["current_price"] = good[-1][1]
-        l["price_change"] = good[-1][1] - (good[-2][1] if len(good) > 1 else good[0][1])
-        kept[lid] = l
+        car["price_readings"] = good
+        car["initial_price"] = good[0][1]
+        car["current_price"] = good[-1][1]
+        car["price_change"] = good[-1][1] - (
+            good[-2][1] if len(good) > 1 else good[0][1]
+        )
+        kept[lid] = car
 
     data["listings"] = kept
     data.setdefault("metadata", {})["total_listings"] = len(kept)

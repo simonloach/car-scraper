@@ -8,7 +8,6 @@ for backward compatibility with the CLI and tests.
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
 
 import click
 
@@ -26,7 +25,7 @@ class CarScraper:
     """
 
     def __init__(
-        self, data_directory: str, make: str = None, model: str = None
+        self, data_directory: str, make: str | None = None, model: str | None = None
     ) -> None:
         logger.info(f"Initializing Car scraper for {make} {model}")
         click.echo(f"Initializing Car scraper for {make} {model}")
@@ -35,11 +34,11 @@ class CarScraper:
         self.data_directory.mkdir(parents=True, exist_ok=True)
         self.make = make
         self.model = model
-        self.listings: List[Dict] = []
+        self.listings: list[dict] = []
 
     def scrape_model(
         self, search_url: str, model_name: str, max_pages: int = 10
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """Scrape a model from a search URL.
 
         Args:

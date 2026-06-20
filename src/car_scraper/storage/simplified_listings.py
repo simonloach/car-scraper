@@ -4,7 +4,6 @@ import json
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 
 import click
 import pandas as pd
@@ -24,7 +23,7 @@ EXTRA_FIELDS = (
 )
 
 
-def _carry_extra_fields(source: Dict, target: Dict) -> None:
+def _carry_extra_fields(source: dict, target: dict) -> None:
     """Copy known rich fields from a freshly scraped listing onto a stored one."""
     for field in EXTRA_FIELDS:
         if source.get(field) is not None:
@@ -71,8 +70,8 @@ class SimplifiedListingsStorage:
         return model_dir / f"{model.replace('/', '_')}.json"
 
     def store_listings_data(  # noqa: C901
-        self, model: str, listings_data: List[Dict], date_str: str
-    ) -> Dict:
+        self, model: str, listings_data: list[dict], date_str: str
+    ) -> dict:
         """
         Store listings data with integrated price tracking
 
@@ -88,7 +87,7 @@ class SimplifiedListingsStorage:
         """
         logger.info(f"Storing listings data for model {model} on date: {date_str}")
 
-        summary: Dict = {"new": [], "price_drops": [], "total": 0, "price_changes": 0}
+        summary: dict = {"new": [], "price_drops": [], "total": 0, "price_changes": 0}
         if not listings_data:
             logger.warning(f"No listings data provided for model {model}")
             return summary
@@ -99,7 +98,7 @@ class SimplifiedListingsStorage:
         existing_data = []
         if data_file.exists():
             try:
-                with open(data_file, "r", encoding="utf-8") as f:
+                with open(data_file, encoding="utf-8") as f:
                     file_data = json.load(f)
 
                 # Handle both old format (list) and new format (dict with 'listings' key)
@@ -300,7 +299,7 @@ class SimplifiedListingsStorage:
         summary["price_changes"] = price_changes
         return summary
 
-    def get_historical_data(self, model: Optional[str] = None) -> pd.DataFrame:
+    def get_historical_data(self, model: str | None = None) -> pd.DataFrame:
         """
         Get historical data for plotting and analysis
 
@@ -318,7 +317,7 @@ class SimplifiedListingsStorage:
                 raise FileNotFoundError(f"No data found for model: {model}")
 
             try:
-                with open(data_file, "r", encoding="utf-8") as f:
+                with open(data_file, encoding="utf-8") as f:
                     data = json.load(f)
 
                 if not data:
@@ -392,7 +391,7 @@ class SimplifiedListingsStorage:
 
             except Exception as e:
                 logger.error(f"Error loading data for model {model}: {e}")
-                raise ValueError(f"Error loading data for model {model}: {e}")
+                raise ValueError(f"Error loading data for model {model}: {e}") from e
         else:
             # Get data for all models
             all_data = []
@@ -407,7 +406,7 @@ class SimplifiedListingsStorage:
                 data_file = model_dir / f"{model_name}.json"
                 if data_file.exists():
                     try:
-                        with open(data_file, "r", encoding="utf-8") as f:
+                        with open(data_file, encoding="utf-8") as f:
                             model_data = json.load(f)
                             all_data.extend(model_data)
                     except Exception as e:
@@ -419,7 +418,7 @@ class SimplifiedListingsStorage:
 
             return pd.DataFrame(all_data)
 
-    def get_summary_stats(self, model: Optional[str] = None) -> Dict:
+    def get_summary_stats(self, model: str | None = None) -> dict:
         """
         Get summary statistics for the data
 
@@ -435,7 +434,7 @@ class SimplifiedListingsStorage:
                 return {"error": f"No data found for model: {model}"}
 
             try:
-                with open(data_file, "r", encoding="utf-8") as f:
+                with open(data_file, encoding="utf-8") as f:
                     data = json.load(f)
 
                 total_listings = len(data)
@@ -495,7 +494,7 @@ class SimplifiedListingsStorage:
             return
 
         try:
-            with open(data_file, "r", encoding="utf-8") as f:
+            with open(data_file, encoding="utf-8") as f:
                 data = json.load(f)
 
             if len(data) < change_count:

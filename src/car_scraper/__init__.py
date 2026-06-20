@@ -24,7 +24,7 @@ from src.car_scraper.models import (
 from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
 from src.car_scraper.scrapers import CarScraper
 from src.car_scraper.storage import SimplifiedListingsStorage
-from src.car_scraper.utils import DataProcessor, DemoRunner
+from src.car_scraper.utils import DataProcessor
 
 __all__ = [
     # Core classes
@@ -42,5 +42,4 @@ __all__ = [
     "YearAnalysisPlotter",
     # Utilities
     "DataProcessor",
-    "DemoRunner",
 ]

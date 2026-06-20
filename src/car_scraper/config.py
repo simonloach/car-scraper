@@ -1,7 +1,6 @@
 """Configuration management."""
 
 from pathlib import Path
-from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -48,7 +47,7 @@ class Config(BaseModel):
     """Main application configuration."""
 
     data_dir: Path = Field(Path("./data"), description="Data directory path")
-    plots_dir: Optional[Path] = Field(None, description="Plots directory path")
+    plots_dir: Path | None = Field(None, description="Plots directory path")
     scraping: ScrapingConfig = Field(default_factory=ScrapingConfig)
     plotting: PlottingConfig = Field(default_factory=PlottingConfig)
 
@@ -63,7 +62,7 @@ class Config(BaseModel):
         if config_path.exists():
             import json
 
-            with open(config_path, "r") as f:
+            with open(config_path) as f:
                 data = json.load(f)
             return cls(**data)
         return cls()

@@ -1,7 +1,6 @@
 """Year-based analysis plotting functionality"""
 
 from pathlib import Path
-from typing import Optional
 
 import click
 import matplotlib.pyplot as plt
@@ -31,7 +30,7 @@ class YearAnalysisPlotter:
 
         self.storage = SimplifiedListingsStorage(str(self.data_dir))
 
-    def _get_model_plots_dir(self, model: Optional[str]) -> Path:
+    def _get_model_plots_dir(self, model: str | None) -> Path:
         """
         Get the plots directory for a specific model
 
@@ -49,7 +48,7 @@ class YearAnalysisPlotter:
         else:
             return self.plots_dir
 
-    def generate_year_analysis_plots(self, model: Optional[str] = None) -> None:
+    def generate_year_analysis_plots(self, model: str | None = None) -> None:
         """
         Generate comprehensive year-based analysis plots
 
@@ -113,7 +112,7 @@ class YearAnalysisPlotter:
         self._print_year_analysis_summary(df, model)
 
     def _generate_four_panel_analysis(
-        self, df: pd.DataFrame, model: Optional[str] = None
+        self, df: pd.DataFrame, model: str | None = None
     ) -> None:
         """Generate 4-panel year analysis plot"""
         # Create year statistics
@@ -229,7 +228,7 @@ class YearAnalysisPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        year_plot_file = model_plots_dir / f"year_analysis.png"
+        year_plot_file = model_plots_dir / "year_analysis.png"
         plt.savefig(year_plot_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -237,7 +236,7 @@ class YearAnalysisPlotter:
         click.echo(f"Year analysis plot saved to {year_plot_file}")
 
     def _generate_year_scatter_plot(
-        self, df: pd.DataFrame, model: Optional[str] = None
+        self, df: pd.DataFrame, model: str | None = None
     ) -> None:
         """Generate scatter plot with year-based markers"""
         plt.figure(figsize=(16, 10))
@@ -247,8 +246,8 @@ class YearAnalysisPlotter:
 
         # Create year-based color mapping
         unique_years = sorted(df["year"].unique())
-        year_colors = plt.cm.viridis(np.linspace(0, 1, len(unique_years)))
-        year_color_map = dict(zip(unique_years, year_colors))
+        year_colors = plt.cm.viridis(np.linspace(0, 1, len(unique_years)))  # type: ignore[attr-defined]
+        year_color_map = dict(zip(unique_years, year_colors, strict=False))
 
         # Define markers for different year ranges
         markers = ["o", "s", "^", "D", "v", "<", ">", "p", "*", "h"]
@@ -282,7 +281,7 @@ class YearAnalysisPlotter:
 
         # Create custom legend for years
         handles, labels = plt.gca().get_legend_handles_labels()
-        by_label = dict(zip(labels, handles))
+        by_label = dict(zip(labels, handles, strict=False))
         sorted_items = sorted(
             by_label.items(), key=lambda x: int(x[0]) if x[0].isdigit() else 0
         )
@@ -297,7 +296,7 @@ class YearAnalysisPlotter:
         plt.tight_layout()
 
         model_plots_dir = self._get_model_plots_dir(model)
-        year_scatter_file = model_plots_dir / f"listings_by_year.png"
+        year_scatter_file = model_plots_dir / "listings_by_year.png"
         plt.savefig(year_scatter_file, dpi=300, bbox_inches="tight")
         plt.close()
 
@@ -305,7 +304,7 @@ class YearAnalysisPlotter:
         click.echo(f"Year-based scatter plot saved to {year_scatter_file}")
 
     def _generate_price_vs_mileage_plot(
-        self, df: pd.DataFrame, model: Optional[str] = None
+        self, df: pd.DataFrame, model: str | None = None
     ) -> None:
         """Generate price vs mileage scatter plot with year coloring"""
         plt.figure(figsize=(12, 8))
@@ -343,7 +342,7 @@ class YearAnalysisPlotter:
             plt.tight_layout()
 
             model_plots_dir = self._get_model_plots_dir(model)
-            price_mileage_file = model_plots_dir / f"price_vs_mileage.png"
+            price_mileage_file = model_plots_dir / "price_vs_mileage.png"
             plt.savefig(price_mileage_file, dpi=300, bbox_inches="tight")
             plt.close()
 
@@ -351,7 +350,7 @@ class YearAnalysisPlotter:
             click.echo(f"Price vs mileage plot saved to {price_mileage_file}")
 
     def _print_year_analysis_summary(
-        self, df: pd.DataFrame, model: Optional[str] = None
+        self, df: pd.DataFrame, model: str | None = None
     ) -> None:
         """Print year analysis summary statistics"""
         year_stats = (

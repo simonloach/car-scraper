@@ -75,7 +75,7 @@ def test_complete_workflow():
         data_file = test_data_dir / test_model / f"{test_model}.json"
         assert data_file.exists(), "❌ Data file was not created"
 
-        with open(data_file, "r") as f:
+        with open(data_file) as f:
             data = json.load(f)
 
         assert "metadata" in data, "❌ Missing metadata section"
@@ -125,7 +125,7 @@ def test_complete_workflow():
         storage.store_listings_data(test_model, updated_listings, "2025-06-01")
 
         # Verify price changes
-        with open(data_file, "r") as f:
+        with open(data_file) as f:
             updated_data = json.load(f)
 
         car1 = updated_data["listings"]["car-1-abc123.html"]

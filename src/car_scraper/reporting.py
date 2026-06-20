@@ -14,9 +14,8 @@ can run anywhere the data files live. Two public helpers:
 import html
 import json
 import statistics
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional
 
 
 def _md_escape(s: str) -> str:
@@ -31,7 +30,7 @@ def _money(n) -> str:
         return "—"
 
 
-def load_targets(targets_file: str = "targets.json") -> Dict[str, str]:
+def load_targets(targets_file: str = "targets.json") -> dict[str, str]:
     """Return ``{key: label}`` from targets.json (empty if missing)."""
     path = Path(targets_file)
     if not path.exists():
@@ -43,14 +42,14 @@ def load_targets(targets_file: str = "targets.json") -> Dict[str, str]:
         return {}
 
 
-def load_models(data_dir: str, targets_file: str = "targets.json") -> List[Dict]:
+def load_models(data_dir: str, targets_file: str = "targets.json") -> list[dict]:
     """Load every model's listings from ``data_dir``.
 
     Each item: ``{"key", "label", "listings": [listing, ...]}``.
     """
     labels = load_targets(targets_file)
     base = Path(data_dir)
-    models = []
+    models: list[dict] = []
     if not base.exists():
         return models
     for model_dir in sorted(base.iterdir()):
@@ -83,14 +82,14 @@ def load_models(data_dir: str, targets_file: str = "targets.json") -> List[Dict]
     return models
 
 
-def _active(listing: Dict) -> bool:
+def _active(listing: dict) -> bool:
     return listing.get("active", True)
 
 
 # --- analytics -------------------------------------------------------------
 
 
-def _solve(matrix: List[List[float]], rhs: List[float]) -> Optional[List[float]]:
+def _solve(matrix: list[list[float]], rhs: list[float]) -> list[float] | None:
     """Solve a small linear system by Gaussian elimination. None if singular."""
     n = len(matrix)
     a = [row[:] + [rhs[i]] for i, row in enumerate(matrix)]
@@ -108,7 +107,7 @@ def _solve(matrix: List[List[float]], rhs: List[float]) -> Optional[List[float]]
     return [a[i][n] / a[i][i] for i in range(n)]
 
 
-def _ols(features: List[List[float]], ys: List[float]) -> Optional[List[float]]:
+def _ols(features: list[list[float]], ys: list[float]) -> list[float] | None:
     """Ordinary least squares with intercept. Returns coefficients or None.
 
     ``features`` is a list of feature-rows (no intercept column). Solves the
@@ -126,7 +125,7 @@ def _ols(features: List[List[float]], ys: List[float]) -> Optional[List[float]]:
     return _solve(xtx, xty)
 
 
-def _deal_scores(active: List[Dict]) -> None:
+def _deal_scores(active: list[dict]) -> None:
     """Annotate each active listing with predicted_price + deal_pct in place.
 
     Expected price is modelled from mileage and (when there is enough spread)
@@ -151,14 +150,14 @@ def _deal_scores(active: List[Dict]) -> None:
     coef = _ols(feats, ys)
     if not coef:
         return
-    for car, f in zip(pts, feats):
-        pred = coef[0] + sum(c * x for c, x in zip(coef[1:], f))
+    for car, f in zip(pts, feats, strict=False):
+        pred = coef[0] + sum(c * x for c, x in zip(coef[1:], f, strict=False))
         if pred > 0:
             car["predicted_price"] = round(pred)
             car["deal_pct"] = round((car["current_price"] - pred) / pred * 100, 1)
 
 
-def _readings(listing: Dict) -> List[List]:
+def _readings(listing: dict) -> list[list]:
     out = []
     for r in listing.get("price_readings") or []:
         if (
@@ -171,7 +170,7 @@ def _readings(listing: Dict) -> List[List]:
     return out
 
 
-def _market_trend(listings: List[Dict]) -> List[Dict]:
+def _market_trend(listings: list[dict]) -> list[dict]:
     """Reconstruct median asking price per day across listings while active.
 
     For each day a listing was live (first_seen..last_seen) its price is the
@@ -179,7 +178,8 @@ def _market_trend(listings: List[Dict]) -> List[Dict]:
     clean "what did the market ask" signal that grows as the pipeline runs.
     """
     spans = []
-    overall_lo = overall_hi = None
+    overall_lo: date | None = None
+    overall_hi: date | None = None
     for car in listings:
         readings = sorted(_readings(car), key=lambda r: r[0])
         if not readings:
@@ -195,7 +195,7 @@ def _market_trend(listings: List[Dict]) -> List[Dict]:
         spans.append((lo, hi, daily))
         overall_lo = lo if overall_lo is None else min(overall_lo, lo)
         overall_hi = hi if overall_hi is None else max(overall_hi, hi)
-    if not spans or overall_lo is None:
+    if not spans or overall_lo is None or overall_hi is None:
         return []
     span_days = (overall_hi - overall_lo).days
     step = 7 if span_days > 180 else 1  # weekly buckets for long histories
@@ -227,12 +227,12 @@ def _market_trend(listings: List[Dict]) -> List[Dict]:
     return series
 
 
-def _has_drop(listing: Dict) -> bool:
+def _has_drop(listing: dict) -> bool:
     r = _readings(listing)
     return len(r) >= 2 and r[-1][1] < r[-2][1]
 
 
-def _kpis(active: List[Dict]) -> Dict:
+def _kpis(active: list[dict]) -> dict:
     prices = [
         car["current_price"]
         for car in active
@@ -273,7 +273,7 @@ _KEEP = (
 )
 
 
-def _prep_model(model: Dict) -> Dict:
+def _prep_model(model: dict) -> dict:
     """Build the slim, analytics-enriched payload for one model."""
     active = [car for car in model["listings"] if _active(car)]
     _deal_scores(active)
@@ -313,7 +313,7 @@ def _prep_model(model: Dict) -> Dict:
 # --- markdown alerts -------------------------------------------------------
 
 
-def format_alert_markdown(new: List[Dict], drops: List[Dict], date: str) -> str:
+def format_alert_markdown(new: list[dict], drops: list[dict], date: str) -> str:
     """Format new listings + price drops as a markdown alert body."""
     lines = [f"## 🚗 Car alerts — {date}", ""]
     if new:

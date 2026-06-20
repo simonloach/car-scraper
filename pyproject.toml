@@ -22,65 +22,54 @@ pydantic = "^2.0.0"
 pytest = "^7.4.0"
 pytest-cov = "^4.1.0"
 pytest-asyncio = "^0.21.0"
-black = "^23.0.0"
-isort = "^5.12.0"
 mypy = "^1.5.0"
-flake8 = "^6.0.0"
+ruff = "^0.6.0"
 pre-commit = "^3.4.0"
-flake8-docstrings = "^1.7.0"
-flake8-bugbear = "^23.7.0"
-flake8-simplify = "^0.20.0"
-flake8-comprehensions = "^3.14.0"
 bandit = "^1.7.5"
-safety = "^2.3.0"
 
 [tool.poetry.scripts]
 car-scraper = "main:cli"
 
-[tool.black]
+# Ruff replaces black + isort + flake8 (+ plugins): one fast linter/formatter.
+[tool.ruff]
 line-length = 88
-target-version = ['py310']
-include = '\.pyi?$'
-extend-exclude = '''
-/(
-  # directories
-  \.eggs
-  | \.git
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | build
-  | dist
-)/
-'''
+target-version = "py310"
+extend-exclude = ["data", "plots", ".venv", "build", "dist"]
 
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-line_length = 88
-known_first_party = ["src"]
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+]
+ignore = [
+    "E501",   # line length is enforced by the formatter
+    "B008",   # function calls in argument defaults (click options)
+    "B007",   # unused loop var (common in dict.items() iteration)
+    "UP038",  # isinstance(x, (a, b)) is clearer than the X | Y form
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]          # re-exports
+"main.py" = ["E402"]              # imports after sys.path bootstrap
+"tests/*" = ["B011", "SIM"]
 
 [tool.mypy]
 python_version = "3.10"
 mypy_path = "."
+plugins = ["pydantic.mypy"]
 explicit_package_bases = true
 ignore_missing_imports = true
-warn_return_any = false
 warn_unused_configs = true
-disallow_untyped_defs = false
-disallow_incomplete_defs = false
-check_untyped_defs = false
-disallow_untyped_decorators = false
-warn_redundant_casts = false
-warn_unused_ignores = false
-warn_no_return = false
-warn_unreachable = false
-strict_equality = false
 show_error_codes = true
-
-[[tool.mypy.overrides]]
-module = "src.*"
-ignore_errors = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -95,39 +84,6 @@ addopts = [
 [tool.bandit]
 exclude_dirs = ["tests", "scripts"]
 skips = ["B101", "B601", "B110", "B112", "B311"]
-
-[tool.pydocstyle]
-convention = "google"
-add_ignore = ["D100", "D104", "D105", "D107"]
-match_dir = "^(?!tests).*"
-
-[tool.flake8]
-max-line-length = 88
-ignore = [
-    "E203", "E501", "W503", "W504",  # Line length and line break issues
-    "D100", "D104", "D105", "D107",  # Missing docstrings (relaxed)
-    "D200", "D202", "D205", "D400", "D401",  # Docstring formatting (relaxed)
-    "F401", "F541", "F841",  # Import and variable issues (will fix gradually)
-    "E402",  # Module level import not at top (due to imports in main.py)
-    "B007",  # Loop variable not used (will fix gradually)
-    "C401", "C408",  # Comprehension style (will fix gradually)
-]
-extend-ignore = ["E203", "W503"]
-max-complexity = 15
-exclude = [
-    ".git",
-    "__pycache__",
-    ".pytest_cache",
-    ".mypy_cache",
-    "build",
-    "dist",
-    ".venv",
-    ".env"
-]
-per-file-ignores = [
-    "__init__.py:F401",
-    "tests/*:D",
-]
 
 [build-system]
 requires = ["poetry-core"]
