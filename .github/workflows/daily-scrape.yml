@@ -12,14 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Allow pushing back to repo
+      contents: write  # push data/plots back to repo
+      issues: write    # open/append car-alert issues
 
     steps:
     - name: 🔄 Checkout repository
       uses: actions/checkout@v4
 
     - name: 🐍 Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -29,15 +30,38 @@ jobs:
         version: latest
         virtualenvs-create: false
 
-    - name: 🔄 Update lock file and install dependencies
+    - name: 🔄 Install dependencies
+      run: poetry install --no-interaction --no-ansi
+
+    - name: 🔍 Scrape all targets
+      run: poetry run python main.py scrape-all --max-pages 5
+
+    - name: 📊 Generate PNG plots + static dashboard
       run: |
-        poetry install --no-interaction --no-ansi
+        for key in $(python -c "import json;print(' '.join(t['key'] for t in json.load(open('targets.json'))['targets']))"); do
+          echo "Plotting $key"
+          poetry run python main.py plot --model "$key" --plot-type all || true
+        done
+        poetry run python main.py report
 
-    - name: 🔍 Scrape Lexus LC listings
-      run: poetry run car-scraper scrape --manufacturer lexus --model lc
-
-    - name: 📊 Generate plots
-      run: poetry run car-scraper plot --model "lexus-lc" --plot-type "all"
+    - name: 🔔 Alert on new cars / price drops
+      if: ${{ hashFiles('data/alerts.md') != '' }}
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        # Only act on a non-empty alerts file.
+        [ -s data/alerts.md ] || { echo "alerts.md empty, skipping"; exit 0; }
+        title="🚗 Car alerts"
+        gh label create car-alert --color FF6B6B \
+          --description "New car / price-drop alerts" 2>/dev/null || true
+        # Reuse one rolling issue. Search by plain text, match exact title via jq.
+        num=$(gh issue list --state open --search "Car alerts in:title" \
+              --json number,title -q ".[] | select(.title==\"$title\") | .number" | head -1)
+        if [ -n "$num" ]; then
+          gh issue comment "$num" --body-file data/alerts.md
+        else
+          gh issue create --title "$title" --label car-alert --body-file data/alerts.md
+        fi
 
     - name: 📝 Commit and push results
       run: |

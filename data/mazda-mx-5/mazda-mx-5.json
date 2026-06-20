@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "last_updated": "2026-06-19T21:23:48.048489",
+    "total_listings": 17,
+    "model": "mazda-mx-5"
+  },
+  "listings": {
+    "6146749122": {
+      "id": "6146749122",
+      "internal_id": 1,
+      "title": "Mazda MX-5",
+      "initial_price": 118800,
+      "current_price": 118800,
+      "year": 2024,
+      "mileage": 4600,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZ8eS.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          118800
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Białe Błota",
+      "created_at": "2026-05-31T06:58:20Z"
+    },
+    "6146926928": {
+      "id": "6146926928",
+      "internal_id": 2,
+      "title": "Mazda MX-5",
+      "initial_price": 70900,
+      "current_price": 70900,
+      "year": 2019,
+      "mileage": 26000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZSuI.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          70900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1999,
+      "location": "Skórzewo",
+      "created_at": "2026-06-07T19:46:31Z"
+    },
+    "6148557467": {
+      "id": "6148557467",
+      "internal_id": 3,
+      "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line",
+      "initial_price": 44000,
+      "current_price": 44000,
+      "year": 2024,
+      "mileage": 10256,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6IFJ.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          44000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "RF SKYACTIV-G 184 Sports-Line",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Łódź",
+      "created_at": "2026-06-10T21:26:17Z"
+    },
+    "6147818526": {
+      "id": "6147818526",
+      "internal_id": 4,
+      "title": "Mazda MX-5 SKYACTIV-G 184 Sports-Line",
+      "initial_price": 82000,
+      "current_price": 82000,
+      "year": 2020,
+      "mileage": 43300,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I3Crk.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          82000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "SKYACTIV-G 184 Sports-Line",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Wrocław",
+      "created_at": "2026-06-08T05:54:14Z"
+    },
+    "6147347406": {
+      "id": "6147347406",
+      "internal_id": 5,
+      "title": "Mazda MX-5 SKYACTIV-G 184 Exclusive-Line",
+      "initial_price": 86100,
+      "current_price": 86100,
+      "year": 2023,
+      "mileage": 25141,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1DSC.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          86100
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "SKYACTIV-G 184 Exclusive-Line",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Warszawa",
+      "created_at": "2026-05-21T15:07:07Z"
+    },
+    "6148256808": {
+      "id": "6148256808",
+      "internal_id": 6,
+      "title": "Mazda MX-5 2.0 Skypassion i-ELOOP",
+      "initial_price": 81000,
+      "current_price": 81000,
+      "year": 2019,
+      "mileage": 36000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I5sso.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          81000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Skypassion i-ELOOP",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Łódź",
+      "created_at": "2026-05-26T20:48:14Z"
+    },
+    "6148710535": {
+      "id": "6148710535",
+      "internal_id": 7,
+      "title": "Mazda MX-5 2.0 Skyfreedom i-ELOOP",
+      "initial_price": 130000,
+      "current_price": 130000,
+      "year": 2019,
+      "mileage": 38900,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I7muz.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          130000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Skyfreedom i-ELOOP",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Warszawa",
+      "created_at": "2026-06-17T19:56:28Z"
+    },
+    "6148626260": {
+      "id": "6148626260",
+      "internal_id": 8,
+      "title": "Mazda MX-5 SKYACTIV-G 2.0 100th Anniversary",
+      "initial_price": 145000,
+      "current_price": 145000,
+      "year": 2021,
+      "mileage": 17000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I70zi.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          145000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "SKYACTIV-G 2.0 100th Anniversary",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Tarnobrzeg",
+      "created_at": "2026-06-14T18:52:11Z"
+    },
+    "6148275159": {
+      "id": "6148275159",
+      "internal_id": 9,
+      "title": "Mazda MX-5 2.0 30th Anniversary",
+      "initial_price": 127700,
+      "current_price": 127700,
+      "year": 2019,
+      "mileage": 116000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I5xen.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          127700
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 30th Anniversary",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Koziegłowy",
+      "created_at": "2026-05-27T13:44:15Z"
+    },
+    "6141855509": {
+      "id": "6141855509",
+      "internal_id": 10,
+      "title": "Mazda MX-5",
+      "initial_price": 114900,
+      "current_price": 114900,
+      "year": 2022,
+      "mileage": 11000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HEBbD.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          114900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Żywiec",
+      "created_at": "2026-06-08T07:13:22Z"
+    },
+    "6148554072": {
+      "id": "6148554072",
+      "internal_id": 11,
+      "title": "Mazda MX-5",
+      "initial_price": 103000,
+      "current_price": 103000,
+      "year": 2020,
+      "mileage": 50000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-OLX_ID6I6HMY.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          103000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 2000,
+      "location": "Białystok",
+      "created_at": "2026-06-10T16:51:52Z"
+    },
+    "6146328886": {
+      "id": "6146328886",
+      "internal_id": 12,
+      "title": "Mazda MX-5",
+      "initial_price": 99900,
+      "current_price": 99900,
+      "year": 2021,
+      "mileage": 20790,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HXmUS.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          99900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Warszawa",
+      "created_at": "2026-05-26T21:02:11Z"
+    },
+    "6147404810": {
+      "id": "6147404810",
+      "internal_id": 13,
+      "title": "Mazda MX-5 2.0 Exclusive-Line i-ELOOP",
+      "initial_price": 139777,
+      "current_price": 139777,
+      "year": 2023,
+      "mileage": 36253,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1SOu.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          139777
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Exclusive-Line i-ELOOP",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Opole",
+      "created_at": "2026-05-24T07:32:17Z"
+    },
+    "6148493256": {
+      "id": "6148493256",
+      "internal_id": 14,
+      "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line",
+      "initial_price": 72000,
+      "current_price": 72000,
+      "year": 2018,
+      "mileage": 121000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6rY4.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          72000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "RF SKYACTIV-G 184 Sports-Line",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Sokółka",
+      "created_at": "2026-06-08T11:16:47Z"
+    },
+    "6147930551": {
+      "id": "6147930551",
+      "internal_id": 15,
+      "title": "Mazda MX-5 RF SKYACTIV-G 2.0 Homura",
+      "initial_price": 115000,
+      "current_price": 115000,
+      "year": 2021,
+      "mileage": 40500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I45Ab.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          115000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "RF SKYACTIV-G 2.0 Homura",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Olsztyn",
+      "created_at": "2026-06-14T15:30:10Z"
+    },
+    "6148034419": {
+      "id": "6148034419",
+      "internal_id": 16,
+      "title": "Mazda MX-5 SKYACTIV-G 2.0 100th Anniversary",
+      "initial_price": 145900,
+      "current_price": 145900,
+      "year": 2021,
+      "mileage": 16642,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I4vBt.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          145900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "SKYACTIV-G 2.0 100th Anniversary",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Długołęka",
+      "created_at": "2026-06-18T10:51:15Z"
+    },
+    "6148598213": {
+      "id": "6148598213",
+      "internal_id": 17,
+      "title": "Mazda MX-5 2.0 Exclusive-Line i-ELOOP",
+      "initial_price": 135900,
+      "current_price": 135900,
+      "year": 2023,
+      "mileage": 15350,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6TgW.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19",
+      "first_scrape_timestamp": 1781895790,
+      "last_scrape_timestamp": 1781897028,
+      "price_readings": [
+        [
+          1781895790,
+          135900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Exclusive-Line i-ELOOP",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Długołęka",
+      "created_at": "2026-06-12T12:31:14Z"
+    }
+  }
+}

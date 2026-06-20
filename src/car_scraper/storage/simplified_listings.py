@@ -11,6 +11,25 @@ import pandas as pd
 
 from src.car_scraper.utils.logger import logger
 
+# Rich fields captured from otomoto's structured data. Carried through on both
+# new and updated listings when present (older data simply won't have them).
+EXTRA_FIELDS = (
+    "version",
+    "fuel_type",
+    "gearbox",
+    "engine_power",
+    "engine_capacity",
+    "location",
+    "created_at",
+)
+
+
+def _carry_extra_fields(source: Dict, target: Dict) -> None:
+    """Copy known rich fields from a freshly scraped listing onto a stored one."""
+    for field in EXTRA_FIELDS:
+        if source.get(field) is not None:
+            target[field] = source[field]
+
 
 class SimplifiedListingsStorage:
     """Simplified storage handler with integrated price tracking"""
@@ -51,35 +70,9 @@ class SimplifiedListingsStorage:
         model_dir = self._get_model_dir(model)
         return model_dir / f"{model.replace('/', '_')}.json"
 
-    def _assign_internal_id(self, existing_data: List[Dict], listing_id: str) -> int:
-        """
-        Assign internal ID to a listing
-
-        Args:
-            existing_data: Existing listings data
-            listing_id: External listing ID
-
-        Returns:
-            Internal ID number
-        """
-        # Find the highest existing internal ID
-        max_internal_id = 0
-        for listing in existing_data:
-            internal_id = listing.get("internal_id", 0)
-            # Ensure internal_id is an integer
-            try:
-                internal_id = int(internal_id) if internal_id else 0
-            except (ValueError, TypeError):
-                internal_id = 0
-
-            if internal_id > max_internal_id:
-                max_internal_id = internal_id
-
-        return max_internal_id + 1
-
     def store_listings_data(  # noqa: C901
         self, model: str, listings_data: List[Dict], date_str: str
-    ) -> None:
+    ) -> Dict:
         """
         Store listings data with integrated price tracking
 
@@ -87,12 +80,18 @@ class SimplifiedListingsStorage:
             model: Model name (e.g., 'bmw-i8')
             listings_data: List of listing dictionaries
             date_str: Date string in YYYY-MM-DD format
+
+        Returns:
+            Run summary: ``{"new": [...], "price_drops": [...], "total": int,
+            "price_changes": int}``. ``new`` holds full listing dicts; each
+            ``price_drops`` entry is ``{listing, old_price, new_price}``.
         """
         logger.info(f"Storing listings data for model {model} on date: {date_str}")
 
+        summary: Dict = {"new": [], "price_drops": [], "total": 0, "price_changes": 0}
         if not listings_data:
             logger.warning(f"No listings data provided for model {model}")
-            return
+            return summary
 
         data_file = self._get_model_data_file(model)
 
@@ -139,7 +138,7 @@ class SimplifiedListingsStorage:
             if listing_id in current_listings_lookup:
                 # Listing exists in current scrape - update it
                 listing_data = current_listings_lookup[listing_id]
-                current_price = listing_data.get("price", 0)
+                current_price = listing_data.get("price") or 0
                 if current_price <= 0:
                     # Keep the existing listing unchanged if price is invalid
                     updated_data.append(existing_listing)
@@ -163,8 +162,10 @@ class SimplifiedListingsStorage:
                         "model": model,
                         "last_seen": date_str,
                         "last_scrape_timestamp": current_timestamp,
+                        "active": True,
                     }
                 )
+                _carry_extra_fields(listing_data, existing_listing)
 
                 # Initialize price_readings if not exists
                 if "price_readings" not in existing_listing:
@@ -179,21 +180,35 @@ class SimplifiedListingsStorage:
                     existing_listing["price_change"] = price_change
                     price_changes += 1
 
+                    if price_change < 0:
+                        summary["price_drops"].append(
+                            {
+                                "listing": existing_listing,
+                                "old_price": last_price,
+                                "new_price": current_price,
+                            }
+                        )
+
                     logger.info(
                         f"Price change detected for {listing_id}: {last_price} → {current_price} ({price_change:+d})"
                     )
 
-                # Always ensure current_price matches the last price reading
-                if existing_listing["price_readings"]:
-                    existing_listing["current_price"] = existing_listing[
-                        "price_readings"
-                    ][-1][1]
-                else:
-                    existing_listing["current_price"] = current_price
+                # Always ensure current_price matches the last price reading.
+                # Seed a reading if there was none yet (e.g. migrated old-format
+                # data re-scraped at an unchanged price), so history is never empty.
+                if not existing_listing["price_readings"]:
+                    existing_listing["price_readings"].append(
+                        [current_timestamp, current_price]
+                    )
+                existing_listing["current_price"] = existing_listing["price_readings"][
+                    -1
+                ][1]
 
                 updated_data.append(existing_listing)
             else:
-                # Listing not in current scrape - preserve it as historical
+                # Listing not in current scrape - preserve it but mark inactive
+                # (sold or de-listed). Historical price readings are kept.
+                existing_listing["active"] = False
                 updated_data.append(existing_listing)
 
         # Process new listings that weren't in existing data
@@ -203,7 +218,7 @@ class SimplifiedListingsStorage:
             if not listing_id:
                 continue
 
-            current_price = listing_data.get("price", 0)
+            current_price = listing_data.get("price") or 0
             if current_price <= 0:
                 continue
 
@@ -241,8 +256,11 @@ class SimplifiedListingsStorage:
                     "last_scrape_timestamp": current_timestamp,
                     "price_readings": [[current_timestamp, current_price]],
                     "price_change": 0,
+                    "active": True,
                 }
+                _carry_extra_fields(listing_data, new_listing)
                 updated_data.append(new_listing)
+                summary["new"].append(new_listing)
                 new_listings += 1
                 next_internal_id += 1  # Increment for next new listing
 
@@ -278,6 +296,10 @@ class SimplifiedListingsStorage:
             logger.error(f"Error saving data: {e}")
             click.echo(f"Error saving data: {e}")
 
+        summary["total"] = len(updated_data)
+        summary["price_changes"] = price_changes
+        return summary
+
     def get_historical_data(self, model: Optional[str] = None) -> pd.DataFrame:
         """
         Get historical data for plotting and analysis
@@ -308,16 +330,14 @@ class SimplifiedListingsStorage:
                     flattened_data = []
                     for listing in data:
                         entry = {
-                            "id": listing["id"],
-                            "internal_id": listing.get(
-                                "internal_id", 0
-                            ),  # Use internal_id if exists, otherwise 0
-                            "title": listing["title"],
-                            "price": listing["price"],
-                            "year": listing["year"],
-                            "mileage": listing["mileage"],
-                            "url": listing["url"],
-                            "model": listing["model"],
+                            "id": listing.get("id"),
+                            "internal_id": listing.get("internal_id", 0),
+                            "title": listing.get("title", ""),
+                            "price": listing.get("price"),
+                            "year": listing.get("year"),
+                            "mileage": listing.get("mileage"),
+                            "url": listing.get("url", ""),
+                            "model": listing.get("model", model),
                             "date": listing.get("scrape_date", "").split("T")[0]
                             if "scrape_date" in listing
                             else "",

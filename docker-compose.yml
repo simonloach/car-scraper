@@ -1,0 +1,15 @@
+# Local interactive dashboard:  docker compose up  ->  http://localhost:8501
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      DATA_DIR: /data
+      TARGETS_FILE: /app/targets.json
+    volumes:
+      - ./data:/data:ro
+      - ./targets.json:/app/targets.json:ro
+    restart: unless-stopped

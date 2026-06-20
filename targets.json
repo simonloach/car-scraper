@@ -1,0 +1,22 @@
+{
+  "targets": [
+    {
+      "key": "lexus-lc",
+      "label": "Lexus LC 500 (V8, naturally aspirated)",
+      "url": "https://www.otomoto.pl/osobowe/lexus/lc?search%5Bfilter_float_engine_power%3Afrom%5D=475",
+      "note": "Power >=475 KM excludes the LC 500h V6 hybrid"
+    },
+    {
+      "key": "mazda-mx-5",
+      "label": "Mazda MX-5 (manual, 184 KM)",
+      "url": "https://www.otomoto.pl/osobowe/mazda/mx-5?search%5Bfilter_enum_gearbox%5D=manual&search%5Bfilter_float_engine_power%3Afrom%5D=180",
+      "note": "Manual gearbox, power >=180 KM (2.0 Skyactiv)"
+    },
+    {
+      "key": "toyota-supra",
+      "label": "Toyota Supra (B58, manual)",
+      "url": "https://www.otomoto.pl/osobowe/toyota/supra/od-2018?search%5Bfilter_enum_gearbox%5D=manual&search%5Bfilter_float_engine_capacity%3Afrom%5D=2900&search%5Bfilter_float_engine_power%3Afrom%5D=180",
+      "note": "Manual, engine >=2900 cm3 (3.0 B58 straight-six), from 2018"
+    }
+  ]
+}

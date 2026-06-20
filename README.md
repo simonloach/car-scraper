@@ -1,13 +1,46 @@
 # 🚗 Car Scraper for Otomoto.pl
 
-[![Daily Scraper](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/simonloach/car-scraper/actions/w3. Optionally customize:
-   - **Models**: Comma-separated list (e.g., `lexus-lc,audi-r8`)
-   - **Max Pages**: Number of pages to scrape per model (default: 5)flows/daily-scrape.yml)
+[![Daily Scraper](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Poetry](https://img.shields.io/badge/dependency--management-poetry-blue)](https://python-poetry.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A modern, professional CLI application for scraping car listings from otomoto.pl with comprehensive time series tracking, analysis, and visualization capabilities. Currently tracking **Lexus LC** with model-specific data organization and automated daily analysis.
+A CLI that scrapes car listings from otomoto.pl with time-series price tracking,
+analysis, and visualization. Listing data is read straight from otomoto's
+embedded structured data (clean price / year / mileage / engine power / gearbox
+/ fuel type), so no fragile per-advert HTML scraping.
+
+## 🎯 Tracked targets
+
+Targets live in [`targets.json`](targets.json) — each is a filtered otomoto
+search URL so only the exact variant is tracked:
+
+| Key | What | Filter |
+|-----|------|--------|
+| `lexus-lc` | Lexus **LC 500** (V8, NA) | power ≥ 475 KM — excludes the LC 500h V6 hybrid |
+| `mazda-mx-5` | Mazda **MX-5** | manual gearbox, power ≥ 180 KM (2.0 Skyactiv) |
+| `toyota-supra` | Toyota **Supra** (B58) | manual, engine ≥ 2900 cm³, from 2018 |
+
+Add a target by appending `{key, label, url}` to `targets.json`.
+
+## 🖥️ Dashboards
+
+Two ways to view the data, both driven from the same JSON:
+
+- **Static HTML** — `car-scraper report` writes a self-contained, interactive
+  `plots/index.html` (Plotly, no server). The pipeline regenerates and commits
+  it daily, so it works on GitHub Pages / your phone.
+- **Local interactive (Docker)** — `docker compose up` → http://localhost:8501
+  for a Streamlit app with model/year filters, price-over-time charts and a
+  sortable, linked table.
+
+PNG charts per model are still generated under `plots/{model}/`.
+
+## 🔔 Alerts
+
+The daily pipeline opens (or comments on) a GitHub issue titled **"🚗 Car
+alerts"** whenever a new listing appears or a tracked price drops. No external
+service or secret needed — it uses the built-in `GITHUB_TOKEN`.
 
 ## ✨ Features
 
@@ -83,6 +116,19 @@ docker run -v $(pwd)/data:/app/data car-scraper --help
 ## 📖 Usage
 
 ### Quick Start
+
+```bash
+# Scrape every target in targets.json (what the daily pipeline runs)
+car-scraper scrape-all --max-pages 5
+
+# Build the interactive static dashboard (plots/index.html)
+car-scraper report
+
+# Local Docker dashboard at http://localhost:8501
+docker compose up
+```
+
+### Single-model commands
 
 ```bash
 # Simple mode - specify manufacturer and model
