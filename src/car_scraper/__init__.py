@@ -1,15 +1,7 @@
 """
-Car scraper packagefrom src.car_scraper.plotters import (
-    IndividualListingsPlotter,
-    YearAnalysisPlotter,
-)
-from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
-from src.car_scraper.storage import (
-    IdMappingStorage,
-    IndividualListingsStorage,
-)o.pl.
+Car scraper package for otomoto.pl.
 
-A professional car listing scraper with comprehensive features:
+A car listing scraper with comprehensive features:
 - Individual listing price tracking over time
 - Advanced data analysis and visualization
 - Multiple export formats and storage options
@@ -30,27 +22,20 @@ from src.car_scraper.models import (
     YearAnalysisData,
 )
 from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
-from src.car_scraper.scrapers import AdvertisementFetcher, CarScraper
-from src.car_scraper.storage import (
-    IdMappingStorage,
-    IndividualListingsStorage,
-    SimplifiedListingsStorage,
-)
+from src.car_scraper.scrapers import CarScraper
+from src.car_scraper.storage import SimplifiedListingsStorage
 from src.car_scraper.utils import DataProcessor, DemoRunner
 
 __all__ = [
     # Core classes
     "Config",
     "CarScraper",
-    "AdvertisementFetcher",
     # Data models
     "CarListing",
     "CarListingHistory",
     "ScrapingResults",
     "YearAnalysisData",
     # Storage
-    "IndividualListingsStorage",
-    "IdMappingStorage",
     "SimplifiedListingsStorage",
     # Plotting
     "IndividualListingsPlotter",

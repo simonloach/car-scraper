@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "last_updated": "2026-06-21T00:26:04.345888",
+    "total_listings": 7,
+    "model": "toyota-supra"
+  },
+  "listings": {
+    "6145467335": {
+      "id": "6145467335",
+      "internal_id": 1,
+      "title": "Toyota Supra",
+      "initial_price": 240000,
+      "current_price": 240000,
+      "year": 2022,
+      "mileage": 9200,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6HTKMT.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          240000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Studzienice",
+      "created_at": "2026-06-15T08:18:23Z"
+    },
+    "6148397428": {
+      "id": "6148397428",
+      "internal_id": 2,
+      "title": "Toyota Supra 3.0 Turbo Executive",
+      "initial_price": 349999,
+      "current_price": 349999,
+      "year": 2023,
+      "mileage": 15000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I632s.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          349999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "3.0 Turbo Executive",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Śrem",
+      "created_at": "2026-06-02T20:05:27Z"
+    },
+    "6148568667": {
+      "id": "6148568667",
+      "internal_id": 3,
+      "title": "Toyota Supra",
+      "initial_price": 269000,
+      "current_price": 269000,
+      "year": 2024,
+      "mileage": 32000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I6LAn.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          269000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Myszków",
+      "created_at": "2026-06-11T11:24:22Z"
+    },
+    "6147782773": {
+      "id": "6147782773",
+      "internal_id": 4,
+      "title": "Toyota Supra",
+      "initial_price": 357900,
+      "current_price": 357900,
+      "year": 2023,
+      "mileage": 3000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I3t8F.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          357900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Siemianice",
+      "created_at": "2026-06-09T18:18:42Z"
+    },
+    "6148731193": {
+      "id": "6148731193",
+      "internal_id": 5,
+      "title": "Toyota Supra",
+      "initial_price": 259000,
+      "current_price": 259000,
+      "year": 2024,
+      "mileage": 20000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          259000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Nowy Targ",
+      "created_at": "2026-06-19T04:52:14Z"
+    },
+    "6148252548": {
+      "id": "6148252548",
+      "internal_id": 6,
+      "title": "Toyota Supra GR 3.0 Legend",
+      "initial_price": 210000,
+      "current_price": 210000,
+      "year": 2022,
+      "mileage": 57000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781895792,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781895792,
+          210000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "GR 3.0 Legend",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Warszawa",
+      "created_at": "2026-05-26T15:27:26Z"
+    },
+    "6148057138": {
+      "id": "6148057138",
+      "internal_id": 7,
+      "title": "Toyota Supra 3.0 Turbo Executive",
+      "initial_price": 305000,
+      "current_price": 305000,
+      "year": 2024,
+      "mileage": 11000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "first_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1781994364,
+      "price_readings": [
+        [
+          1781994364,
+          305000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "3.0 Turbo Executive",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Pcin",
+      "created_at": "2026-06-20T12:08:15Z"
+    }
+  }
+}

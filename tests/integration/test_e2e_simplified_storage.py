@@ -20,7 +20,6 @@ from unittest.mock import Mock, patch
 import pandas as pd
 
 from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
-from src.car_scraper.scrapers import AdvertisementFetcher
 from src.car_scraper.storage import SimplifiedListingsStorage
 from src.car_scraper.utils import DataProcessor
 
@@ -381,48 +380,6 @@ class TestE2ESimplifiedStorage(unittest.TestCase):
             print("✅ Backward compatibility test passed")
         except Exception as e:
             self.fail(f"Backward compatibility failed: {e}")
-
-    def test_09_advertisement_fetcher_integration(self):
-        """Test integration with AdvertisementFetcher (mocked)."""
-        print("\n=== Testing AdvertisementFetcher Integration ===")
-
-        # Create mock fetcher
-        fetcher = AdvertisementFetcher(str(self.test_data_dir))
-
-        # Mock the scraping functionality
-        with patch.object(fetcher, "fetch_ads") as mock_fetch:
-            # Mock fetch_ads to populate the ads list
-            def mock_fetch_ads(links, model):
-                fetcher.ads = self.sample_listings_1
-
-            mock_fetch.side_effect = mock_fetch_ads
-
-            # Test the integration flow
-            try:
-                # Simulate the main.py workflow
-                mock_links = [
-                    "https://example.com/car-1",
-                    "https://example.com/car-2",
-                    "https://example.com/car-3",
-                ]
-                fetcher.fetch_ads(mock_links, self.test_model)
-
-                # Get the scraped ads
-                scraped_ads = fetcher.ads
-                self.assertEqual(len(scraped_ads), 3, "Should get 3 scraped ads")
-
-                # Store using simplified storage
-                self.storage.store_listings_data(
-                    self.test_model, scraped_ads, "2025-05-31"
-                )
-
-                # Verify storage worked
-                df = self.storage.get_historical_data(self.test_model)
-                self.assertEqual(len(df), 3, "Should have stored 3 listings")
-
-                print("✅ AdvertisementFetcher integration test passed")
-            except Exception as e:
-                self.fail(f"AdvertisementFetcher integration failed: {e}")
 
     def test_10_full_workflow_simulation(self):
         """Test complete workflow simulation over multiple days."""

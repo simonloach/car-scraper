@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Tracker · market dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E14; --surface:#141A24; --surface-2:#1B2230; --border:#242C3A;
+    --text:#E6EAF2; --muted:#8B95A7; --muted-2:#5C6678;
+    --primary:#60A5FA; --primary-deep:#3B82F6; --accent:#F59E0B;
+    --good:#34D399; --bad:#F87171;
+    --r:12px; --r-sm:8px; --maxw:1180px;
+    --sans:'Fira Sans',system-ui,sans-serif; --mono:'Fira Code',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{color-scheme:dark}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+       font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .num{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* header */
+  header.top{position:sticky;top:0;z-index:20;background:rgba(11,14,20,.82);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .top-row{display:flex;align-items:center;gap:14px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.02em}
+  .brand svg{color:var(--primary)}
+  .gen{margin-left:auto;color:var(--muted);font-size:13px}
+  nav.models{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:12px}
+  nav.models a{font-size:13px;font-weight:500;color:var(--muted);padding:6px 12px;
+    border:1px solid var(--border);border-radius:999px;background:var(--surface);transition:.18s}
+  nav.models a:hover{color:var(--text);border-color:var(--primary-deep);text-decoration:none}
+
+  /* global kpi strip */
+  .gkpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 8px}
+  .gkpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+  .gkpi .lab{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+    display:flex;align-items:center;gap:7px}
+  .gkpi .val{font-size:26px;font-weight:600;margin-top:6px}
+
+  /* model section */
+  section.model{margin:40px 0;scroll-margin-top:120px}
+  .m-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .m-head h2{font-size:21px;font-weight:600;margin:0;letter-spacing:-.02em}
+  .m-head .tag{color:var(--muted);font-size:13px;font-family:var(--mono)}
+
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px}
+  .kpi .lab{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+    display:flex;align-items:center;gap:6px}
+  .kpi .v{font-size:18px;font-weight:600;margin-top:6px}
+  .kpi .sub{font-size:12px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pos{color:var(--good)} .neg{color:var(--bad)}
+
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 14px 6px}
+  .card h3{margin:0 0 2px;font-size:14px;font-weight:600}
+  .card .hint{margin:0 0 8px;font-size:12px;color:var(--muted)}
+  .plot{height:300px}
+  .empty{height:300px;display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:13px}
+
+  /* table */
+  .tablewrap{margin-top:16px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--r);overflow:hidden}
+  .tbar{display:flex;align-items:center;gap:14px;padding:12px 14px;border-bottom:1px solid var(--border)}
+  .tbar .t{font-size:14px;font-weight:600}
+  .tbar label{margin-left:auto;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px;cursor:pointer}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:9px 14px;border-bottom:1px solid var(--border);white-space:nowrap}
+  th:nth-child(2),td:nth-child(2){text-align:left;white-space:normal}
+  th{color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+    cursor:pointer;user-select:none;position:sticky;top:0;background:var(--surface-2)}
+  th[aria-sort] .car{opacity:1}
+  tbody tr:hover{background:var(--surface-2)}
+  tbody tr:last-child td{border-bottom:none}
+  .deal-badge{display:inline-block;padding:1px 7px;border-radius:999px;font-family:var(--mono);
+    font-size:12px;font-weight:500}
+  .deal-good{background:rgba(52,211,153,.14);color:var(--good)}
+  .deal-bad{background:rgba(248,113,113,.14);color:var(--bad)}
+  .deal-na{color:var(--muted-2)}
+  footer{color:var(--muted-2);font-size:12px;text-align:center;padding:36px 0 28px}
+
+  @media(max-width:860px){
+    .gkpis{grid-template-columns:repeat(2,1fr)}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .charts{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <span class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 0 .01M19 17a2 2 0 1 0 0 .01M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5v3a1 1 0 0 1-1 1h-1M3 13h16M3 13v3a1 1 0 0 0 1 1h1"/></svg>
+        Car Tracker
+      </span>
+      <span class="gen num">updated 2026-06-21 00:26</span>
+    </div>
+    <nav class="models" id="modelnav" aria-label="Models"></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="gkpis" id="gkpis"></div>
+  <div id="root"></div>
+</main>
+<footer>Daily otomoto.pl scrape · prices in PLN · deal score = price vs expected from mileage &amp; year</footer>
+
+<script>
+const GLOBAL = {"generated": "2026-06-21 00:26", "models": 3, "active": 29, "drops": 0};
+const MODELS = [{"key": "lexus-lc", "label": "Lexus LC 500 (V8, naturally aspirated)", "listings": [{"internal_id": 209, "title": "Lexus LC 500 Superturismo", "version": "500 Superturismo", "year": 2024, "mileage": 5000, "current_price": 515000, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HnvoR.html", "price_readings": [[1781994362, 515000]], "predicted_price": 499154, "deal_pct": 3.2}, {"internal_id": 210, "title": "Lexus LC", "version": null, "year": 2021, "mileage": 30000, "current_price": 479900, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HjhwJ.html", "price_readings": [[1781994362, 479900]], "predicted_price": 431822, "deal_pct": 11.1}, {"internal_id": 211, "title": "Lexus LC", "version": null, "year": 2017, "mileage": 79000, "current_price": 259999, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I0xaF.html", "price_readings": [[1781994362, 259999]], "predicted_price": 320200, "deal_pct": -18.8}, {"internal_id": 212, "title": "Lexus LC", "version": null, "year": 2023, "mileage": 33000, "current_price": 389900, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HxYhz.html", "price_readings": [[1781994362, 389900]], "predicted_price": 449288, "deal_pct": -13.2}, {"internal_id": 213, "title": "Lexus LC 500 Prestige", "version": "500 Prestige", "year": 2017, "mileage": 31500, "current_price": 389000, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HXLyC.html", "price_readings": [[1781994362, 389000]], "predicted_price": 386431, "deal_pct": 0.7}, {"internal_id": 214, "title": "Lexus LC", "version": null, "year": 2018, "mileage": 96300, "current_price": 359999, "engine_power": 477, "engine_capacity": 4969, "fuel_type": "petrol", "gearbox": "automatic", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I2IYw.html", "price_readings": [[1781994362, 359999]], "predicted_price": 306903, "deal_pct": 17.3}], "trend": [{"date": "2025-05-30", "median": 339500, "count": 2}, {"date": "2025-06-06", "median": 342000, "count": 3}, {"date": "2025-06-13", "median": 420000, "count": 6}, {"date": "2025-06-20", "median": 342000, "count": 11}, {"date": "2025-06-27", "median": 335500, "count": 12}, {"date": "2025-07-04", "median": 338250, "count": 13}, {"date": "2025-07-11", "median": 329000, "count": 13}, {"date": "2025-07-18", "median": 338250, "count": 13}, {"date": "2025-07-25", "median": 338250, "count": 15}, {"date": "2025-08-01", "median": 338250, "count": 15}, {"date": "2025-08-08", "median": 340125, "count": 12}, {"date": "2025-08-15", "median": 361000, "count": 14}, {"date": "2025-08-22", "median": 367000, "count": 16}, {"date": "2025-08-29", "median": 374500, "count": 14}, {"date": "2025-09-05", "median": 404500, "count": 14}, {"date": "2025-09-12", "median": 429000, "count": 23}, {"date": "2025-09-19", "median": 429900, "count": 25}, {"date": "2025-09-26", "median": 429900, "count": 25}, {"date": "2025-10-03", "median": 429900, "count": 25}, {"date": "2025-10-10", "median": 438900, "count": 24}, {"date": "2025-10-17", "median": 438900, "count": 22}, {"date": "2025-10-24", "median": 419450, "count": 22}, {"date": "2025-10-31", "median": 419450, "count": 20}, {"date": "2025-11-07", "median": 429000, "count": 23}, {"date": "2025-11-14", "median": 429000, "count": 23}, {"date": "2025-11-21", "median": 412050, "count": 21}, {"date": "2025-11-28", "median": 419450, "count": 22}, {"date": "2025-12-05", "median": 369500, "count": 24}, {"date": "2025-12-12", "median": 404900, "count": 21}, {"date": "2025-12-19", "median": 381950, "count": 22}, {"date": "2025-12-26", "median": 404900, "count": 21}, {"date": "2026-01-02", "median": 367000, "count": 24}, {"date": "2026-01-09", "median": 367000, "count": 22}, {"date": "2026-01-16", "median": 354000, "count": 20}, {"date": "2026-01-23", "median": 349000, "count": 21}, {"date": "2026-01-30", "median": 349000, "count": 19}, {"date": "2026-02-06", "median": 349000, "count": 19}, {"date": "2026-02-13", "median": 369450, "count": 18}, {"date": "2026-02-20", "median": 369450, "count": 18}, {"date": "2026-02-27", "median": 369450, "count": 18}, {"date": "2026-03-06", "median": 374450, "count": 20}, {"date": "2026-03-13", "median": 365000, "count": 21}, {"date": "2026-03-20", "median": 377450, "count": 24}, {"date": "2026-03-27", "median": 389900, "count": 25}, {"date": "2026-04-03", "median": 390000, "count": 23}, {"date": "2026-04-10", "median": 389900, "count": 23}, {"date": "2026-04-17", "median": 389900, "count": 21}, {"date": "2026-04-24", "median": 389950, "count": 20}, {"date": "2026-05-01", "median": 389950, "count": 20}, {"date": "2026-05-08", "median": 389900, "count": 19}, {"date": "2026-05-15", "median": 392500, "count": 20}, {"date": "2026-05-22", "median": 395000, "count": 19}, {"date": "2026-05-29", "median": 389950, "count": 20}, {"date": "2026-06-05", "median": 377000, "count": 22}, {"date": "2026-06-12", "median": 377000, "count": 18}, {"date": "2026-06-19", "median": 365000, "count": 17}], "kpis": {"count": 6, "median": 389450, "drops": 0, "cheapest": {"internal_id": 211, "title": "Lexus LC", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I0xaF.html", "price": 259999, "deal_pct": -18.8, "mileage": 79000}, "low_km": {"internal_id": 209, "title": "Lexus LC 500 Superturismo", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HnvoR.html", "price": 515000, "deal_pct": 3.2, "mileage": 5000}, "best_deal": {"internal_id": 211, "title": "Lexus LC", "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I0xaF.html", "price": 259999, "deal_pct": -18.8, "mileage": 79000}}}, {"key": "mazda-mx-5", "label": "Mazda MX-5 (manual, 184 KM)", "listings": [{"internal_id": 1, "title": "Mazda MX-5", "version": null, "year": 2024, "mileage": 4600, "current_price": 118800, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZ8eS.html", "price_readings": [[1781895790, 118800]], "predicted_price": 116495, "deal_pct": 2.0}, {"internal_id": 2, "title": "Mazda MX-5", "version": null, "year": 2019, "mileage": 26000, "current_price": 70900, "engine_power": 184, "engine_capacity": 1999, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZSuI.html", "price_readings": [[1781895790, 70900]], "predicted_price": 103294, "deal_pct": -31.4}, {"internal_id": 3, "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line", "version": "RF SKYACTIV-G 184 Sports-Line", "year": 2024, "mileage": 10256, "current_price": 44000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6IFJ.html", "price_readings": [[1781895790, 44000]], "predicted_price": 116385, "deal_pct": -62.2}, {"internal_id": 4, "title": "Mazda MX-5 SKYACTIV-G 184 Sports-Line", "version": "SKYACTIV-G 184 Sports-Line", "year": 2020, "mileage": 43300, "current_price": 82000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I3Crk.html", "price_readings": [[1781895790, 82000]], "predicted_price": 105515, "deal_pct": -22.3}, {"internal_id": 6, "title": "Mazda MX-5 2.0 Skypassion i-ELOOP", "version": "2.0 Skypassion i-ELOOP", "year": 2019, "mileage": 36000, "current_price": 81000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I5sso.html", "price_readings": [[1781895790, 81000]], "predicted_price": 103100, "deal_pct": -21.4}, {"internal_id": 7, "title": "Mazda MX-5 2.0 Skyfreedom i-ELOOP", "version": "2.0 Skyfreedom i-ELOOP", "year": 2019, "mileage": 38900, "current_price": 130000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I7muz.html", "price_readings": [[1781895790, 130000]], "predicted_price": 103044, "deal_pct": 26.2}, {"internal_id": 8, "title": "Mazda MX-5 SKYACTIV-G 2.0 100th Anniversary", "version": "SKYACTIV-G 2.0 100th Anniversary", "year": 2021, "mileage": 17000, "current_price": 145000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I70zi.html", "price_readings": [[1781895790, 145000]], "predicted_price": 108583, "deal_pct": 33.5}, {"internal_id": 9, "title": "Mazda MX-5 2.0 30th Anniversary", "version": "2.0 30th Anniversary", "year": 2019, "mileage": 116000, "current_price": 127700, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I5xen.html", "price_readings": [[1781895790, 127700]], "predicted_price": 101547, "deal_pct": 25.8}, {"internal_id": 10, "title": "Mazda MX-5", "version": null, "year": 2022, "mileage": 11000, "current_price": 114900, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HEBbD.html", "price_readings": [[1781895790, 114900]], "predicted_price": 111257, "deal_pct": 3.3}, {"internal_id": 11, "title": "Mazda MX-5", "version": null, "year": 2020, "mileage": 50000, "current_price": 103000, "engine_power": 184, "engine_capacity": 2000, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-OLX_ID6I6HMY.html", "price_readings": [[1781895790, 103000]], "predicted_price": 105385, "deal_pct": -2.3}, {"internal_id": 12, "title": "Mazda MX-5", "version": null, "year": 2021, "mileage": 20790, "current_price": 99900, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HXmUS.html", "price_readings": [[1781895790, 99900]], "predicted_price": 108509, "deal_pct": -7.9}, {"internal_id": 13, "title": "Mazda MX-5 2.0 Exclusive-Line i-ELOOP", "version": "2.0 Exclusive-Line i-ELOOP", "year": 2023, "mileage": 36253, "current_price": 139777, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1SOu.html", "price_readings": [[1781895790, 139777]], "predicted_price": 113323, "deal_pct": 23.3}, {"internal_id": 14, "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line", "version": "RF SKYACTIV-G 184 Sports-Line", "year": 2018, "mileage": 121000, "current_price": 72000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6rY4.html", "price_readings": [[1781895790, 72000]], "predicted_price": 98893, "deal_pct": -27.2}, {"internal_id": 15, "title": "Mazda MX-5 RF SKYACTIV-G 2.0 Homura", "version": "RF SKYACTIV-G 2.0 Homura", "year": 2021, "mileage": 40500, "current_price": 115000, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I45Ab.html", "price_readings": [[1781895790, 115000]], "predicted_price": 108127, "deal_pct": 6.4}, {"internal_id": 16, "title": "Mazda MX-5 SKYACTIV-G 2.0 100th Anniversary", "version": "SKYACTIV-G 2.0 100th Anniversary", "year": 2021, "mileage": 16642, "current_price": 145900, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I4vBt.html", "price_readings": [[1781895790, 145900]], "predicted_price": 108590, "deal_pct": 34.4}, {"internal_id": 17, "title": "Mazda MX-5 2.0 Exclusive-Line i-ELOOP", "version": "2.0 Exclusive-Line i-ELOOP", "year": 2023, "mileage": 15350, "current_price": 135900, "engine_power": 184, "engine_capacity": 1998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6TgW.html", "price_readings": [[1781895790, 135900]], "predicted_price": 113729, "deal_pct": 19.5}], "trend": [{"date": "2026-06-19", "median": 114900, "count": 17}, {"date": "2026-06-20", "median": 114950, "count": 16}, {"date": "2026-06-21", "median": 114950, "count": 16}], "kpis": {"count": 16, "median": 114950, "drops": 0, "cheapest": {"internal_id": 3, "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6IFJ.html", "price": 44000, "deal_pct": -62.2, "mileage": 10256}, "low_km": {"internal_id": 1, "title": "Mazda MX-5", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZ8eS.html", "price": 118800, "deal_pct": 2.0, "mileage": 4600}, "best_deal": {"internal_id": 3, "title": "Mazda MX-5 RF SKYACTIV-G 184 Sports-Line", "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6IFJ.html", "price": 44000, "deal_pct": -62.2, "mileage": 10256}}}, {"key": "toyota-supra", "label": "Toyota Supra (B58, manual)", "listings": [{"internal_id": 1, "title": "Toyota Supra", "version": null, "year": 2022, "mileage": 9200, "current_price": 240000, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6HTKMT.html", "price_readings": [[1781895792, 240000]], "predicted_price": 295690, "deal_pct": -18.8}, {"internal_id": 2, "title": "Toyota Supra 3.0 Turbo Executive", "version": "3.0 Turbo Executive", "year": 2023, "mileage": 15000, "current_price": 349999, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I632s.html", "price_readings": [[1781895792, 349999]], "predicted_price": 294771, "deal_pct": 18.7}, {"internal_id": 3, "title": "Toyota Supra", "version": null, "year": 2024, "mileage": 32000, "current_price": 269000, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I6LAn.html", "price_readings": [[1781895792, 269000]], "predicted_price": 271828, "deal_pct": -1.0}, {"internal_id": 4, "title": "Toyota Supra", "version": null, "year": 2023, "mileage": 3000, "current_price": 357900, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I3t8F.html", "price_readings": [[1781895792, 357900]], "predicted_price": 318370, "deal_pct": 12.4}, {"internal_id": 5, "title": "Toyota Supra", "version": null, "year": 2024, "mileage": 20000, "current_price": 259000, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html", "price_readings": [[1781895792, 259000]], "predicted_price": 295426, "deal_pct": -12.3}, {"internal_id": 6, "title": "Toyota Supra GR 3.0 Legend", "version": "GR 3.0 Legend", "year": 2022, "mileage": 57000, "current_price": 210000, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html", "price_readings": [[1781895792, 210000]], "predicted_price": 201689, "deal_pct": 4.1}, {"internal_id": 7, "title": "Toyota Supra 3.0 Turbo Executive", "version": "3.0 Turbo Executive", "year": 2024, "mileage": 11000, "current_price": 305000, "engine_power": 340, "engine_capacity": 2998, "fuel_type": "petrol", "gearbox": "manual", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html", "price_readings": [[1781994364, 305000]], "predicted_price": 313125, "deal_pct": -2.6}], "trend": [{"date": "2026-06-19", "median": 264000, "count": 6}, {"date": "2026-06-20", "median": 264000, "count": 6}, {"date": "2026-06-21", "median": 269000, "count": 7}], "kpis": {"count": 7, "median": 269000, "drops": 0, "cheapest": {"internal_id": 6, "title": "Toyota Supra GR 3.0 Legend", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html", "price": 210000, "deal_pct": 4.1, "mileage": 57000}, "low_km": {"internal_id": 4, "title": "Toyota Supra", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I3t8F.html", "price": 357900, "deal_pct": 12.4, "mileage": 3000}, "best_deal": {"internal_id": 1, "title": "Toyota Supra", "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6HTKMT.html", "price": 240000, "deal_pct": -18.8, "mileage": 9200}}}];
+
+const C = {text:'#E6EAF2',muted:'#8B95A7',grid:'rgba(255,255,255,0.06)',
+  primary:'#60A5FA',accent:'#F59E0B',good:'#34D399',bad:'#F87171'};
+const fmt = n => (n==null||isNaN(n)) ? '—' : Number(Math.round(n)).toLocaleString('pl-PL')+' zł';
+const fkm = n => (n==null||isNaN(n)) ? '—' : Number(Math.round(n)).toLocaleString('pl-PL')+' km';
+const ICON = {
+  car:'<path d="M5 11l1.5-4A2 2 0 0 1 8.4 5.7h7.2A2 2 0 0 1 17.5 7L19 11M4 11h16v4H4zM7 15v1M17 15v1"/>',
+  tag:'<path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7" cy="7" r="1.5"/>',
+  gauge:'<path d="M12 13l4-3M4 18a8 8 0 1 1 16 0z"/>',
+  trend:'<path d="M3 17l6-6 4 4 7-7M14 8h6v6"/>',
+  drop:'<path d="M12 4v12M7 11l5 5 5-5"/>',
+  spark:'<path d="M12 3l2.2 5.6L20 11l-5.8 2.4L12 19l-2.2-5.6L4 11l5.8-2.4z"/>'};
+const svg = (p,cls='') => `<svg class="${cls}" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+
+const baseLayout = extra => Object.assign({
+  paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)',
+  font:{family:'Fira Sans, sans-serif', color:C.muted, size:12},
+  margin:{t:8,r:12,b:38,l:60},
+  xaxis:{gridcolor:C.grid,zerolinecolor:C.grid,linecolor:C.grid,ticksuffix:'',automargin:true},
+  yaxis:{gridcolor:C.grid,zerolinecolor:C.grid,linecolor:C.grid,automargin:true},
+  hoverlabel:{bgcolor:'#1B2230',bordercolor:'#242C3A',font:{family:'Fira Code',color:C.text}},
+  showlegend:false
+}, extra||{});
+const cfg = {displayModeBar:false, responsive:true};
+
+function linfit(xs, ys){
+  const n=xs.length; if(n<2) return null;
+  let sx=0,sy=0,sxx=0,sxy=0;
+  for(let i=0;i<n;i++){sx+=xs[i];sy+=ys[i];sxx+=xs[i]*xs[i];sxy+=xs[i]*ys[i];}
+  const d=n*sxx-sx*sx; if(Math.abs(d)<1e-9) return null;
+  const m=(n*sxy-sx*sy)/d; return {m, b:(sy-m*sx)/n};
+}
+
+// ---- global KPIs ----
+function renderGlobal(){
+  const g=document.getElementById('gkpis');
+  const cards=[
+    ['Cars tracked', ICON.car, GLOBAL.active],
+    ['Models', ICON.spark, GLOBAL.models],
+    ['Active price drops', ICON.drop, GLOBAL.drops],
+    ['Last scrape', ICON.trend, '<span style="font-size:18px">'+(GLOBAL.generated||'—')+'</span>'],
+  ];
+  g.innerHTML = cards.map(([lab,ic,val])=>`
+    <div class="gkpi"><div class="lab">${svg(ic)}${lab}</div>
+    <div class="val num">${val}</div></div>`).join('');
+  document.getElementById('modelnav').innerHTML =
+    MODELS.map(m=>`<a href="#m-${m.key}">${m.label}</a>`).join('');
+}
+
+// ---- per-model KPI cards ----
+function dealHTML(ref){
+  if(!ref) return '<span class="deal-na">—</span>';
+  const d = ref.deal_pct;
+  const badge = (d==null)?'' :
+    ` <span class="deal-badge ${d<0?'deal-good':'deal-bad'}">${d>0?'+':''}${d}%</span>`;
+  return `<a href="${ref.url}" target="_blank" rel="noopener">#${ref.internal_id}</a>${badge}`;
+}
+function kpiCards(m){
+  const k=m.kpis;
+  const cards=[
+    ['Active', ICON.car, `<span class="num">${k.count}</span>`, ''],
+    ['Median price', ICON.tag, `<span class="num">${fmt(k.median)}</span>`, ''],
+    ['Cheapest', ICON.tag, k.cheapest?`<a class="num" href="${k.cheapest.url}" target="_blank" rel="noopener">${fmt(k.cheapest.price)}</a>`:'—',
+      k.cheapest?`#${k.cheapest.internal_id}`:''],
+    ['Lowest mileage', ICON.gauge, k.low_km?`<span class="num">${fkm(k.low_km.mileage)}</span>`:'—',
+      k.low_km?`<a href="${k.low_km.url}" target="_blank" rel="noopener">#${k.low_km.internal_id}</a>`:''],
+    ['Best deal', ICON.spark, k.best_deal?`<span class="num pos">${k.best_deal.deal_pct}%</span>`:'—',
+      k.best_deal?`<a href="${k.best_deal.url}" target="_blank" rel="noopener">#${k.best_deal.internal_id} · ${fmt(k.best_deal.price)}</a>`:'below expected'],
+    ['Price drops', ICON.drop, `<span class="num ${k.drops?'pos':''}">${k.drops}</span>`, k.drops?'tracked':''],
+  ];
+  return `<div class="kpis">`+cards.map(([lab,ic,v,sub])=>`
+    <div class="kpi"><div class="lab">${svg(ic)}${lab}</div>
+    <div class="v">${v}</div><div class="sub">${sub||''}</div></div>`).join('')+`</div>`;
+}
+
+// ---- charts ----
+function dealChart(el, m){
+  const ls=m.listings.filter(l=>l.current_price>0 && l.mileage!=null);
+  if(ls.length<2){ el.outerHTML='<div class="empty">Not enough listings yet</div>'; return; }
+  const x=ls.map(l=>l.mileage), y=ls.map(l=>l.current_price);
+  const color=ls.map(l=>l.deal_pct==null?0:Math.max(-15,Math.min(15,l.deal_pct)));
+  const scored=ls.some(l=>l.deal_pct!=null);
+  const txt=ls.map(l=>`#${l.internal_id} ${l.title||''}<br>${(l.year||'')} · ${fkm(l.mileage)}<br>${fmt(l.current_price)}`
+      + (l.deal_pct!=null?`<br>${l.deal_pct>0?'+':''}${l.deal_pct}% vs expected`:''));
+  const traces=[{x,y,text:txt,mode:'markers',type:'scatter',hovertemplate:'%{text}<extra></extra>',
+    marker:{size:12,color:scored?color:C.primary,
+      colorscale:scored?[[0,C.good],[0.5,'#64748B'],[1,C.bad]]:undefined,
+      cmin:-15,cmax:15,showscale:scored,line:{width:1,color:'rgba(255,255,255,.15)'},
+      colorbar:scored?{title:{text:'deal %',font:{size:10}},thickness:8,len:.7,x:1.02}:undefined}}];
+  const f=linfit(x,y);
+  if(f){const xs=[Math.min(...x),Math.max(...x)];
+    traces.unshift({x:xs,y:xs.map(v=>f.m*v+f.b),mode:'lines',hoverinfo:'skip',
+      line:{color:'rgba(255,255,255,.18)',dash:'dot',width:1.5}});}
+  Plotly.newPlot(el,traces,baseLayout({xaxis:{title:{text:'mileage (km)'},gridcolor:C.grid},
+    yaxis:{title:{text:'price'},gridcolor:C.grid}}),cfg);
+}
+function trendChart(el, m){
+  const t=m.trend||[];
+  if(t.length<2){ el.outerHTML='<div class="empty">Collecting history — needs ≥2 scrape days</div>'; return; }
+  Plotly.newPlot(el,[{x:t.map(p=>p.date),y:t.map(p=>p.median),mode:'lines+markers',
+    line:{color:C.primary,width:2,shape:'spline'},marker:{size:5,color:C.primary},
+    fill:'tozeroy',fillcolor:'rgba(96,165,250,.08)',
+    text:t.map(p=>`${p.count} cars`),hovertemplate:'%{x}<br>median %{y:,.0f} zł<br>%{text}<extra></extra>'}],
+    baseLayout({yaxis:{title:{text:'median price'},gridcolor:C.grid,rangemode:'tozero'},
+      xaxis:{gridcolor:C.grid}}),cfg);
+}
+function yearChart(el, m){
+  const ls=m.listings.filter(l=>l.year && l.current_price>0);
+  if(ls.length<2){ el.outerHTML='<div class="empty">Not enough listings yet</div>'; return; }
+  const byYear={}; ls.forEach(l=>{(byYear[l.year]=byYear[l.year]||[]).push(l.current_price);});
+  const years=Object.keys(byYear).map(Number).sort((a,b)=>a-b);
+  const med=years.map(y=>{const a=byYear[y].slice().sort((p,q)=>p-q);return a[Math.floor(a.length/2)];});
+  Plotly.newPlot(el,[
+    {x:ls.map(l=>l.year),y:ls.map(l=>l.current_price),mode:'markers',type:'scatter',
+     text:ls.map(l=>`#${l.internal_id} ${l.title||''}<br>${fkm(l.mileage)}`),
+     hovertemplate:'%{text}<br>%{y:,.0f} zł<extra></extra>',
+     marker:{size:10,color:ls.map(l=>l.mileage||0),colorscale:'Viridis',showscale:true,
+       colorbar:{title:{text:'km',font:{size:10}},thickness:8,len:.7,x:1.02},
+       line:{width:1,color:'rgba(255,255,255,.12)'}}},
+    {x:years,y:med,mode:'lines+markers',line:{color:C.accent,width:2},marker:{size:6,color:C.accent},
+     hovertemplate:'%{x} median %{y:,.0f} zł<extra></extra>'}
+  ],baseLayout({xaxis:{title:{text:'model year'},dtick:1,gridcolor:C.grid},
+    yaxis:{title:{text:'price'},gridcolor:C.grid}}),cfg);
+}
+function trackChart(el, m){
+  const traces=[];
+  m.listings.forEach(l=>{
+    const pr=(l.price_readings||[]).filter(r=>r[1]>0);
+    if(pr.length<2) return;
+    traces.push({x:pr.map(r=>new Date(r[0]*1000)),y:pr.map(r=>r[1]),mode:'lines+markers',
+      name:'#'+l.internal_id,text:l.title,
+      hovertemplate:'#'+l.internal_id+' %{y:,.0f} zł<extra></extra>',
+      line:{width:1.6},marker:{size:4}});
+  });
+  if(!traces.length){ el.outerHTML='<div class="empty">No tracked price changes yet</div>'; return; }
+  Plotly.newPlot(el,traces,baseLayout({yaxis:{title:{text:'price'},gridcolor:C.grid},
+    xaxis:{gridcolor:C.grid},showlegend:traces.length<=8,
+    legend:{font:{size:9},orientation:'h',y:-0.25}}),cfg);
+}
+
+// ---- table ----
+function tableHTML(m){
+  const cols=[
+    ['#','internal_id','num'],['Title','title','t'],['Year','year','num'],
+    ['Mileage','mileage','num'],['Power','engine_power','num'],['Gearbox','gearbox','t'],
+    ['Deal','deal_pct','num'],['Price','current_price','num']];
+  const head=cols.map(([lab,key])=>`<th data-k="${key}" tabindex="0" role="columnheader">${lab}</th>`).join('');
+  return `<div class="tablewrap">
+    <div class="tbar"><span class="t">${m.kpis.count} active listings</span>
+      <label><input type="checkbox" class="dealsonly"> deals only</label></div>
+    <div style="overflow:auto;max-height:460px"><table><thead><tr>${head}</tr></thead>
+    <tbody></tbody></table></div></div>`;
+}
+function fillTable(sec, m, sortKey='current_price', asc=true, dealsOnly=false){
+  let rows=m.listings.slice();
+  if(dealsOnly) rows=rows.filter(l=>l.deal_pct!=null && l.deal_pct<0);
+  rows.sort((a,b)=>{const x=a[sortKey],y=b[sortKey];
+    if(x==null)return 1; if(y==null)return -1;
+    return (typeof x==='number')?(asc?x-y:y-x):String(x).localeCompare(String(y))*(asc?1:-1);});
+  const tb=sec.querySelector('tbody');
+  tb.innerHTML=rows.map(l=>{
+    const d=l.deal_pct;
+    const deal=(d==null)?'<span class="deal-na">—</span>'
+      :`<span class="deal-badge ${d<0?'deal-good':'deal-bad'}">${d>0?'+':''}${d}%</span>`;
+    return `<tr>
+      <td class="num">${l.internal_id||''}</td>
+      <td><a href="${l.url}" target="_blank" rel="noopener">${l.title||''}</a></td>
+      <td class="num">${l.year||''}</td>
+      <td class="num">${l.mileage!=null?Number(l.mileage).toLocaleString('pl-PL'):''}</td>
+      <td class="num">${l.engine_power||''}</td>
+      <td>${l.gearbox||''}</td>
+      <td>${deal}</td>
+      <td class="num">${fmt(l.current_price)}</td></tr>`;}).join('');
+  sec.querySelectorAll('th').forEach(th=>th.removeAttribute('aria-sort'));
+  const th=sec.querySelector(`th[data-k="${sortKey}"]`);
+  if(th) th.setAttribute('aria-sort',asc?'ascending':'descending');
+}
+
+// ---- assemble ----
+const root=document.getElementById('root');
+renderGlobal();
+MODELS.forEach((m,i)=>{
+  const sec=document.createElement('section');
+  sec.className='model'; sec.id='m-'+m.key;
+  sec.innerHTML=`<div class="m-head"><h2>${m.label}</h2><span class="tag">${m.key}</span></div>
+    ${kpiCards(m)}
+    <div class="charts">
+      <div class="card"><h3>Deal finder</h3><p class="hint">price vs mileage · green = cheaper than expected</p><div class="plot" id="deal-${i}"></div></div>
+      <div class="card"><h3>Market trend</h3><p class="hint">median asking price over time</p><div class="plot" id="trend-${i}"></div></div>
+      <div class="card"><h3>Price by model year</h3><p class="hint">colour = mileage · amber = yearly median</p><div class="plot" id="year-${i}"></div></div>
+      <div class="card"><h3>Tracked price changes</h3><p class="hint">listings whose price moved</p><div class="plot" id="track-${i}"></div></div>
+    </div>
+    ${tableHTML(m)}`;
+  root.appendChild(sec);
+  dealChart(document.getElementById('deal-'+i), m);
+  trendChart(document.getElementById('trend-'+i), m);
+  yearChart(document.getElementById('year-'+i), m);
+  trackChart(document.getElementById('track-'+i), m);
+
+  let sortKey='current_price', asc=true, dealsOnly=false;
+  fillTable(sec, m, sortKey, asc, dealsOnly);
+  sec.querySelectorAll('th').forEach(th=>{
+    const act=()=>{const k=th.dataset.k; if(k===sortKey)asc=!asc; else {sortKey=k;asc=(k==='current_price'||k==='mileage'||k==='deal_pct');}
+      fillTable(sec,m,sortKey,asc,dealsOnly);};
+    th.addEventListener('click',act);
+    th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act();}});
+  });
+  sec.querySelector('.dealsonly').addEventListener('change',e=>{
+    dealsOnly=e.target.checked; fillTable(sec,m,sortKey,asc,dealsOnly);});
+});
+</script>
+</body>
+</html>

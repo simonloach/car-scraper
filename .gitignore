@@ -183,3 +183,7 @@ export_test.*
 # Development scripts output
 scripts/output/
 scripts/logs/
+
+# Alert payload (transient, consumed by the workflow) and cleanup backups
+data/alerts.md
+*.pre-clean

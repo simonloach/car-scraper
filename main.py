@@ -23,15 +23,10 @@ from loguru import logger
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from src.car_scraper.config import Config
-from src.car_scraper.models import ScrapingResults
 from src.car_scraper.plotters import IndividualListingsPlotter, YearAnalysisPlotter
 from src.car_scraper.scrapers import CarScraper
 from src.car_scraper.utils import DataProcessor, DemoRunner
 from src.car_scraper.utils.logger import setup_logger
-
-# Initialize configuration
-config = Config()
 
 
 @click.group()
@@ -161,17 +156,20 @@ def scrape(
         click.echo(f"📊 Processing listings data for {model_key}")
 
         # Store data using simplified storage system
-        storage.store_listings_data(model_key, scraper.ad_fetcher.ads, current_date)
+        result = storage.store_listings_data(model_key, scraper.listings, current_date)
 
         # Log completion
         logger.success(f"Scraping completed successfully!")
         click.echo(f"✅ Scraping completed for: {make} {car_model}")
+        click.echo(
+            f"   {result['total']} tracked, {len(result['new'])} new, "
+            f"{len(result['price_drops'])} price drops"
+        )
         click.echo(f"📁 Data saved to: {data_dir}")
 
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
         raise click.ClickException(f"Scraping failed: {e}")
-        sys.exit(1)
 
 
 @cli.command()
@@ -291,6 +289,89 @@ def demo(data_dir: str):
     except Exception as e:
         logger.error(f"Demo failed: {e}")
         sys.exit(1)
+
+
+@cli.command(name="scrape-all")
+@click.option(
+    "--targets", "targets_file", default="targets.json", help="Targets config file"
+)
+@click.option("--data-dir", default="./data", help="Directory to save data")
+@click.option("--max-pages", default=10, help="Maximum pages per target")
+@click.option(
+    "--alerts-file",
+    default="data/alerts.md",
+    help="Where to write the alert body (only if there is something to report)",
+)
+def scrape_all(targets_file: str, data_dir: str, max_pages: int, alerts_file: str):
+    """🚙 Scrape every target in targets.json and write an alert summary.
+
+    This is what the daily pipeline runs. Each target has its own filtered
+    otomoto URL so we only track the exact variants we care about.
+    """
+    import json
+
+    from src.car_scraper.reporting import format_alert_markdown
+    from src.car_scraper.storage.simplified_listings import SimplifiedListingsStorage
+
+    targets = json.loads(Path(targets_file).read_text(encoding="utf-8"))["targets"]
+    storage = SimplifiedListingsStorage(data_dir)
+    current_date = datetime.now().strftime("%Y-%m-%d")
+
+    all_new, all_drops = [], []
+    for target in targets:
+        key, url, label = (
+            target["key"],
+            target["url"],
+            target.get("label", target["key"]),
+        )
+        click.echo(f"\n=== {label} ===")
+        try:
+            make, _, model = key.partition("-")
+            scraper = CarScraper(data_dir, make, model)
+            scraper.scrape_model(url, key, max_pages)
+            result = storage.store_listings_data(key, scraper.listings, current_date)
+            for item in result["new"]:
+                item["_model_label"] = label
+            for drop in result["price_drops"]:
+                drop["listing"]["_model_label"] = label
+            all_new.extend(result["new"])
+            all_drops.extend(result["price_drops"])
+            click.echo(
+                f"  {result['total']} tracked, {len(result['new'])} new, "
+                f"{len(result['price_drops'])} price drops"
+            )
+        except Exception as e:  # noqa: BLE001 - keep going on per-target failure
+            logger.error(f"Target {key} failed: {e}")
+            click.echo(f"  ⚠️  {key} failed: {e}")
+
+    alerts_path = Path(alerts_file)
+    alerts_path.parent.mkdir(parents=True, exist_ok=True)
+    if all_new or all_drops:
+        body = format_alert_markdown(all_new, all_drops, current_date)
+        alerts_path.write_text(body, encoding="utf-8")
+        click.echo(
+            f"\n📣 {len(all_new)} new, {len(all_drops)} price drops → {alerts_file}"
+        )
+    else:
+        # No stale alert file lingering for the pipeline to act on.
+        alerts_path.unlink(missing_ok=True)
+        click.echo("\n✅ No new cars or price drops")
+
+
+@cli.command()
+@click.option("--data-dir", default="./data", help="Directory containing data")
+@click.option("--output", default="plots/index.html", help="Output HTML file")
+@click.option(
+    "--targets", "targets_file", default="targets.json", help="Targets config file"
+)
+def report(data_dir: str, output: str, targets_file: str):
+    """🖥️  Build the static HTML dashboard (interactive, no server needed)."""
+    from src.car_scraper.reporting import build_static_report
+
+    generated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    path = build_static_report(data_dir, output, targets_file, generated)
+    logger.success(f"Static report written to {path}")
+    click.echo(f"🖥️  Dashboard: {path}")
 
 
 if __name__ == "__main__":
