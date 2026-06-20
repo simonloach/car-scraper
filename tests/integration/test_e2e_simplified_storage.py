@@ -15,7 +15,6 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock, patch
 
 import pandas as pd
 
@@ -131,7 +130,7 @@ class TestE2ESimplifiedStorage(unittest.TestCase):
         self.assertTrue(data_file.exists(), "Data file should be created")
 
         # Verify file structure
-        with open(data_file, "r") as f:
+        with open(data_file) as f:
             data = json.load(f)
 
         self.assertIn("metadata", data, "Should have metadata section")
@@ -209,7 +208,7 @@ class TestE2ESimplifiedStorage(unittest.TestCase):
 
         # Verify price changes were tracked
         data_file = self.test_data_dir / self.test_model / f"{self.test_model}.json"
-        with open(data_file, "r") as f:
+        with open(data_file) as f:
             data = json.load(f)
 
         # Check car-1 price decrease

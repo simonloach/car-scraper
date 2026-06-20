@@ -3,7 +3,7 @@
 [![Daily Scraper](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/simonloach/car-scraper/actions/workflows/daily-scrape.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Poetry](https://img.shields.io/badge/dependency--management-poetry-blue)](https://python-poetry.org/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 A CLI that scrapes car listings from otomoto.pl with time-series price tracking,
 analysis, and visualization. Listing data is read straight from otomoto's
@@ -52,23 +52,20 @@ service or secret needed — it uses the built-in `GITHUB_TOKEN`.
 - **Professional CLI**: Modern Click-based command-line interface
 - **Modular Architecture**: Clean, maintainable codebase following PEP standards
 - **Type Safety**: Full type hints with Pydantic data validation
-- **Quality Tooling**: Black, isort, mypy, and pytest integration
+- **Quality Tooling**: Ruff (lint + format), mypy, bandit, and pytest
 - **Docker Support**: Containerized deployment ready
-- **GitHub Actions**: Automated daily scraping and reporting
+- **GitHub Actions**: Automated daily scraping, alerts, and Pages deploy
 
-## 📊 Live Analysis & Graphs
+## 📊 Live dashboard
 
-🔥 **[View Live Analysis Graphs →](GRAPHS.md)**
+🔥 **[Open the live dashboard →](https://simonloach.github.io/car-scraper/)** — interactive Plotly (deal-finder, market trend, depreciation, price tracking), rebuilt and published daily by the pipeline.
 
-Our automated system generates comprehensive visualizations updated daily:
+Per-model PNG snapshots are also generated under `plots/{model}/`:
 
-| Graph Type | Description | Latest |
-|------------|-------------|---------|
-| 📅 **Year Analysis** | Market composition by manufacturing year | ![](plots/lexus-lc/year_analysis.png) |
+| Graph | Description | Latest |
+|-------|-------------|--------|
 | 💰 **Price vs Mileage** | Value correlation and depreciation patterns | ![](plots/lexus-lc/price_vs_mileage.png) |
-| 📊 **Listings by Year** | Distribution of listings across manufacturing years | ![](plots/lexus-lc/listings_by_year.png) |
-
-*All graphs are automatically updated daily via GitHub Actions. [→ See full analysis report](GRAPHS.md)*
+| 📅 **Year Analysis** | Market composition by manufacturing year | ![](plots/lexus-lc/year_analysis.png) |
 
 ## 🚀 Installation
 
@@ -186,17 +183,13 @@ car-scraper plot --model "lexus-lc" --plot-type "all"
 # Generate specific plot types
 car-scraper plot --model "lexus-lc" --plot-type "individual"  # Price trends
 car-scraper plot --model "lexus-lc" --plot-type "year"       # Year analysis
-car-scraper plot --model "lexus-lc" --plot-type "legacy"     # Legacy formats
 ```
 
-#### 📋 Status & Analysis
+#### 📋 Status
 
 ```bash
 # Check data status
 car-scraper status
-
-# Run demo workflow
-car-scraper demo
 ```
 
 ## 🏗️ Project Structure
@@ -286,9 +279,9 @@ poetry run pytest
 # Run type checking
 poetry run mypy src/
 
-# Format code
-poetry run black src/
-poetry run isort src/
+# Lint + format (ruff replaces black/isort/flake8)
+poetry run ruff check --fix .
+poetry run ruff format .
 ```
 
 ## 📊 CLI Command Reference
@@ -330,13 +323,12 @@ car-scraper plot [OPTIONS]
 **Options:**
 - `--model TEXT` - Model name to generate plots for (required)
 - `--data-dir TEXT` - Directory containing data (default: ./data)
-- `--plot-type [all|individual|year|legacy]` - Type of plots to generate (default: all)
+- `--plot-type [all|individual|year]` - Type of plots to generate (default: all)
 - `--output-dir TEXT` - Directory to save plots (default: ./plots)
 
 **Plot Types:**
 - `individual` - Individual listing price trends over time
 - `year` - Year-based analysis (price vs year, mileage analysis)
-- `legacy` - Legacy plot formats for historical compatibility
 - `all` - Generate all plot types
 
 **Examples:**
@@ -361,17 +353,6 @@ car-scraper status [OPTIONS]
 - Models found and record counts
 - File sizes and last update times
 - Data directory structure overview
-
-### 🎪 `demo` - Full Demo Workflow
-
-```bash
-car-scraper demo [OPTIONS]
-```
-
-**Options:**
-- `--data-dir TEXT` - Directory containing data (default: ./data)
-
-Runs a complete demonstration including data analysis and visualization.
 
 ## 📁 Data Structure
 
@@ -469,11 +450,11 @@ This format provides:
 
 ### Quality Assurance
 
-- **Black** - Code formatting
-- **isort** - Import sorting
-- **MyPy** - Static type checking
+- **Ruff** - Linting + formatting (replaces black, isort, flake8)
+- **MyPy** - Static type checking (pydantic plugin)
+- **Bandit** - Security scanning
 - **Pytest** - Test framework
-- **Flake8** - Code linting
+- **pre-commit** - Runs all of the above on every commit
 
 ## 🤝 Contributing
 
@@ -483,8 +464,8 @@ This format provides:
 4. **Make your changes** with proper type hints and tests
 5. **Run quality checks**:
    ```bash
-   poetry run black src/
-   poetry run isort src/
+   poetry run ruff check --fix .
+   poetry run ruff format .
    poetry run mypy src/
    poetry run pytest
    ```

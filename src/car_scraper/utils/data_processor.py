@@ -2,7 +2,6 @@
 
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
 
 import click
 import pandas as pd
@@ -22,14 +21,14 @@ class DataProcessor:
         """
         self.data_dir = Path(data_dir)
 
-    def get_data_status(self) -> Dict:
+    def get_data_status(self) -> dict:
         """
         Get comprehensive status of scraped data
 
         Returns:
             Dictionary with data status information
         """
-        status = {
+        status: dict = {
             "model_files": [],
             "time_series_files": [],
             "simplified_listings": {},
@@ -46,7 +45,7 @@ class DataProcessor:
         for file_path in model_files:
             try:
                 if file_path.suffix == ".json":
-                    with open(file_path, "r") as f:
+                    with open(file_path) as f:
                         data = json.load(f)
                     count = len(data)
                 else:
@@ -82,7 +81,7 @@ class DataProcessor:
                 model_file = model_dir / f"{model_dir.name}.json"
                 if model_file.exists():
                     try:
-                        with open(model_file, "r") as f:
+                        with open(model_file) as f:
                             data = json.load(f)
 
                         # Handle both old format (list) and new format (dict with 'listings' key)
@@ -149,7 +148,7 @@ class DataProcessor:
 
         # Simplified listings data
         if status["simplified_listings"]:
-            click.echo(f"\nSimplified listings data:")
+            click.echo("\nSimplified listings data:")
             for model, model_info in status["simplified_listings"].items():
                 if "error" not in model_info:
                     click.echo(
@@ -198,14 +197,10 @@ class DataProcessor:
                 continue
 
             try:
-                with open(model_file, "r", encoding="utf-8") as f:
+                with open(model_file, encoding="utf-8") as f:
                     data = json.load(f)
 
                 listings = data.get("listings", {})
-                total_before = sum(
-                    len(listing.get("price_readings", []))
-                    for listing in listings.values()
-                )
 
                 # Clean duplicate price readings for each listing
                 cleaned_count = 0
@@ -259,7 +254,7 @@ class DataProcessor:
 
             try:
                 if ext == "json":
-                    with open(historical_file, "r", encoding="utf-8") as f:
+                    with open(historical_file, encoding="utf-8") as f:
                         data = json.load(f)
                     df = pd.DataFrame(data)
                 else:
@@ -297,7 +292,7 @@ class DataProcessor:
                 logger.error(f"Error cleaning {historical_file.name}: {str(e)}")
                 click.echo(f"Error cleaning {historical_file.name}: {str(e)}")
 
-    def export_data(self, format: str = "csv", model: Optional[str] = None) -> None:
+    def export_data(self, format: str = "csv", model: str | None = None) -> None:
         """
         Export data in specified format
 
@@ -320,7 +315,7 @@ class DataProcessor:
         click.echo(f"Data exported to {exports_dir}")
 
     def _export_individual_listings(
-        self, exports_dir: Path, format: str, model: Optional[str]
+        self, exports_dir: Path, format: str, model: str | None
     ) -> None:
         """Export individual listings data from simplified storage"""
         try:
@@ -349,7 +344,7 @@ class DataProcessor:
             logger.error(f"Error exporting individual listings: {str(e)}")
 
     def _export_aggregated_data(
-        self, exports_dir: Path, format: str, model: Optional[str]
+        self, exports_dir: Path, format: str, model: str | None
     ) -> None:
         """Export aggregated statistical data"""
         try:
