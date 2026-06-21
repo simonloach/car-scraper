@@ -125,15 +125,16 @@ def _ols(features: list[list[float]], ys: list[float]) -> list[float] | None:
     return _solve(xtx, xty)
 
 
-def _deal_scores(active: list[dict]) -> None:
-    """Annotate each active listing with predicted_price + deal_pct in place.
+def _deal_scores(listings: list[dict]) -> None:
+    """Annotate each listing with predicted_price + deal_pct in place.
 
-    Expected price is modelled from mileage and (when there is enough spread)
-    production year. ``deal_pct`` < 0 means cheaper than expected (a deal).
+    Expected price is modelled (OLS) from mileage and, when there is enough
+    spread, production year, fit over every listing passed in. ``deal_pct`` < 0
+    means cheaper than expected (a deal).
     """
     pts = [
         car
-        for car in active
+        for car in listings
         if isinstance(car.get("current_price"), (int, float))
         and car["current_price"] > 0
         and isinstance(car.get("mileage"), (int, float))
@@ -232,29 +233,6 @@ def _has_drop(listing: dict) -> bool:
     return len(r) >= 2 and r[-1][1] < r[-2][1]
 
 
-def _kpis(active: list[dict]) -> dict:
-    prices = [
-        car["current_price"]
-        for car in active
-        if isinstance(car.get("current_price"), (int, float))
-    ]
-    cheapest = min(active, key=lambda c: c.get("current_price") or 1e18, default=None)
-    miled = [car for car in active if isinstance(car.get("mileage"), (int, float))]
-    low_km = min(miled, key=lambda c: c["mileage"], default=None)
-    deals = [car for car in active if isinstance(car.get("deal_pct"), (int, float))]
-    best_deal = min(deals, key=lambda c: c["deal_pct"], default=None)
-    return {
-        "count": len(active),
-        "median": int(statistics.median(prices)) if prices else 0,
-        "cheapest": cheapest,
-        "low_km": low_km,
-        "best_deal": best_deal
-        if best_deal and best_deal.get("deal_pct", 0) < 0
-        else None,
-        "drops": sum(1 for car in active if _has_drop(car)),
-    }
-
-
 _KEEP = (
     "internal_id",
     "title",
@@ -270,43 +248,35 @@ _KEEP = (
     "price_readings",
     "predicted_price",
     "deal_pct",
+    "active",
+    "first_seen",
+    "last_seen",
 )
 
 
 def _prep_model(model: dict) -> dict:
-    """Build the slim, analytics-enriched payload for one model."""
-    active = [car for car in model["listings"] if _active(car)]
-    _deal_scores(active)
-    kpis = _kpis(active)
+    """Build the slim, analytics-enriched payload for one model.
+
+    Ships *all* listings (each tagged ``active``) so the dashboard's "show
+    historical" toggle can switch the working set client-side. The deal model
+    is fit on the full history (more data = a more stable expected price), and
+    the market trend is precomputed for both the full and active-only sets.
+    """
+    listings = model["listings"]
+    _deal_scores(listings)
+    active = [car for car in listings if _active(car)]
 
     def slim(listing):
-        return {k: listing.get(k) for k in _KEEP}
-
-    def ref(listing):
-        if not listing:
-            return None
-        return {
-            "internal_id": listing.get("internal_id"),
-            "title": listing.get("title"),
-            "url": listing.get("url"),
-            "price": listing.get("current_price"),
-            "deal_pct": listing.get("deal_pct"),
-            "mileage": listing.get("mileage"),
-        }
+        out = {k: listing.get(k) for k in _KEEP}
+        out["active"] = _active(listing)
+        return out
 
     return {
         "key": model["key"],
         "label": model["label"],
-        "listings": [slim(car) for car in active],
-        "trend": _market_trend(model["listings"]),
-        "kpis": {
-            "count": kpis["count"],
-            "median": kpis["median"],
-            "drops": kpis["drops"],
-            "cheapest": ref(kpis["cheapest"]),
-            "low_km": ref(kpis["low_km"]),
-            "best_deal": ref(kpis["best_deal"]),
-        },
+        "listings": [slim(car) for car in listings],
+        "trend_all": _market_trend(listings),
+        "trend_active": _market_trend(active),
     }
 
 
@@ -367,13 +337,14 @@ def build_static_report(
 ) -> str:
     """Write a self-contained HTML dashboard. Returns the output path."""
     models = [_prep_model(m) for m in load_models(data_dir, targets_file)]
-    total_active = sum(m["kpis"]["count"] for m in models)
-    total_drops = sum(m["kpis"]["drops"] for m in models)
+    all_listings = [car for m in models for car in m["listings"]]
+    active = [car for car in all_listings if car.get("active")]
     global_data = {
         "generated": generated or "now",
         "models": len(models),
-        "active": total_active,
-        "drops": total_drops,
+        "active": len(active),
+        "total": len(all_listings),
+        "drops": sum(1 for car in active if _has_drop(car)),
     }
     template = _TEMPLATE_PATH.read_text(encoding="utf-8")
     out_html = (
@@ -432,6 +403,20 @@ def _selfcheck() -> None:
     ]
     _deal_scores(active)
     assert active[3]["deal_pct"] < 0, active[3]
+
+    # Market trend carries a stable price forward across the active window and
+    # takes the daily median. One listing at 100k over 2 days -> 2 points @ 100k.
+    ts = int(datetime(2025, 1, 1).timestamp())
+    trend = _market_trend(
+        [
+            {
+                "first_seen": "2025-01-01",
+                "last_seen": "2025-01-02",
+                "price_readings": [[ts, 100000]],
+            }
+        ]
+    )
+    assert [p["median"] for p in trend] == [100000, 100000], trend
     print("reporting self-check OK")
 
 
