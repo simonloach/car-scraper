@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-21T00:26:04.345888",
+    "last_updated": "2026-06-21T09:39:39.122795",
     "total_listings": 7,
     "model": "toyota-supra"
   },
@@ -18,7 +18,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -47,7 +47,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -77,7 +77,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -106,7 +106,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -135,7 +135,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -164,7 +164,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781895792,
@@ -194,7 +194,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-21",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1781994364,
+      "last_scrape_timestamp": 1782034779,
       "price_readings": [
         [
           1781994364,
