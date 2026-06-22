@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-06-22T19:12:21.343025",
-    "total_listings": 25,
+    "last_updated": "2026-06-22T11:39:16.830933",
+    "total_listings": 18,
     "model": "mazda-mx-5"
   },
   "listings": {
@@ -18,7 +18,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -32,10 +32,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Białe Błota",
-      "created_at": "2026-05-31T06:58:20Z",
-      "short_description": "Mazda MX-5 Homura RF 2.0 184 KM 5tkm jak nowy manual homura",
-      "country": "d",
-      "country_label": "Niemcy"
+      "created_at": "2026-05-31T06:58:20Z"
     },
     "6146926928": {
       "id": "6146926928",
@@ -50,7 +47,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -79,7 +76,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -94,8 +91,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Łódź",
-      "created_at": "2026-06-10T21:26:17Z",
-      "short_description": "Miata Club 2024 | 2.0 184KM RWD | Manual | Import USA"
+      "created_at": "2026-06-10T21:26:17Z"
     },
     "6147818526": {
       "id": "6147818526",
@@ -110,7 +106,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -125,10 +121,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Wrocław",
-      "created_at": "2026-06-08T05:54:14Z",
-      "short_description": "BOSE | kamera | KONI sport | FERODO",
-      "country": "usa",
-      "country_label": "Stany Zjednoczone"
+      "created_at": "2026-06-08T05:54:14Z"
     },
     "6147347406": {
       "id": "6147347406",
@@ -173,7 +166,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -188,10 +181,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Łódź",
-      "created_at": "2026-05-26T20:48:14Z",
-      "short_description": "Mazda MX-5 ND2 2.0 184 KM Manual",
-      "country": "usa",
-      "country_label": "Stany Zjednoczone"
+      "created_at": "2026-05-26T20:48:14Z"
     },
     "6148710535": {
       "id": "6148710535",
@@ -206,7 +196,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -221,10 +211,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Warszawa",
-      "created_at": "2026-06-17T19:56:28Z",
-      "short_description": "Mx-5 RF 2.0 manual LSD  SkyFreedom Pierwszy właściciel",
-      "country": "pl",
-      "country_label": "Polska"
+      "created_at": "2026-06-17T19:56:28Z"
     },
     "6148626260": {
       "id": "6148626260",
@@ -239,7 +226,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -254,8 +241,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Tarnobrzeg",
-      "created_at": "2026-06-14T18:52:11Z",
-      "short_description": "Mazda MX-5 2021, anniversary 100, full wersja"
+      "created_at": "2026-06-14T18:52:11Z"
     },
     "6148275159": {
       "id": "6148275159",
@@ -270,7 +256,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -285,10 +271,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Koziegłowy",
-      "created_at": "2026-05-27T13:44:15Z",
-      "short_description": "Pierwszy właściciel 30th Serwisowany ASO",
-      "country": "pl",
-      "country_label": "Polska"
+      "created_at": "2026-05-27T13:44:15Z"
     },
     "6141855509": {
       "id": "6141855509",
@@ -303,7 +286,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -317,10 +300,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Żywiec",
-      "created_at": "2026-06-08T07:13:22Z",
-      "short_description": "2.0 benzyna 184hp, manual, GOKART! hardtop, wydech, bilstein",
-      "country": "usa",
-      "country_label": "Stany Zjednoczone"
+      "created_at": "2026-06-08T07:13:22Z"
     },
     "6148554072": {
       "id": "6148554072",
@@ -335,7 +315,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -349,10 +329,7 @@
       "engine_power": 184,
       "engine_capacity": 2000,
       "location": "Białystok",
-      "created_at": "2026-06-10T16:51:52Z",
-      "short_description": "Mazda mx5 ND  RF",
-      "country": "usa",
-      "country_label": "Stany Zjednoczone"
+      "created_at": "2026-06-10T16:51:52Z"
     },
     "6146328886": {
       "id": "6146328886",
@@ -367,7 +344,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -381,8 +358,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Warszawa",
-      "created_at": "2026-05-26T21:02:11Z",
-      "short_description": "Grand Touring"
+      "created_at": "2026-05-26T21:02:11Z"
     },
     "6147404810": {
       "id": "6147404810",
@@ -397,7 +373,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -412,10 +388,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Opole",
-      "created_at": "2026-05-24T07:32:17Z",
-      "short_description": "2.0 184KM, Exclusive Line, Salon PL, ASO, Vat marża",
-      "country": "pl",
-      "country_label": "Polska"
+      "created_at": "2026-05-24T07:32:17Z"
     },
     "6148493256": {
       "id": "6148493256",
@@ -430,7 +403,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -445,10 +418,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Sokółka",
-      "created_at": "2026-06-08T11:16:47Z",
-      "short_description": "Mazda MX-5 RF 2018 ND2 184 KM",
-      "country": "usa",
-      "country_label": "Stany Zjednoczone"
+      "created_at": "2026-06-08T11:16:47Z"
     },
     "6147930551": {
       "id": "6147930551",
@@ -463,7 +433,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -493,7 +463,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -508,9 +478,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Długołęka",
-      "created_at": "2026-06-18T10:51:15Z",
-      "country": "pl",
-      "country_label": "Polska"
+      "created_at": "2026-06-18T10:51:15Z"
     },
     "6148598213": {
       "id": "6148598213",
@@ -525,7 +493,7 @@
       "first_seen": "2026-06-19",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782148341,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
           1781895790,
@@ -540,9 +508,7 @@
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Długołęka",
-      "created_at": "2026-06-12T12:31:14Z",
-      "country": "pl",
-      "country_label": "Polska"
+      "created_at": "2026-06-12T12:31:14Z"
     },
     "6148772947": {
       "id": "6148772947",
@@ -556,228 +522,23 @@
       "model": "mazda-mx-5",
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782139073,
-      "last_scrape_timestamp": 1782148341,
+      "first_scrape_timestamp": 1782128356,
+      "last_scrape_timestamp": 1782128356,
       "price_readings": [
         [
-          1782139073,
+          1782128356,
           89000
         ]
       ],
       "price_change": 0,
       "active": true,
       "version": "ST SKYACTIV-G 2.0 Homura",
-      "short_description": "2019 Mazda MX-5 2.0 Sky-Activ G 184 Homura Polymetal Gray",
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 184,
       "engine_capacity": 1998,
       "location": "Olsztyn",
       "created_at": "2026-06-21T13:33:20Z"
-    },
-    "6144610425": {
-      "id": "6144610425",
-      "internal_id": 19,
-      "title": "Mazda MX-5 2.0 Homura i-ELOOP",
-      "initial_price": 139000,
-      "current_price": 139000,
-      "year": 2024,
-      "mileage": 22000,
-      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HQ9RL.html",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          139000
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "version": "2.0 Homura i-ELOOP",
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Stawiszyn",
-      "created_at": "2026-06-22T16:15:42Z"
-    },
-    "autoplac-4280028": {
-      "id": "autoplac-4280028",
-      "internal_id": 20,
-      "title": "Mazda MX-5 2.0 2021 Miata RF Grand Touring",
-      "initial_price": 34700,
-      "current_price": 34700,
-      "year": 2021,
-      "mileage": 14521,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2021r-2021-miata-rf-grand-touring-5311-7678-WM",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          34700
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Warszawa",
-      "created_at": "2026-05-26T15:13:52.786000"
-    },
-    "autoplac-4247460": {
-      "id": "autoplac-4247460",
-      "internal_id": 21,
-      "title": "Mazda MX-5 2.0 Miata Club 2021",
-      "initial_price": 56000,
-      "current_price": 56000,
-      "year": 2021,
-      "mileage": 107376,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2021r-miata-club-2021-4703-2282-MN",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          56000
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 181,
-      "engine_capacity": 2000,
-      "location": "Warszawa",
-      "created_at": "2026-05-17T13:53:33.305000"
-    },
-    "autoplac-3706159": {
-      "id": "autoplac-3706159",
-      "internal_id": 22,
-      "title": "Mazda MX-5 2.0 Homura manual, NOWA, Full PPF + Dodatki Salon PL",
-      "initial_price": 199999,
-      "current_price": 199999,
-      "year": 2024,
-      "mileage": 130,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2024r-mazda-mx-5-homura-manual-nowa-full-ppf--dodatki-salon-pl-AGQQ2ljSqcw",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          199999
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Warszawa",
-      "created_at": "2025-11-20T12:47:01.855000"
-    },
-    "autoplac-3991403": {
-      "id": "autoplac-3991403",
-      "internal_id": 23,
-      "title": "Mazda MX-5 2.0 nd 2024 184 KM fullppf fv Iwl bezwyp 4980km gwar salon",
-      "initial_price": 199900,
-      "current_price": 199900,
-      "year": 2024,
-      "mileage": 4980,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2024r-nd-2024-184-km-fullppf-fv-iwl-bezwyp-4980km-gwar-salon-4386-9068-CT",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          199900
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Kraków",
-      "created_at": "2026-03-04T01:36:41.017000"
-    },
-    "autoplac-3233868": {
-      "id": "autoplac-3233868",
-      "internal_id": 24,
-      "title": "Mazda MX-5 2.0 MX-5, jak nowa",
-      "initial_price": 152125,
-      "current_price": 152125,
-      "year": 2023,
-      "mileage": 3800,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2023r-mazda-mx-5-cesja-AGNOPl7faNs7",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          152125
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Warszawa",
-      "created_at": "2025-06-12T11:16:01.152000"
-    },
-    "autoplac-4268355": {
-      "id": "autoplac-4268355",
-      "internal_id": 25,
-      "title": "Mazda MX-5 2.0 / bogata wersja / niski przebieg /",
-      "initial_price": 39000,
-      "current_price": 39000,
-      "year": 2021,
-      "mileage": 57434,
-      "url": "https://autoplac.pl/oferta/mazda/mx-5/2-0-2021r-bogata-wersja-niski-przebieg-7902-1369-UH",
-      "model": "mazda-mx-5",
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "first_scrape_timestamp": 1782148341,
-      "last_scrape_timestamp": 1782148341,
-      "price_readings": [
-        [
-          1782148341,
-          39000
-        ]
-      ],
-      "price_change": 0,
-      "active": true,
-      "fuel_type": "petrol",
-      "gearbox": "manual",
-      "engine_power": 184,
-      "engine_capacity": 1998,
-      "location": "Tarnów",
-      "created_at": "2026-05-22T15:30:47.571000"
     }
   }
 }
