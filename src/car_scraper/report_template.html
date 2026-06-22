@@ -60,6 +60,23 @@
   .m-head h2{font-size:21px;font-weight:600;margin:0;letter-spacing:-.02em}
   .m-head .tag{color:var(--muted);font-size:13px;font-family:var(--mono)}
 
+  /* facet filters */
+  .facets{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:16px}
+  .facet-group{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .facet-group .dim{color:var(--muted-2);font-size:11px;text-transform:uppercase;
+    letter-spacing:.06em;margin-right:2px}
+  .chip{font-family:var(--sans);font-size:12.5px;color:var(--muted);background:var(--surface);
+    border:1px solid var(--border);border-radius:999px;padding:4px 11px;cursor:pointer;
+    transition:.15s;display:inline-flex;align-items:center;gap:5px;line-height:1.3}
+  .chip:hover{color:var(--text);border-color:var(--primary-deep)}
+  .chip[aria-pressed="true"]{color:#fff;background:var(--primary-deep);border-color:var(--primary-deep)}
+  .chip .cnt{font-family:var(--mono);font-size:11px;opacity:.65}
+  .chip.empty{opacity:.4}
+  .chip-clear{margin-left:2px;color:var(--muted-2);background:none;border:none;cursor:pointer;
+    font-size:12px;text-decoration:underline;padding:4px 2px}
+  .chip-clear:hover{color:var(--text)}
+  .origin{font-size:15px;line-height:1}
+
   .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
   .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px}
   .kpi .lab{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
@@ -125,7 +142,7 @@
   <div class="gkpis" id="gkpis"></div>
   <div id="root"></div>
 </main>
-<footer>Daily otomoto.pl scrape · prices in PLN · deal score = price vs expected from mileage &amp; year (fit on all history)</footer>
+<footer>Daily otomoto.pl scrape · prices in PLN · deal score = price vs expected from mileage &amp; year (fit on all history) · use the chips to filter by engine, body, trim &amp; origin</footer>
 
 <script>
 const GLOBAL = __GLOBAL_JSON__;
@@ -165,11 +182,67 @@ function linfit(xs, ys){
 }
 const median = a => { if(!a.length) return 0; const s=[...a].sort((x,y)=>x-y); const m=Math.floor(s.length/2); return s.length%2?s[m]:(s[m-1]+s[m])/2; };
 
-// ---- working set driven by the toggle ----
+// ---- working set: historical toggle (base) ∩ facet chips (per section) ----
 const isActive = c => c.active !== false;
 const rowsOf = m => showHistorical ? m.listings : m.listings.filter(isActive);
-const trendOf = m => (showHistorical ? m.trend_all : m.trend_active) || [];
+const FACET_DIMS = [['variant','Engine'],['body','Body'],['trim','Trim'],['country','Origin']];
+const UNKNOWN = 'Unknown';
+// Facet value of a car for a dimension. Missing/blank -> an explicit "Unknown"
+// bucket so a dimension's chip counts always sum to the working-set size (older
+// listings predate the origin/trim fields and would otherwise vanish silently).
+const facetVal = (c, dim) => { const v = c.facets ? c.facets[dim] : null; return (v==null||v==='') ? UNKNOWN : v; };
+// Distinct values for a dim across ALL listings (stable chip set across toggle),
+// real values sorted first, the Unknown bucket pinned last.
+function dimValues(m, dim){
+  const s=new Set(m.listings.map(c=>facetVal(c,dim)));
+  const real=[...s].filter(v=>v!==UNKNOWN).sort((a,b)=>a.localeCompare(b));
+  return {values:real.concat(s.has(UNKNOWN)?[UNKNOWN]:[]), hasReal:real.length>0};
+}
+function applyFacets(rows, filters){
+  return rows.filter(c=>{
+    for(const dim in filters){
+      const sel=filters[dim]; if(!sel||!sel.size) continue;
+      if(!sel.has(facetVal(c,dim))) return false;
+    }
+    return true;
+  });
+}
 function hasDrop(c){ const r=(c.price_readings||[]).filter(x=>x&&x[1]>0); return r.length>=2 && r[r.length-1][1]<r[r.length-2][1]; }
+
+// Market trend recomputed from the working set (mirrors reporting.py
+// _market_trend): for each day a listing was live, carry its most recent
+// reading forward and take the daily median. Reacts to toggle + facet filters.
+const dIdx = ms => Math.floor(ms/86400000);          // UTC day index
+const parseDay = s => { const t=Date.parse((s||'')+'T00:00:00Z'); return isNaN(t)?null:dIdx(t); };
+const isoDay = day => new Date(day*86400000).toISOString().slice(0,10);
+function marketTrend(rows){
+  const spans=[]; let lo=null, hi=null;
+  for(const c of rows){
+    const rs=(c.price_readings||[]).filter(r=>r&&r[1]>0)
+      .map(r=>[dIdx(r[0]*1000), r[1]]).sort((a,b)=>a[0]-b[0]);
+    if(!rs.length) continue;
+    let a=parseDay(c.first_seen), b=parseDay(c.last_seen);
+    if(a==null||b==null) continue;
+    if(b<a){const t=a;a=b;b=t;}
+    spans.push([a,b,rs]);
+    lo=lo==null?a:Math.min(lo,a); hi=hi==null?b:Math.max(hi,b);
+  }
+  if(!spans.length) return [];
+  const step=(hi-lo)>180?7:1;
+  const out=[];
+  for(let day=lo; day<=hi; day+=step){
+    const ps=[];
+    for(const [a,b,rs] of spans){
+      if(a<=day && day<=b){
+        let p=null; for(const [d,v] of rs){ if(d<=day) p=v; else break; }
+        if(p==null) p=rs[0][1];
+        if(p) ps.push(p);
+      }
+    }
+    if(ps.length) out.push({date:isoDay(day), median:Math.round(median(ps)), count:ps.length});
+  }
+  return out;
+}
 function kpisFor(rows){
   const priced = rows.filter(c=>c.current_price>0);
   const cheapest = priced.length ? priced.reduce((a,b)=>a.current_price<=b.current_price?a:b) : null;
@@ -286,13 +359,16 @@ function trackChart(el, rows){
 
 // ---- table ----
 const COLS=[['#','internal_id'],['Title','title'],['Year','year'],['Mileage','mileage'],
-  ['Power','engine_power'],['Gearbox','gearbox'],['Deal','deal_pct'],['Price','current_price']];
+  ['Power','engine_power'],['Origin','_origin'],['Deal','deal_pct'],['Price','current_price']];
 const NUMERIC=new Set(['internal_id','year','mileage','engine_power','deal_pct','current_price']);
+const cellVal=(c,key)=> key==='_origin' ? (c.facets&&c.facets.country) : c[key];
+const facetLine=c=>{ const f=c.facets||{};
+  return [f.variant,f.body,f.trim].filter(Boolean).join(' · '); };
 
 function renderTable(host, rows, st){
   let data=rows.slice();
   if(st.dealsOnly) data=data.filter(c=>c.deal_pct!=null && c.deal_pct<0);
-  data.sort((a,b)=>{let x=a[st.sortKey],y=b[st.sortKey];
+  data.sort((a,b)=>{let x=cellVal(a,st.sortKey),y=cellVal(b,st.sortKey);
     if(x==null)return 1; if(y==null)return -1;
     return (typeof x==='number')?(st.asc?x-y:y-x):String(x).localeCompare(String(y))*(st.asc?1:-1);});
   const head=COLS.map(([lab,key])=>{
@@ -302,13 +378,15 @@ function renderTable(host, rows, st){
     const d=c.deal_pct;
     const deal=(d==null)?'<span class="deal-na">—</span>'
       :`<span class="deal-badge ${d<0?'deal-good':'deal-bad'}">${d>0?'+':''}${d}%</span>`;
+    const fl=facetLine(c), f=c.facets||{};
+    const origin=f.country?`<span class="origin" title="${f.country}">${f.flag||'·'}</span>`:'';
     return `<tr class="${isActive(c)?'':'sold'}">
       <td class="num">${c.internal_id||''}</td>
-      <td><a href="${c.url}" target="_blank" rel="noopener">${c.title||''}</a></td>
+      <td><a href="${c.url}" target="_blank" rel="noopener">${c.title||''}</a>${fl?`<div class="sub">${fl}</div>`:''}</td>
       <td class="num">${c.year||''}</td>
       <td class="num">${c.mileage!=null?Number(c.mileage).toLocaleString('pl-PL'):''}</td>
       <td class="num">${c.engine_power||''}</td>
-      <td>${c.gearbox||''}</td>
+      <td>${origin}</td>
       <td>${deal}</td>
       <td class="num">${fmt(c.current_price)}</td></tr>`;}).join('');
   const label = showHistorical ? `${data.length} listings (incl. historical)` : `${data.length} active listings`;
@@ -336,6 +414,7 @@ const sections = MODELS.map((m,i)=>{
   const sec=document.createElement('section');
   sec.className='model'; sec.id='m-'+m.key;
   sec.innerHTML=`<div class="m-head"><h2>${m.label}</h2><span class="tag">${m.key}</span></div>
+    <div class="facets facet-host"></div>
     <div class="kpis kpi-host"></div>
     <div class="charts">
       <div class="card"><h3>Deal finder</h3><p class="hint">price vs mileage · green = cheaper than expected</p><div class="plot deal"></div></div>
@@ -345,14 +424,44 @@ const sections = MODELS.map((m,i)=>{
     </div>
     <div class="table-host"></div>`;
   root.appendChild(sec);
-  return {m, sec, state:{sortKey:'current_price', asc:true, dealsOnly:false}};
+  const s={m, sec, state:{sortKey:'current_price', asc:true, dealsOnly:false, filters:{}}};
+  // one delegated listener for this section's chips
+  sec.querySelector('.facet-host').addEventListener('click', e=>{
+    const clr=e.target.closest('.chip-clear'); if(clr){ s.state.filters={}; renderModel(s); return; }
+    const chip=e.target.closest('.chip'); if(!chip) return;
+    const {dim,val}=chip.dataset; const f=s.state.filters;
+    (f[dim]=f[dim]||new Set()).has(val) ? f[dim].delete(val) : f[dim].add(val);
+    renderModel(s);
+  });
+  return s;
 });
 
+function renderFacets(s){
+  const m=s.m, base=rowsOf(m), filters=s.state.filters;
+  const groups=FACET_DIMS.map(([dim,lab])=>{
+      const dv=dimValues(m,dim);
+      if(!dv.hasReal) return '';   // dimension doesn't apply to this model
+      const chips=dv.values.map(val=>{
+        const n=base.filter(c=>facetVal(c,dim)===val).length;
+        const on=filters[dim] && filters[dim].has(val);
+        const flag=(dim==='country' && val!==UNKNOWN && m.flags[val])?m.flags[val]+' ':'';
+        const esc=val.replace(/"/g,'&quot;');
+        return `<button class="chip${n?'':' empty'}" data-dim="${dim}" data-val="${esc}"
+          aria-pressed="${on?'true':'false'}">${flag}${val}<span class="cnt">${n}</span></button>`;
+      }).join('');
+      return `<div class="facet-group"><span class="dim">${lab}</span>${chips}</div>`;
+    }).join('');
+  const any=Object.values(filters).some(set=>set&&set.size);
+  s.sec.querySelector('.facet-host').innerHTML =
+    groups + (any?`<button class="chip-clear">clear filters</button>`:'');
+}
+
 function renderModel(s){
-  const rows=rowsOf(s.m);
+  renderFacets(s);
+  const rows=applyFacets(rowsOf(s.m), s.state.filters);
   s.sec.querySelector('.kpi-host').innerHTML = kpiCards(rows);
   dealChart(s.sec.querySelector('.deal'), rows);
-  trendChart(s.sec.querySelector('.trend'), trendOf(s.m));
+  trendChart(s.sec.querySelector('.trend'), marketTrend(rows));
   yearChart(s.sec.querySelector('.year'), rows);
   trackChart(s.sec.querySelector('.track'), rows);
   renderTable(s.sec.querySelector('.table-host'), rows, s.state);

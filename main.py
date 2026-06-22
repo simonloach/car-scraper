@@ -294,17 +294,26 @@ def scrape_all(targets_file: str, data_dir: str, max_pages: int, alerts_file: st
 
     all_new, all_drops = [], []
     for target in targets:
-        key, url, label = (
-            target["key"],
-            target["url"],
-            target.get("label", target["key"]),
-        )
+        key = target["key"]
+        label = target.get("label", key)
+        # A target may pull from several marketplaces; merge them into one file.
+        sources = target.get("sources") or [{"url": target["url"]}]
         click.echo(f"\n=== {label} ===")
+        make, _, model = key.partition("-")
+        scraper = CarScraper(data_dir, make, model)
+        listings: list[dict] = []
+        for src in sources:
+            try:
+                scraper.scrape_model(src["url"], key, max_pages)
+                listings.extend(scraper.listings)
+            except Exception as e:  # noqa: BLE001 - keep going on per-source failure
+                logger.error(f"Source for {key} failed: {e}")
+                click.echo(f"  ⚠️  source failed: {e}")
+        if not listings:
+            click.echo(f"  ⚠️  no listings collected for {key}")
+            continue
         try:
-            make, _, model = key.partition("-")
-            scraper = CarScraper(data_dir, make, model)
-            scraper.scrape_model(url, key, max_pages)
-            result = storage.store_listings_data(key, scraper.listings, current_date)
+            result = storage.store_listings_data(key, listings, current_date)
             for item in result["new"]:
                 item["_model_label"] = label
             for drop in result["price_drops"]:
@@ -316,7 +325,7 @@ def scrape_all(targets_file: str, data_dir: str, max_pages: int, alerts_file: st
                 f"{len(result['price_drops'])} price drops"
             )
         except Exception as e:  # noqa: BLE001 - keep going on per-target failure
-            logger.error(f"Target {key} failed: {e}")
+            logger.error(f"Storing {key} failed: {e}")
             click.echo(f"  ⚠️  {key} failed: {e}")
 
     alerts_path = Path(alerts_file)

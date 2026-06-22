@@ -1,8 +1,9 @@
-"""Car scraper for otomoto.pl search pages.
+"""Car scraper for otomoto.pl and autoplac.pl search pages.
 
-Thin wrapper over :mod:`otomoto_search`, which reads otomoto's embedded
-structured data instead of scraping individual advert pages. Kept as a class
-for backward compatibility with the CLI and tests.
+Thin wrapper that reads each site's embedded structured data instead of
+scraping individual advert pages. The scraper is picked by the URL's domain, so
+one model can be fed from several marketplaces into the same data file. Kept as
+a class for backward compatibility with the CLI and tests.
 """
 
 import time
@@ -11,12 +12,18 @@ from pathlib import Path
 
 import click
 
+from src.car_scraper.scrapers.autoplac_search import scrape_autoplac
 from src.car_scraper.scrapers.otomoto_search import scrape_search
 from src.car_scraper.utils.logger import logger
 
 
+def _scraper_for(url: str):
+    """Pick the search scraper for a URL by domain."""
+    return scrape_autoplac if "autoplac.pl" in url else scrape_search
+
+
 class CarScraper:
-    """Scrapes cars from otomoto.pl search pages.
+    """Scrapes cars from otomoto.pl / autoplac.pl search pages.
 
     Args:
         data_directory: path to directory where data will be saved.
@@ -52,7 +59,7 @@ class CarScraper:
         logger.info(f"Start scraping model: {model_name}")
         click.echo(f"Start scraping model: {model_name}")
 
-        raw = scrape_search(search_url, max_pages=max_pages)
+        raw = _scraper_for(search_url)(search_url, max_pages=max_pages)
 
         scrape_date = datetime.now().isoformat()
         scrape_ts = int(time.time())
