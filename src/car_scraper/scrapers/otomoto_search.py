@@ -82,14 +82,15 @@ def _node_to_listing(node: dict) -> dict | None:
     with contextlib.suppress(KeyError, TypeError):
         location = node["location"]["city"]["name"]
 
-    version = (
-        params.get("version", {}).get("displayValue") if params.get("version") else None
-    )
+    def disp(key: str) -> str | None:
+        p = params.get(key)
+        return p.get("displayValue") if p else None
 
     return {
         "id": str(listing_id),
         "title": node.get("title", ""),
-        "version": version,
+        "version": disp("version"),
+        "short_description": (node.get("shortDescription") or "").strip() or None,
         "url": node.get("url", ""),
         "price": price,
         "year": num("year"),
@@ -98,6 +99,8 @@ def _node_to_listing(node: dict) -> dict | None:
         "gearbox": val("gearbox"),
         "engine_power": num("engine_power"),
         "engine_capacity": num("engine_capacity"),
+        "country": val("country_origin"),  # otomoto code: pl/d/usa/cdn/f/s...
+        "country_label": disp("country_origin"),  # e.g. "Stany Zjednoczone"
         "location": location,
         "created_at": node.get("createdAt"),
     }

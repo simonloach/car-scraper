@@ -14,10 +14,13 @@ from src.car_scraper.utils.logger import logger
 # new and updated listings when present (older data simply won't have them).
 EXTRA_FIELDS = (
     "version",
+    "short_description",
     "fuel_type",
     "gearbox",
     "engine_power",
     "engine_capacity",
+    "country",
+    "country_label",
     "location",
     "created_at",
 )

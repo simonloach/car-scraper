@@ -17,6 +17,8 @@ import statistics
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
+from src.car_scraper.facets import classify
+
 
 def _md_escape(s: str) -> str:
     """Escape characters that would break out of a markdown link/text."""
@@ -257,26 +259,41 @@ _KEEP = (
 def _prep_model(model: dict) -> dict:
     """Build the slim, analytics-enriched payload for one model.
 
-    Ships *all* listings (each tagged ``active``) so the dashboard's "show
-    historical" toggle can switch the working set client-side. The deal model
-    is fit on the full history (more data = a more stable expected price), and
-    the market trend is precomputed for both the full and active-only sets.
+    Ships *all* listings (each tagged ``active`` and ``facets``) so the
+    dashboard can switch the working set client-side: the "show historical"
+    toggle and the per-dimension facet chips both filter in the browser. The
+    deal model is fit on the full history (more data = a more stable expected
+    price). The market trend is recomputed in JS from whatever the working set
+    is, so it reacts to the toggle and the facet filters too — it mirrors
+    :func:`_market_trend` (kept here as the tested reference implementation).
     """
     listings = model["listings"]
     _deal_scores(listings)
-    active = [car for car in listings if _active(car)]
+    key = model["key"]
 
     def slim(listing):
         out = {k: listing.get(k) for k in _KEEP}
         out["active"] = _active(listing)
+        out["facets"] = classify(key, listing)
         return out
 
+    slimmed = [slim(car) for car in listings]
+
+    # label->flag map so origin chips show the right flag. The chip value lists
+    # themselves are derived client-side from the listings (so a dimension can
+    # carry an explicit "Unknown" bucket for cars that predate a field), which
+    # keeps every dimension's chip counts reconciling to the working-set size.
+    flags = {
+        f["country"]: f["flag"]
+        for car in slimmed
+        if (f := car["facets"]).get("country") and f.get("flag")
+    }
+
     return {
-        "key": model["key"],
+        "key": key,
         "label": model["label"],
-        "listings": [slim(car) for car in listings],
-        "trend_all": _market_trend(listings),
-        "trend_active": _market_trend(active),
+        "listings": slimmed,
+        "flags": flags,
     }
 
 
