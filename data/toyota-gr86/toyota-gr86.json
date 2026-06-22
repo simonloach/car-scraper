@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-22T19:12:24.624929",
+    "last_updated": "2026-06-22T19:27:37.506497",
     "total_listings": 7,
     "model": "toyota-gr86"
   },
@@ -18,7 +18,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -48,7 +48,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -78,7 +78,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -110,7 +110,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -139,7 +139,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -168,7 +168,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,
@@ -197,7 +197,7 @@
       "first_seen": "2026-06-22",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782148344,
+      "last_scrape_timestamp": 1782149257,
       "price_readings": [
         [
           1782148344,

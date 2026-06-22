@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-06-22T11:39:15.458679",
-    "total_listings": 169,
+    "last_updated": "2026-06-22T19:27:32.539243",
+    "total_listings": 198,
     "model": "lexus-lc"
   },
   "listings": {
@@ -4291,7 +4291,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4306,7 +4306,10 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Wieluń",
-      "created_at": "2026-06-17T08:52:44Z"
+      "created_at": "2026-06-17T08:52:44Z",
+      "short_description": "LC500 Cabrio Superturismo Nowy Model LIFT Polska",
+      "country": "usa",
+      "country_label": "Stany Zjednoczone"
     },
     "6136774987": {
       "id": "6136774987",
@@ -4321,7 +4324,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4335,7 +4338,10 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Wieluń",
-      "created_at": "2026-06-17T20:51:32Z"
+      "created_at": "2026-06-17T20:51:32Z",
+      "short_description": "Inspiration Series",
+      "country": "usa",
+      "country_label": "Stany Zjednoczone"
     },
     "6147083289": {
       "id": "6147083289",
@@ -4350,7 +4356,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4364,7 +4370,10 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Warszawa",
-      "created_at": "2026-06-11T08:47:13Z"
+      "created_at": "2026-06-11T08:47:13Z",
+      "short_description": "LC 500 477 KM ! 2017r ! 79.000 km ! Warszawa",
+      "country": "usa",
+      "country_label": "Stany Zjednoczone"
     },
     "6140275993": {
       "id": "6140275993",
@@ -4379,7 +4388,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4393,7 +4402,8 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Kielce",
-      "created_at": "2026-06-15T15:04:21Z"
+      "created_at": "2026-06-15T15:04:21Z",
+      "short_description": "Superturismo Carbon"
     },
     "6146423606": {
       "id": "6146423606",
@@ -4408,7 +4418,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4423,7 +4433,10 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Ząbkowice Śląskie",
-      "created_at": "2026-05-29T08:54:18Z"
+      "created_at": "2026-05-29T08:54:18Z",
+      "short_description": "Lexus LC 500 Prestige Coupe V8",
+      "country": "pl",
+      "country_label": "Polska"
     },
     "6147605319": {
       "id": "6147605319",
@@ -4438,7 +4451,7 @@
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-22",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1782128355,
+      "last_scrape_timestamp": 1782149252,
       "price_readings": [
         [
           1781994362,
@@ -4452,7 +4465,904 @@
       "engine_power": 477,
       "engine_capacity": 4969,
       "location": "Radwanice",
-      "created_at": "2026-06-08T11:56:19Z"
+      "created_at": "2026-06-08T11:56:19Z",
+      "short_description": "Lexus LC500 5.0 V8 !! Salon PL !! FV23% !! autaniszowe.pl",
+      "country": "pl",
+      "country_label": "Polska"
+    },
+    "6148251392": {
+      "id": "6148251392",
+      "internal_id": 215,
+      "title": "Lexus LC",
+      "initial_price": 169900,
+      "current_price": 169900,
+      "year": 2025,
+      "mileage": 1096,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5r32.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          169900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Rzeszów",
+      "created_at": "2026-05-26T14:21:17Z"
+    },
+    "6148421133": {
+      "id": "6148421133",
+      "internal_id": 216,
+      "title": "Lexus LC 500",
+      "initial_price": 134900,
+      "current_price": 134900,
+      "year": 2021,
+      "mileage": 10499,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I69cN.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          134900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Warszawa",
+      "created_at": "2026-06-03T15:27:19Z"
+    },
+    "6145991847": {
+      "id": "6145991847",
+      "internal_id": 217,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 780000,
+      "current_price": 780000,
+      "year": 2023,
+      "mileage": 21,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HWXeL.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          780000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Superturismo",
+      "short_description": "500 Superturismo / FV 23% / NOWY / Gwarancja",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Warszawa",
+      "created_at": "2026-06-04T06:25:21Z"
+    },
+    "6146457259": {
+      "id": "6146457259",
+      "internal_id": 218,
+      "title": "Lexus LC 500h Prestige",
+      "initial_price": 259900,
+      "current_price": 259900,
+      "year": 2019,
+      "mileage": 42800,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HXUjp.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          259900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h Prestige",
+      "short_description": "Pierwszy właściciel. Stan igła Oryginalny przebieg",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "location": "Ostrów Mazowiecka",
+      "created_at": "2026-05-27T09:43:08Z"
+    },
+    "6148380279": {
+      "id": "6148380279",
+      "internal_id": 219,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 365000,
+      "current_price": 365000,
+      "year": 2018,
+      "mileage": 60752,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5YzR.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          365000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Superturismo",
+      "short_description": "Lexus LC500 Superturismo REZERWACJA",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "cdn",
+      "country_label": "Kanada",
+      "location": "Warszawa",
+      "created_at": "2026-06-02T08:01:22Z"
+    },
+    "6148195798": {
+      "id": "6148195798",
+      "internal_id": 220,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 249999,
+      "current_price": 249999,
+      "year": 2018,
+      "mileage": 70000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5cAm.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          249999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Superturismo",
+      "short_description": "Carbon skretna oś spoiler",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Mława",
+      "created_at": "2026-05-23T20:30:26Z"
+    },
+    "6148774238": {
+      "id": "6148774238",
+      "internal_id": 221,
+      "title": "Lexus LC 500h Launch Edition",
+      "initial_price": 349000,
+      "current_price": 349000,
+      "year": 2017,
+      "mileage": 109000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I7D42.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          349000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h Launch Edition",
+      "short_description": "Limitowana edycja, Salon Polska, stan idealny",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Gorzów Wielkopolski",
+      "created_at": "2026-06-21T14:49:36Z"
+    },
+    "6148382083": {
+      "id": "6148382083",
+      "internal_id": 222,
+      "title": "Lexus LC ver-500-prestige",
+      "initial_price": 249000,
+      "current_price": 249000,
+      "year": 2018,
+      "mileage": 90500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5Z2X.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          249000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "ver-500-prestige",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 470,
+      "engine_capacity": 4969,
+      "country": "usa",
+      "country_label": "Stany Zjednoczone",
+      "location": "Kraków",
+      "created_at": "2026-06-02T08:44:38Z"
+    },
+    "6148353990": {
+      "id": "6148353990",
+      "internal_id": 223,
+      "title": "Lexus LC 500 Prestige",
+      "initial_price": 299000,
+      "current_price": 299000,
+      "year": 2018,
+      "mileage": 92414,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5RJQ.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          299000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Prestige",
+      "short_description": "Lexus LC500 5.0 V8 Performance Package, Mark Levinson Audio, Carbon",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "usa",
+      "country_label": "Stany Zjednoczone",
+      "location": "Warszawa",
+      "created_at": "2026-05-31T18:20:20Z"
+    },
+    "6146672713": {
+      "id": "6146672713",
+      "internal_id": 224,
+      "title": "Lexus LC",
+      "initial_price": 330000,
+      "current_price": 330000,
+      "year": 2019,
+      "mileage": 62000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HYOmt.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          330000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "short_description": "Lexus LC500h Idealny stan",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 463,
+      "engine_capacity": 3456,
+      "country": "s",
+      "country_label": "Szwecja",
+      "location": "Poznań",
+      "created_at": "2026-05-27T16:54:56Z"
+    },
+    "6148244625": {
+      "id": "6148244625",
+      "internal_id": 225,
+      "title": "Lexus LC 500h Prestige",
+      "initial_price": 274900,
+      "current_price": 274900,
+      "year": 2017,
+      "mileage": 113208,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I5phT.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          274900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h Prestige",
+      "short_description": "500h Prestige / Salon Polska / ASO / Gwarancja / Bezwypadkowy",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Osielsko",
+      "created_at": "2026-05-26T11:06:17Z"
+    },
+    "6147254450": {
+      "id": "6147254450",
+      "internal_id": 226,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 690000,
+      "current_price": 690000,
+      "year": 2023,
+      "mileage": 15350,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I1fHk.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          690000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Superturismo",
+      "short_description": "500 Superturismo /SerwisASO /FV23% /Bezwypadkowy",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "d",
+      "country_label": "Niemcy",
+      "location": "Warszawa",
+      "created_at": "2026-05-18T04:00:34Z"
+    },
+    "6148388662": {
+      "id": "6148388662",
+      "internal_id": 227,
+      "title": "Lexus LC 500h",
+      "initial_price": 335000,
+      "current_price": 335000,
+      "year": 2018,
+      "mileage": 89000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I60L4.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          335000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h",
+      "short_description": "500h Hybrid 359KM Najbogatsza Wersja Serwis Bezwypadkowy Zamiana",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "country": "f",
+      "country_label": "Francja",
+      "location": "Bolęcin",
+      "created_at": "2026-06-02T12:45:23Z"
+    },
+    "6130172524": {
+      "id": "6130172524",
+      "internal_id": 228,
+      "title": "Lexus LC 500h Prestige",
+      "initial_price": 499900,
+      "current_price": 499900,
+      "year": 2022,
+      "mileage": 1900,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GRzUo.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          499900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h Prestige",
+      "short_description": "500h Prestige Salon PL VAT 23% Stan Kolekcjonerski Serwis ASO LEXUS",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Katowice",
+      "created_at": "2026-05-25T07:24:48Z"
+    },
+    "6131249361": {
+      "id": "6131249361",
+      "internal_id": 229,
+      "title": "Lexus LC 500 Superturismo",
+      "initial_price": 438000,
+      "current_price": 438000,
+      "year": 2021,
+      "mileage": 89689,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GV62J.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          438000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Superturismo",
+      "short_description": "500 Superturismo Luxury+Nawigacja",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Warszawa",
+      "created_at": "2026-06-04T12:28:26Z"
+    },
+    "6131062349": {
+      "id": "6131062349",
+      "internal_id": 230,
+      "title": "Lexus LC 500h Prestige",
+      "initial_price": 274000,
+      "current_price": 274000,
+      "year": 2017,
+      "mileage": 126000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GWjop.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          274000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500h Prestige",
+      "short_description": "bezwypadkowy faktura vat 23% zjawiskowy",
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 299,
+      "engine_capacity": 3456,
+      "location": "Gorzów Wielkopolski",
+      "created_at": "2026-06-07T15:08:07Z"
+    },
+    "6148596129": {
+      "id": "6148596129",
+      "internal_id": 231,
+      "title": "Lexus LC 500 Bespoke",
+      "initial_price": 479000,
+      "current_price": 479000,
+      "year": 2022,
+      "mileage": 75097,
+      "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I6SJj.html",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          479000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "500 Bespoke",
+      "short_description": "LC 500 Bespoke + Aviation + HUD + FV23%",
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Kraków",
+      "created_at": "2026-06-12T11:07:17Z"
+    },
+    "autoplac-4357349": {
+      "id": "autoplac-4357349",
+      "internal_id": 232,
+      "title": "Lexus LC 5.0 Samochód osobowy 500 Cabrio",
+      "initial_price": 349000,
+      "current_price": 349000,
+      "year": 2021,
+      "mileage": 15000,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2021r-samochod-osobowy-500-cabrio-4376-3166-DT",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          349000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 477,
+      "engine_capacity": 4969,
+      "location": "Nadarzyn",
+      "created_at": "2026-06-17T18:20:14.906000"
+    },
+    "autoplac-4283534": {
+      "id": "autoplac-4283534",
+      "internal_id": 233,
+      "title": "Lexus LC 5.0 2023 r.,",
+      "initial_price": 173000,
+      "current_price": 173000,
+      "year": 2023,
+      "mileage": 5582,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2023r-2023-r-50l-0949-7116-SC",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          173000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 477,
+      "engine_capacity": 5000,
+      "location": "Warszawa",
+      "created_at": "2026-05-27T14:04:36.452000"
+    },
+    "autoplac-4281856": {
+      "id": "autoplac-4281856",
+      "internal_id": 234,
+      "title": "Lexus LC 3.5",
+      "initial_price": 274900,
+      "current_price": 274900,
+      "year": 2017,
+      "mileage": 113208,
+      "url": "https://autoplac.pl/oferta/lexus/lc/3-5-2017r-3899-9562-AX",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          274900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "hybrid",
+      "gearbox": "automatic",
+      "engine_power": 359,
+      "engine_capacity": 3456,
+      "location": "Osielsko",
+      "created_at": "2026-05-27T07:49:41.007000"
+    },
+    "autoplac-4302881": {
+      "id": "autoplac-4302881",
+      "internal_id": 235,
+      "title": "Lexus LC 5.0",
+      "initial_price": 479000,
+      "current_price": 479000,
+      "year": 2022,
+      "mileage": 75097,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2022r-1088-5879-PM",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          479000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Kraków",
+      "created_at": "2026-06-02T06:23:38.743000"
+    },
+    "autoplac-4292527": {
+      "id": "autoplac-4292527",
+      "internal_id": 236,
+      "title": "Lexus LC 5.0",
+      "initial_price": 179900,
+      "current_price": 179900,
+      "year": 2023,
+      "mileage": 14801,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2023r-lexus-lc-2058-7290-RY",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          179900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 477,
+      "engine_capacity": 4969,
+      "location": "Katowice",
+      "created_at": "2026-05-29T18:08:01.271000"
+    },
+    "autoplac-4292073": {
+      "id": "autoplac-4292073",
+      "internal_id": 237,
+      "title": "Lexus LC 5.0",
+      "initial_price": 169900,
+      "current_price": 169900,
+      "year": 2025,
+      "mileage": 1096,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2025r-lexus-lc-1464-7920-CR",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          169900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Katowice",
+      "created_at": "2026-05-29T16:22:54.121000"
+    },
+    "autoplac-4142875": {
+      "id": "autoplac-4142875",
+      "internal_id": 238,
+      "title": "Lexus LC 5.0",
+      "initial_price": 690000,
+      "current_price": 690000,
+      "year": 2023,
+      "mileage": 15350,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2023r-1134-5933-QA",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          690000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Warszawa",
+      "created_at": "2026-04-18T12:47:36.345000"
+    },
+    "autoplac-4205475": {
+      "id": "autoplac-4205475",
+      "internal_id": 239,
+      "title": "Lexus LC 5.0 LC500 V8 !! Salon PL !! FV23% !! autaniszowe.pl",
+      "initial_price": 359999,
+      "current_price": 359999,
+      "year": 2018,
+      "mileage": 96300,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2018r-lc500-v8-salon-pl-fv23-autaniszowepl-8450-4911-EY",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          359999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 477,
+      "engine_capacity": 4969,
+      "location": "Radwanice",
+      "created_at": "2026-05-06T00:17:27.162000"
+    },
+    "autoplac-2692833": {
+      "id": "autoplac-2692833",
+      "internal_id": 240,
+      "title": "Lexus LC 5.0",
+      "initial_price": 438000,
+      "current_price": 438000,
+      "year": 2021,
+      "mileage": 89689,
+      "url": "https://autoplac.pl/oferta/lexus/lc/AGlJWaxCNU9",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          438000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Warszawa",
+      "created_at": "2024-11-29T02:07:26.728000"
+    },
+    "autoplac-3057509": {
+      "id": "autoplac-3057509",
+      "internal_id": 241,
+      "title": "Lexus LC 5.0",
+      "initial_price": 780000,
+      "current_price": 780000,
+      "year": 2023,
+      "mileage": 21,
+      "url": "https://autoplac.pl/oferta/lexus/lc/AGPXK6dizuw",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          780000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Warszawa",
+      "created_at": "2025-04-11T12:17:07.081000"
+    },
+    "autoplac-2331027": {
+      "id": "autoplac-2331027",
+      "internal_id": 242,
+      "title": "Lexus LC 5.0 500 Cabrio REGATA Limited Edition 1 z 200 szt. V8 Salon Polska NOWY",
+      "initial_price": 575000,
+      "current_price": 575000,
+      "year": 2020,
+      "mileage": 18000,
+      "url": "https://autoplac.pl/oferta/lexus/lc/AGe1MZQH4wSR",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          575000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 464,
+      "engine_capacity": 4969,
+      "location": "Krapkowice",
+      "created_at": "2024-07-17T15:00:08.682000"
+    },
+    "autoplac-4122571": {
+      "id": "autoplac-4122571",
+      "internal_id": 243,
+      "title": "Lexus LC 5.0 500 477 KM ! 2017r ! 79.000 km ! Warszawa",
+      "initial_price": 259999,
+      "current_price": 259999,
+      "year": 2017,
+      "mileage": 79000,
+      "url": "https://autoplac.pl/oferta/lexus/lc/5-0-2017r-500-477-km-2017r-79000-km-warszawa-0842-6623-BM",
+      "model": "lexus-lc",
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "first_scrape_timestamp": 1782149252,
+      "last_scrape_timestamp": 1782149252,
+      "price_readings": [
+        [
+          1782149252,
+          259999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "fuel_type": "petrol",
+      "gearbox": "automatic",
+      "engine_power": 477,
+      "engine_capacity": 4969,
+      "location": "Nowa Wola",
+      "created_at": "2026-04-12T14:15:42.576000"
     }
   }
 }
