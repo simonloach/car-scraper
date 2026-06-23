@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-22T19:27:37.506497",
+    "last_updated": "2026-06-23T09:25:31.687469",
     "total_listings": 7,
     "model": "toyota-gr86"
   },
@@ -16,9 +16,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6I5TVi.html",
       "model": "toyota-gr86",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
+      "last_seen": "2026-06-23",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782149257,
+      "last_scrape_timestamp": 1782206731,
       "price_readings": [
         [
           1782148344,
@@ -46,9 +46,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6I6SEq.html",
       "model": "toyota-gr86",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
+      "last_seen": "2026-06-23",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782149257,
+      "last_scrape_timestamp": 1782206731,
       "price_readings": [
         [
           1782148344,
@@ -76,9 +76,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6I7iVD.html",
       "model": "toyota-gr86",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
+      "last_seen": "2026-06-23",
       "first_scrape_timestamp": 1782148344,
-      "last_scrape_timestamp": 1782149257,
+      "last_scrape_timestamp": 1782206731,
       "price_readings": [
         [
           1782148344,
@@ -118,7 +118,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 228,
@@ -147,7 +147,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 228,
@@ -176,7 +176,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 228,
@@ -205,7 +205,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 234,
