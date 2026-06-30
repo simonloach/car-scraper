@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-29T10:27:54.149267",
+    "last_updated": "2026-06-30T08:59:27.650036",
     "total_listings": 26,
     "model": "mazda-mx-5"
   },
@@ -16,9 +16,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZ8eS.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -52,9 +52,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HZSuI.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -81,9 +81,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6IFJ.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -112,9 +112,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I3Crk.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -149,9 +149,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1DSC.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -256,7 +256,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "version": "SKYACTIV-G 2.0 100th Anniversary",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -310,9 +310,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HEBbD.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -342,9 +342,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-OLX_ID6I6HMY.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -404,9 +404,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1SOu.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -441,9 +441,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6rY4.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -474,9 +474,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I45Ab.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -504,9 +504,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I4vBt.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -536,9 +536,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6TgW.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1781895790,
@@ -568,9 +568,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I7CJd.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1782128356,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1782128356,
@@ -599,9 +599,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HQ9RL.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-06-29",
+      "last_seen": "2026-06-30",
       "first_scrape_timestamp": 1782149253,
-      "last_scrape_timestamp": 1782728874,
+      "last_scrape_timestamp": 1782809967,
       "price_readings": [
         [
           1782149253,
@@ -813,7 +813,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Mazda MX-5, Pierwszy właściciel, Perełka",
       "fuel_type": "petrol",
       "gearbox": "manual",
