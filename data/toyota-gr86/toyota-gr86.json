@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-12T08:04:45.907491",
-    "total_listings": 7,
+    "last_updated": "2026-07-14T07:50:37.270335",
+    "total_listings": 8,
     "model": "toyota-gr86"
   },
   "listings": {
@@ -56,7 +56,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Manual, Niski Przebieg, Kosmetycznie Uszkodzony!!!",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -212,6 +212,36 @@
       "engine_capacity": 2000,
       "location": "Częstochowa",
       "created_at": "2026-03-27T11:24:15.544000"
+    },
+    "6149285180": {
+      "id": "6149285180",
+      "internal_id": 8,
+      "title": "Toyota GR86",
+      "initial_price": 99999,
+      "current_price": 99999,
+      "year": 2022,
+      "mileage": 89056,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6I9LZ2.html",
+      "model": "toyota-gr86",
+      "first_seen": "2026-07-14",
+      "last_seen": "2026-07-14",
+      "first_scrape_timestamp": 1784015437,
+      "last_scrape_timestamp": 1784015437,
+      "price_readings": [
+        [
+          1784015437,
+          99999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "short_description": "Toyota GR86 Premium Manual",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 234,
+      "engine_capacity": 2387,
+      "location": "Proszowice",
+      "created_at": "2026-07-13T17:58:20Z"
     }
   }
 }
