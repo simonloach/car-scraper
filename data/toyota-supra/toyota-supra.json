@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-17T07:56:36.739065",
-    "total_listings": 10,
+    "last_updated": "2026-07-18T07:37:36.938126",
+    "total_listings": 11,
     "model": "toyota-supra"
   },
   "listings": {
@@ -58,7 +58,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "version": "3.0 Turbo Executive",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -155,9 +155,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1784274996,
+      "last_scrape_timestamp": 1784360256,
       "price_readings": [
         [
           1781895792,
@@ -185,9 +185,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1784274996,
+      "last_scrape_timestamp": 1784360256,
       "price_readings": [
         [
           1781895792,
@@ -218,9 +218,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1784274996,
+      "last_scrape_timestamp": 1784360256,
       "price_readings": [
         [
           1781994364,
@@ -317,9 +317,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6Ia0JZ.html",
       "model": "toyota-supra",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
+      "last_seen": "2026-07-18",
       "first_scrape_timestamp": 1784274996,
-      "last_scrape_timestamp": 1784274996,
+      "last_scrape_timestamp": 1784360256,
       "price_readings": [
         [
           1784274996,
@@ -335,6 +335,38 @@
       "engine_capacity": 2998,
       "location": "Myszków",
       "created_at": "2026-07-16T16:43:38Z"
+    },
+    "6149351915": {
+      "id": "6149351915",
+      "internal_id": 11,
+      "title": "Toyota Supra",
+      "initial_price": 234900,
+      "current_price": 234900,
+      "year": 2022,
+      "mileage": 12952,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6Ia3lp.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-07-18",
+      "last_seen": "2026-07-18",
+      "first_scrape_timestamp": 1784360256,
+      "last_scrape_timestamp": 1784360256,
+      "price_readings": [
+        [
+          1784360256,
+          234900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "short_description": "Toyota Supra GR 3.0 A90 Special EDITION 1/50",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "country": "cdn",
+      "country_label": "Kanada",
+      "location": "Studzienice",
+      "created_at": "2026-07-17T11:41:19Z"
     }
   }
 }
