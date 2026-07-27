@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-26T08:12:20.118571",
+    "last_updated": "2026-07-27T09:36:03.798464",
     "total_listings": 11,
     "model": "toyota-supra"
   },
@@ -111,9 +111,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I3t8F.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-07-26",
+      "last_seen": "2026-07-27",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1785053540,
+      "last_scrape_timestamp": 1785144963,
       "price_readings": [
         [
           1781895792,
@@ -159,9 +159,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-07-26",
+      "last_seen": "2026-07-27",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1785053540,
+      "last_scrape_timestamp": 1785144963,
       "price_readings": [
         [
           1781895792,
@@ -193,9 +193,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-07-25",
+      "last_seen": "2026-07-27",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1784966046,
+      "last_scrape_timestamp": 1785144963,
       "price_readings": [
         [
           1781895792,
@@ -203,14 +203,14 @@
         ]
       ],
       "price_change": 0,
-      "active": false,
+      "active": true,
       "version": "GR 3.0 Legend",
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 340,
       "engine_capacity": 2998,
       "location": "Warszawa",
-      "created_at": "2026-06-24T13:00:48Z",
+      "created_at": "2026-07-27T08:33:29Z",
       "short_description": "SUPRA 3.0 Benz 382 KM ! 2022r Warszawa",
       "country": "usa",
       "country_label": "Stany Zjednoczone"
@@ -325,9 +325,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6Ia0JZ.html",
       "model": "toyota-supra",
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-26",
+      "last_seen": "2026-07-27",
       "first_scrape_timestamp": 1784274996,
-      "last_scrape_timestamp": 1785053540,
+      "last_scrape_timestamp": 1785144963,
       "price_readings": [
         [
           1784274996,
@@ -355,9 +355,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6Ia3lp.html",
       "model": "toyota-supra",
       "first_seen": "2026-07-18",
-      "last_seen": "2026-07-26",
+      "last_seen": "2026-07-27",
       "first_scrape_timestamp": 1784360256,
-      "last_scrape_timestamp": 1785053540,
+      "last_scrape_timestamp": 1785144963,
       "price_readings": [
         [
           1784360256,
