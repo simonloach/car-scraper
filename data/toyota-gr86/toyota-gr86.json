@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-30T08:11:02.036941",
-    "total_listings": 8,
+    "last_updated": "2026-07-31T08:38:11.933410",
+    "total_listings": 9,
     "model": "toyota-gr86"
   },
   "listings": {
@@ -224,9 +224,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6I9LZ2.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-07-31",
       "first_scrape_timestamp": 1784015437,
-      "last_scrape_timestamp": 1785399062,
+      "last_scrape_timestamp": 1785487091,
       "price_readings": [
         [
           1784015437,
@@ -242,6 +242,37 @@
       "engine_capacity": 2387,
       "location": "Proszowice",
       "created_at": "2026-07-13T17:58:20Z"
+    },
+    "6149619904": {
+      "id": "6149619904",
+      "internal_id": 9,
+      "title": "Toyota GR86 2.4 Executive",
+      "initial_price": 117900,
+      "current_price": 117900,
+      "year": 2023,
+      "mileage": 19500,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
+      "model": "toyota-gr86",
+      "first_seen": "2026-07-31",
+      "last_seen": "2026-07-31",
+      "first_scrape_timestamp": 1785487091,
+      "last_scrape_timestamp": 1785487091,
+      "price_readings": [
+        [
+          1785487091,
+          117900
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.4 Executive",
+      "short_description": "Toyota GR86 2.4 Boxer Premium 2023r 19500km",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 234,
+      "engine_capacity": 2387,
+      "location": "Łężany",
+      "created_at": "2026-07-30T14:49:22Z"
     }
   }
 }
