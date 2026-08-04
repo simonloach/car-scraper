@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-03T09:28:44.370632",
-    "total_listings": 50,
+    "last_updated": "2026-08-04T08:24:53.089420",
+    "total_listings": 52,
     "model": "mazda-mx-5"
   },
   "listings": {
@@ -150,9 +150,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1DSC.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -351,9 +351,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-OLX_ID6I6HMY.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -425,9 +425,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I1SOu.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -503,9 +503,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I45Ab.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -533,9 +533,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I4vBt.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -570,9 +570,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I6TgW.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1781895790,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1781895790,
@@ -899,7 +899,7 @@
         ]
       ],
       "price_change": -3500,
-      "active": true,
+      "active": false,
       "short_description": "Mazda MX‑5 • 2.0 184 KM • Recaro • Polska salon • ASO • 49 tys. km",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -921,9 +921,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I8H9t.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-01",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1782898389,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1782898389,
@@ -1034,7 +1034,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "version": "2.0 Exclusive-Line i-ELOOP",
       "short_description": "Cesja leasingu – Mazda MX‑5 2.0 184 KM, hard top 2024 – gotówka 35 tys",
       "fuel_type": "petrol",
@@ -1073,7 +1073,7 @@
         ]
       ],
       "price_change": -2000,
-      "active": true,
+      "active": false,
       "short_description": "Mazda MX-5 2024 2.0 184 KM GT Bilstein, Bose, Cobalt",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -1093,9 +1093,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I95Dp.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-06",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1783332024,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1783332024,
@@ -1140,7 +1140,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "version": "2.0 Homura i-ELOOP",
       "short_description": "Nowa, Gwarancja, FV23% Homura + dodatki, full PPF",
       "fuel_type": "petrol",
@@ -1229,9 +1229,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9qXY.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-10",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1783675304,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1783675304,
@@ -1325,9 +1325,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9FQ3.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1783843483,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1783843483,
@@ -1356,9 +1356,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9i4j.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-13",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1783932872,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1783932872,
@@ -1388,9 +1388,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9KYb.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-14",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1784015435,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1784015435,
@@ -1425,9 +1425,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9Nzt.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-15",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1784102033,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1784102033,
@@ -1456,9 +1456,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6I9XXh.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-16",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1784188799,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1784188799,
@@ -1557,9 +1557,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6IaCoT.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-25",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1784966045,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1784966045,
@@ -1619,7 +1619,7 @@
         ]
       ],
       "price_change": 1000,
-      "active": true,
+      "active": false,
       "version": "SKYACTIV-G 184 Sports-Line",
       "short_description": "Mazda MX-5  2.0 Skyactiv-G 184 Sports Line",
       "fuel_type": "petrol",
@@ -1642,9 +1642,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6HYQqz.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-26",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1785053539,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1785053539,
@@ -1673,9 +1673,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6Ib8ON.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1785487089,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1785487089,
@@ -1706,9 +1706,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6IbdfR.html",
       "model": "mazda-mx-5",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-04",
       "first_scrape_timestamp": 1785571664,
-      "last_scrape_timestamp": 1785749324,
+      "last_scrape_timestamp": 1785831893,
       "price_readings": [
         [
           1785571664,
@@ -1727,6 +1727,70 @@
       "country_label": "Polska",
       "location": "Warszawa",
       "created_at": "2026-07-31T08:38:45Z"
+    },
+    "6149676073": {
+      "id": "6149676073",
+      "internal_id": 51,
+      "title": "Mazda MX-5 2.0 Homura i-ELOOP",
+      "initial_price": 172000,
+      "current_price": 172000,
+      "year": 2024,
+      "mileage": 6530,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6IbpFL.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-08-04",
+      "last_seen": "2026-08-04",
+      "first_scrape_timestamp": 1785831893,
+      "last_scrape_timestamp": 1785831893,
+      "price_readings": [
+        [
+          1785831893,
+          172000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Homura i-ELOOP",
+      "short_description": "Faktura VAT",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Zawiercie",
+      "created_at": "2026-08-03T11:07:21Z"
+    },
+    "6149675302": {
+      "id": "6149675302",
+      "internal_id": 52,
+      "title": "Mazda MX-5 2.0 Homura i-ELOOP",
+      "initial_price": 92500,
+      "current_price": 92500,
+      "year": 2020,
+      "mileage": 117000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/mazda-mx-5-ID6Ibptk.html",
+      "model": "mazda-mx-5",
+      "first_seen": "2026-08-04",
+      "last_seen": "2026-08-04",
+      "first_scrape_timestamp": 1785831893,
+      "last_scrape_timestamp": 1785831893,
+      "price_readings": [
+        [
+          1785831893,
+          92500
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "2.0 Homura i-ELOOP",
+      "short_description": "Mazda MX-5 ND 2.0 manual torsen grand touring GT miekki dach roadster",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 184,
+      "engine_capacity": 1998,
+      "location": "Pyrzowice",
+      "created_at": "2026-08-03T19:05:50Z"
     }
   }
 }
