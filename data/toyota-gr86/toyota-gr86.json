@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-06T08:20:37.023346",
+    "last_updated": "2026-08-07T07:02:34.734881",
     "total_listings": 9,
     "model": "toyota-gr86"
   },
@@ -234,7 +234,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Toyota GR86 Premium Manual",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -254,9 +254,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-07",
       "first_scrape_timestamp": 1785487091,
-      "last_scrape_timestamp": 1786004437,
+      "last_scrape_timestamp": 1786086154,
       "price_readings": [
         [
           1785487091,
