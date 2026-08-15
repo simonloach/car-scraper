@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-14T07:13:13.402735",
+    "last_updated": "2026-08-15T06:24:00.409073",
     "total_listings": 9,
     "model": "toyota-gr86"
   },
@@ -248,22 +248,26 @@
       "internal_id": 9,
       "title": "Toyota GR86 2.4 Executive",
       "initial_price": 117900,
-      "current_price": 117900,
+      "current_price": 116900,
       "year": 2023,
       "mileage": 19500,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-14",
+      "last_seen": "2026-08-15",
       "first_scrape_timestamp": 1785487091,
-      "last_scrape_timestamp": 1786691593,
+      "last_scrape_timestamp": 1786775040,
       "price_readings": [
         [
           1785487091,
           117900
+        ],
+        [
+          1786775040,
+          116900
         ]
       ],
-      "price_change": 0,
+      "price_change": -1000,
       "active": true,
       "version": "2.4 Executive",
       "short_description": "Toyota GR86 2.4 Boxer Premium 2023r 19500km",
