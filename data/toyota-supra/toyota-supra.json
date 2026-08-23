@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-22T06:26:12.872445",
-    "total_listings": 12,
+    "last_updated": "2026-08-23T06:27:35.839746",
+    "total_listings": 13,
     "model": "toyota-supra"
   },
   "listings": {
@@ -197,7 +197,7 @@
         ]
       ],
       "price_change": 10000,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 340,
@@ -217,9 +217,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1787379972,
+      "last_scrape_timestamp": 1787466455,
       "price_readings": [
         [
           1781895792,
@@ -250,9 +250,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1787379972,
+      "last_scrape_timestamp": 1787466455,
       "price_readings": [
         [
           1781994364,
@@ -431,9 +431,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IaRaY.html",
       "model": "toyota-supra",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "first_scrape_timestamp": 1785226844,
-      "last_scrape_timestamp": 1787379972,
+      "last_scrape_timestamp": 1787466455,
       "price_readings": [
         [
           1785226844,
@@ -449,6 +449,37 @@
       "engine_capacity": 3000,
       "location": "Warszawa",
       "created_at": "2026-07-27T14:47:16Z"
+    },
+    "6150126398": {
+      "id": "6150126398",
+      "internal_id": 13,
+      "title": "Toyota Supra 3.0 Turbo Executive",
+      "initial_price": 239000,
+      "current_price": 239000,
+      "year": 2024,
+      "mileage": 32000,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IdiP4.html",
+      "model": "toyota-supra",
+      "first_seen": "2026-08-23",
+      "last_seen": "2026-08-23",
+      "first_scrape_timestamp": 1787466455,
+      "last_scrape_timestamp": 1787466455,
+      "price_readings": [
+        [
+          1787466455,
+          239000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "version": "3.0 Turbo Executive",
+      "short_description": "Toyota GR Supra 45th Anniversary Manual Limitowana 900 sztuk 2024r",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 340,
+      "engine_capacity": 2998,
+      "location": "Myszków",
+      "created_at": "2026-08-22T19:08:27Z"
     }
   }
 }
