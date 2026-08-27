@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-26T06:34:48.250512",
+    "last_updated": "2026-08-27T17:10:58.272391",
     "total_listings": 13,
     "model": "toyota-supra"
   },
@@ -217,9 +217,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-08-26",
+      "last_seen": "2026-08-27",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1787726088,
+      "last_scrape_timestamp": 1787850658,
       "price_readings": [
         [
           1781895792,
@@ -234,7 +234,7 @@
       "engine_power": 340,
       "engine_capacity": 2998,
       "location": "Warszawa",
-      "created_at": "2026-07-27T08:33:29Z",
+      "created_at": "2026-08-26T11:56:16Z",
       "short_description": "SUPRA 3.0 Benz 382 KM ! 2022r Warszawa",
       "country": "usa",
       "country_label": "Stany Zjednoczone"
@@ -250,9 +250,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-08-26",
+      "last_seen": "2026-08-27",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1787726088,
+      "last_scrape_timestamp": 1787850658,
       "price_readings": [
         [
           1781994364,
@@ -441,7 +441,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Manual 45th Anniversary",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -461,9 +461,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IdiP4.html",
       "model": "toyota-supra",
       "first_seen": "2026-08-23",
-      "last_seen": "2026-08-26",
+      "last_seen": "2026-08-27",
       "first_scrape_timestamp": 1787466455,
-      "last_scrape_timestamp": 1787726088,
+      "last_scrape_timestamp": 1787850658,
       "price_readings": [
         [
           1787466455,
