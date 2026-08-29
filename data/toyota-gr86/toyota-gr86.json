@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-28T17:57:54.710245",
+    "last_updated": "2026-08-29T12:03:26.650988",
     "total_listings": 9,
     "model": "toyota-gr86"
   },
@@ -254,9 +254,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-28",
+      "last_seen": "2026-08-29",
       "first_scrape_timestamp": 1785487091,
-      "last_scrape_timestamp": 1787939874,
+      "last_scrape_timestamp": 1788005006,
       "price_readings": [
         [
           1785487091,
