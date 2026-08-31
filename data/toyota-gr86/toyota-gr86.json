@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-29T12:03:26.650988",
-    "total_listings": 9,
+    "last_updated": "2026-08-31T12:19:24.041602",
+    "total_listings": 10,
     "model": "toyota-gr86"
   },
   "listings": {
@@ -268,7 +268,7 @@
         ]
       ],
       "price_change": -1000,
-      "active": true,
+      "active": false,
       "version": "2.4 Executive",
       "short_description": "Toyota GR86 2.4 Boxer Premium 2023r 19500km",
       "fuel_type": "petrol",
@@ -277,6 +277,38 @@
       "engine_capacity": 2387,
       "location": "Łężany",
       "created_at": "2026-07-30T14:49:22Z"
+    },
+    "6150278270": {
+      "id": "6150278270",
+      "internal_id": 10,
+      "title": "Toyota GR86",
+      "initial_price": 139999,
+      "current_price": 139999,
+      "year": 2025,
+      "mileage": 9789,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IdVkC.html",
+      "model": "toyota-gr86",
+      "first_seen": "2026-08-31",
+      "last_seen": "2026-08-31",
+      "first_scrape_timestamp": 1788178764,
+      "last_scrape_timestamp": 1788178764,
+      "price_readings": [
+        [
+          1788178764,
+          139999
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "short_description": "Prawie Nowa | 2025 | 234 KM | Niski Przebieg | Bogata Wersja",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 234,
+      "engine_capacity": 2387,
+      "country": "pl",
+      "country_label": "Polska",
+      "location": "Fałków",
+      "created_at": "2026-08-31T10:22:20Z"
     }
   }
 }
