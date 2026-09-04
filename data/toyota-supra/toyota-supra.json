@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-03T10:28:49.394235",
+    "last_updated": "2026-09-04T10:17:12.805146",
     "total_listings": 13,
     "model": "toyota-supra"
   },
@@ -217,9 +217,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1788431329,
+      "last_scrape_timestamp": 1788517032,
       "price_readings": [
         [
           1781895792,
@@ -250,9 +250,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1788431329,
+      "last_scrape_timestamp": 1788517032,
       "price_readings": [
         [
           1781994364,
@@ -461,9 +461,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IdiP4.html",
       "model": "toyota-supra",
       "first_seen": "2026-08-23",
-      "last_seen": "2026-09-03",
+      "last_seen": "2026-09-04",
       "first_scrape_timestamp": 1787466455,
-      "last_scrape_timestamp": 1788431329,
+      "last_scrape_timestamp": 1788517032,
       "price_readings": [
         [
           1787466455,
