@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-04T10:17:10.293593",
+    "last_updated": "2026-09-05T09:45:09.977613",
     "total_listings": 228,
     "model": "lexus-lc"
   },
@@ -4289,9 +4289,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HnvoR.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1781994362,
@@ -4322,9 +4322,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HjhwJ.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1781994362,
@@ -4394,9 +4394,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HxYhz.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1781994362,
@@ -4422,15 +4422,15 @@
       "internal_id": 213,
       "title": "Lexus LC 500 Prestige",
       "initial_price": 389000,
-      "current_price": 369000,
+      "current_price": 365000,
       "year": 2017,
       "mileage": 31500,
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HXLyC.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1781994362,
@@ -4447,9 +4447,13 @@
         [
           1787034547,
           369000
+        ],
+        [
+          1788601509,
+          365000
         ]
       ],
-      "price_change": -10000,
+      "price_change": -4000,
       "active": true,
       "version": "500 Prestige",
       "fuel_type": "petrol",
@@ -4473,9 +4477,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I2IYw.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1781994362,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1781994362,
@@ -4779,7 +4783,7 @@
         ]
       ],
       "price_change": -10000,
-      "active": true,
+      "active": false,
       "version": "500 Prestige",
       "short_description": "Lexus LC500 5.0 V8 Performance Package, Mark Levinson Audio, Carbon",
       "fuel_type": "petrol",
@@ -4802,9 +4806,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HYOmt.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1782149252,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1782149252,
@@ -4970,9 +4974,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GV62J.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1782149252,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1782149252,
@@ -5011,9 +5015,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GWjop.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1782149252,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1782149252,
@@ -5042,9 +5046,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I6SJj.html",
       "model": "lexus-lc",
       "first_seen": "2026-06-22",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1782149252,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1782149252,
@@ -5608,7 +5612,7 @@
         ]
       ],
       "price_change": -20000,
-      "active": true,
+      "active": false,
       "version": "500 Prestige",
       "short_description": "Lexus LC 500 salon POLSKA 2019 rok",
       "fuel_type": "petrol",
@@ -5641,7 +5645,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Lexus LC 500 Cabrio 5.0 V8",
       "fuel_type": "petrol",
       "gearbox": "automatic",
@@ -5661,9 +5665,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6GZxGq.html",
       "model": "lexus-lc",
       "first_seen": "2026-07-10",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1783675303,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1783675303,
@@ -5726,9 +5730,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6I9Q8I.html",
       "model": "lexus-lc",
       "first_seen": "2026-07-15",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1784102032,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1784102032,
@@ -5798,9 +5802,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HBgJH.html",
       "model": "lexus-lc",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1784707961,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1784707961,
@@ -5901,9 +5905,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6IawOk.html",
       "model": "lexus-lc",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1784880715,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1784880715,
@@ -6093,9 +6097,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6IbY8i.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-09",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1786257698,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1786257698,
@@ -6158,9 +6162,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6IbZ1k.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-10",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1786346143,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1786346143,
@@ -6185,15 +6189,15 @@
       "internal_id": 267,
       "title": "Lexus LC 500 Prestige",
       "initial_price": 377000,
-      "current_price": 355000,
+      "current_price": 377000,
       "year": 2022,
       "mileage": 28500,
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6IcE5F.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-16",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1786861585,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1786861585,
@@ -6206,9 +6210,13 @@
         [
           1788087578,
           355000
+        ],
+        [
+          1788601509,
+          377000
         ]
       ],
-      "price_change": -15000,
+      "price_change": 22000,
       "active": true,
       "version": "500 Prestige",
       "fuel_type": "petrol",
@@ -6216,7 +6224,8 @@
       "engine_power": 464,
       "engine_capacity": 4969,
       "location": "Pilawa",
-      "created_at": "2026-08-15T10:06:15Z"
+      "created_at": "2026-08-15T10:06:15Z",
+      "short_description": "Stan idealny, samochod jak nowy"
     },
     "6137944500": {
       "id": "6137944500",
@@ -6229,9 +6238,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6HobKQ.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-18",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1787034547,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1787034547,
@@ -6294,9 +6303,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6Idsov.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-25",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1787639581,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1787639581,
@@ -6358,9 +6367,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/lexus-lc-ID6IdKvo.html",
       "model": "lexus-lc",
       "first_seen": "2026-08-27",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "first_scrape_timestamp": 1787850656,
-      "last_scrape_timestamp": 1788517030,
+      "last_scrape_timestamp": 1788601509,
       "price_readings": [
         [
           1787850656,
