@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-09-08T10:22:17.929341",
-    "total_listings": 11,
+    "last_updated": "2026-09-09T10:31:39.530281",
+    "total_listings": 12,
     "model": "toyota-gr86"
   },
   "listings": {
@@ -254,9 +254,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "first_scrape_timestamp": 1785487091,
-      "last_scrape_timestamp": 1788862937,
+      "last_scrape_timestamp": 1788949899,
       "price_readings": [
         [
           1785487091,
@@ -293,9 +293,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IdVkC.html",
       "model": "toyota-gr86",
       "first_seen": "2026-08-31",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "first_scrape_timestamp": 1788178764,
-      "last_scrape_timestamp": 1788862937,
+      "last_scrape_timestamp": 1788949899,
       "price_readings": [
         [
           1788178764,
@@ -325,9 +325,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IekBJ.html",
       "model": "toyota-gr86",
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-08",
+      "last_seen": "2026-09-09",
       "first_scrape_timestamp": 1788517033,
-      "last_scrape_timestamp": 1788862937,
+      "last_scrape_timestamp": 1788949899,
       "price_readings": [
         [
           1788517033,
@@ -343,6 +343,38 @@
       "engine_capacity": 2387,
       "location": "Wyszków",
       "created_at": "2026-09-04T09:26:17Z"
+    },
+    "6142364001": {
+      "id": "6142364001",
+      "internal_id": 12,
+      "title": "Toyota GR86",
+      "initial_price": 129000,
+      "current_price": 129000,
+      "year": 2024,
+      "mileage": 21900,
+      "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6HGJt7.html",
+      "model": "toyota-gr86",
+      "first_seen": "2026-09-09",
+      "last_seen": "2026-09-09",
+      "first_scrape_timestamp": 1788949899,
+      "last_scrape_timestamp": 1788949899,
+      "price_readings": [
+        [
+          1788949899,
+          129000
+        ]
+      ],
+      "price_change": 0,
+      "active": true,
+      "short_description": "Toyota GR86 2.4 Premium Edition 2024r",
+      "fuel_type": "petrol",
+      "gearbox": "manual",
+      "engine_power": 234,
+      "engine_capacity": 2387,
+      "country": "usa",
+      "country_label": "Stany Zjednoczone",
+      "location": "Łódź",
+      "created_at": "2026-09-08T20:41:48Z"
     }
   }
 }
