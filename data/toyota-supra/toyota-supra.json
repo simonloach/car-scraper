@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-10T10:20:52.168096",
+    "last_updated": "2026-09-11T10:21:18.590020",
     "total_listings": 13,
     "model": "toyota-supra"
   },
@@ -171,9 +171,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-11",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1789035652,
+      "last_scrape_timestamp": 1789122078,
       "price_readings": [
         [
           1781895792,
@@ -221,9 +221,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-11",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1789035652,
+      "last_scrape_timestamp": 1789122078,
       "price_readings": [
         [
           1781895792,
@@ -276,7 +276,7 @@
         ]
       ],
       "price_change": -7000,
-      "active": true,
+      "active": false,
       "version": "3.0 Turbo Executive",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -459,22 +459,26 @@
       "internal_id": 13,
       "title": "Toyota Supra 3.0 Turbo Executive",
       "initial_price": 239000,
-      "current_price": 239000,
+      "current_price": 235000,
       "year": 2024,
       "mileage": 32000,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IdiP4.html",
       "model": "toyota-supra",
       "first_seen": "2026-08-23",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-11",
       "first_scrape_timestamp": 1787466455,
-      "last_scrape_timestamp": 1789035652,
+      "last_scrape_timestamp": 1789122078,
       "price_readings": [
         [
           1787466455,
           239000
+        ],
+        [
+          1789122078,
+          235000
         ]
       ],
-      "price_change": 0,
+      "price_change": -4000,
       "active": true,
       "version": "3.0 Turbo Executive",
       "short_description": "Toyota GR Supra 45th Anniversary Manual Limitowana 900 sztuk 2024r",
