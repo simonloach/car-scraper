@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-21T11:37:18.932982",
+    "last_updated": "2026-09-22T10:42:10.583403",
     "total_listings": 13,
     "model": "toyota-supra"
   },
@@ -171,9 +171,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1789990638,
+      "last_scrape_timestamp": 1790073730,
       "price_readings": [
         [
           1781895792,
@@ -221,9 +221,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1789990638,
+      "last_scrape_timestamp": 1790073730,
       "price_readings": [
         [
           1781895792,
@@ -254,9 +254,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1789990638,
+      "last_scrape_timestamp": 1790073730,
       "price_readings": [
         [
           1781994364,
@@ -495,7 +495,7 @@
         ]
       ],
       "price_change": 20000,
-      "active": true,
+      "active": false,
       "version": "3.0 Turbo Executive",
       "short_description": "Toyota GR Supra 45th Anniversary Manual Limitowana 900 sztuk 2024r",
       "fuel_type": "petrol",
