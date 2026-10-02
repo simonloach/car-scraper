@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-01T12:10:38.474577",
+    "last_updated": "2026-10-02T11:40:33.818355",
     "total_listings": 13,
     "model": "toyota-supra"
   },
@@ -171,9 +171,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1790856638,
+      "last_scrape_timestamp": 1790941233,
       "price_readings": [
         [
           1781895792,
@@ -219,22 +219,26 @@
       "internal_id": 6,
       "title": "Toyota Supra GR 3.0 Legend",
       "initial_price": 210000,
-      "current_price": 210000,
+      "current_price": 199999,
       "year": 2022,
       "mileage": 57000,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1790856638,
+      "last_scrape_timestamp": 1790941233,
       "price_readings": [
         [
           1781895792,
           210000
+        ],
+        [
+          1790941233,
+          199999
         ]
       ],
-      "price_change": 0,
+      "price_change": -10001,
       "active": true,
       "version": "GR 3.0 Legend",
       "fuel_type": "petrol",
@@ -242,7 +246,7 @@
       "engine_power": 340,
       "engine_capacity": 2998,
       "location": "Warszawa",
-      "created_at": "2026-09-25T13:04:18Z",
+      "created_at": "2026-09-25T13:03:43Z",
       "short_description": "SUPRA 3.0 Benz 382 KM ! 2022r Warszawa",
       "country": "usa",
       "country_label": "Stany Zjednoczone"
@@ -258,9 +262,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1790856638,
+      "last_scrape_timestamp": 1790941233,
       "price_readings": [
         [
           1781994364,
