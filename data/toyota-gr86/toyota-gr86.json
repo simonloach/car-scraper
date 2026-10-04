@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-03T10:54:23.028111",
+    "last_updated": "2026-10-04T11:36:35.814432",
     "total_listings": 13,
     "model": "toyota-gr86"
   },
@@ -280,7 +280,7 @@
         ]
       ],
       "price_change": -600,
-      "active": true,
+      "active": false,
       "version": "2.4 Executive",
       "short_description": "Toyota GR86 2.4 Boxer Premium 2023r 19500km",
       "fuel_type": "petrol",
@@ -343,7 +343,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "GR86 Premium Manual ProfiMotors",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -363,9 +363,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6HGJt7.html",
       "model": "toyota-gr86",
       "first_seen": "2026-09-09",
-      "last_seen": "2026-10-03",
+      "last_seen": "2026-10-04",
       "first_scrape_timestamp": 1788949899,
-      "last_scrape_timestamp": 1791024863,
+      "last_scrape_timestamp": 1791113795,
       "price_readings": [
         [
           1788949899,
@@ -395,9 +395,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-OLX_ID6Ig2lF.html",
       "model": "toyota-gr86",
       "first_seen": "2026-09-24",
-      "last_seen": "2026-10-03",
+      "last_seen": "2026-10-04",
       "first_scrape_timestamp": 1790247129,
-      "last_scrape_timestamp": 1791024863,
+      "last_scrape_timestamp": 1791113795,
       "price_readings": [
         [
           1790247129,
