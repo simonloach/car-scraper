@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-08T12:34:27.021745",
+    "last_updated": "2026-10-09T12:22:21.648088",
     "total_listings": 15,
     "model": "toyota-supra"
   },
@@ -165,15 +165,15 @@
       "internal_id": 5,
       "title": "Toyota Supra",
       "initial_price": 259000,
-      "current_price": 210000,
+      "current_price": 199000,
       "year": 2024,
       "mileage": 23000,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I7rRL.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1791462867,
+      "last_scrape_timestamp": 1791548541,
       "price_readings": [
         [
           1781895792,
@@ -206,9 +206,13 @@
         [
           1791289917,
           210000
+        ],
+        [
+          1791548541,
+          199000
         ]
       ],
-      "price_change": -30000,
+      "price_change": -11000,
       "active": true,
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -229,9 +233,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1791462867,
+      "last_scrape_timestamp": 1791548541,
       "price_readings": [
         [
           1781895792,
@@ -266,9 +270,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I4CwU.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-21",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "first_scrape_timestamp": 1781994364,
-      "last_scrape_timestamp": 1791462867,
+      "last_scrape_timestamp": 1791548541,
       "price_readings": [
         [
           1781994364,
@@ -538,7 +542,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 340,
@@ -557,9 +561,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IgReo.html",
       "model": "toyota-supra",
       "first_seen": "2026-10-06",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
       "first_scrape_timestamp": 1791289917,
-      "last_scrape_timestamp": 1791462867,
+      "last_scrape_timestamp": 1791548541,
       "price_readings": [
         [
           1791289917,
