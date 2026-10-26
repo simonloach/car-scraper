@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-25T10:29:01.648447",
+    "last_updated": "2026-10-26T12:00:15.629887",
     "total_listings": 15,
     "model": "toyota-supra"
   },
@@ -233,9 +233,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-10-25",
+      "last_seen": "2026-10-26",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1792924141,
+      "last_scrape_timestamp": 1793016015,
       "price_readings": [
         [
           1781895792,
@@ -254,7 +254,7 @@
       "engine_power": 340,
       "engine_capacity": 2998,
       "location": "Warszawa",
-      "created_at": "2026-09-25T13:03:43Z",
+      "created_at": "2026-10-26T09:45:20Z",
       "short_description": "SUPRA 3.0 Benz 382 KM ! 2022r Warszawa",
       "country": "usa",
       "country_label": "Stany Zjednoczone"
@@ -561,9 +561,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IgReo.html",
       "model": "toyota-supra",
       "first_seen": "2026-10-06",
-      "last_seen": "2026-10-25",
+      "last_seen": "2026-10-26",
       "first_scrape_timestamp": 1791289917,
-      "last_scrape_timestamp": 1792924141,
+      "last_scrape_timestamp": 1793016015,
       "price_readings": [
         [
           1791289917,
