@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-04T13:34:17.716044",
+    "last_updated": "2026-11-05T13:47:55.980495",
     "total_listings": 21,
     "model": "toyota-gr86"
   },
@@ -254,9 +254,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ibb3O.html",
       "model": "toyota-gr86",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1785487091,
-      "last_scrape_timestamp": 1793799257,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1785487091,
@@ -449,7 +449,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Premium Manual ProfiMotors",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -479,7 +479,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "short_description": "Prawie Nowa | 2025 | 234 KM | Niski Przebieg | Bogata Wersja",
       "fuel_type": "petrol",
       "gearbox": "manual",
@@ -501,9 +501,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhuKy.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-14",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1791975448,
-      "last_scrape_timestamp": 1793799257,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1791975448,
@@ -565,9 +565,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ii7FR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-22",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1792666565,
-      "last_scrape_timestamp": 1793799257,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1792666565,
@@ -588,22 +588,26 @@
       "internal_id": 19,
       "title": "Toyota GR86",
       "initial_price": 117900,
-      "current_price": 117900,
+      "current_price": 115700,
       "year": 2023,
       "mileage": 79441,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhN9a.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1793275368,
-      "last_scrape_timestamp": 1793799257,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1793275368,
           117900
+        ],
+        [
+          1793886475,
+          115700
         ]
       ],
-      "price_change": 0,
+      "price_change": -2200,
       "active": true,
       "short_description": "TOYOTA GR86 2023 r. / 2.4 / 235 KM / CARBON",
       "fuel_type": "petrol",
@@ -624,9 +628,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IiPPR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-31",
-      "last_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1793446180,
-      "last_scrape_timestamp": 1793799257,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1793446180,
@@ -650,30 +654,34 @@
       "internal_id": 21,
       "title": "Toyota GR86 Pure",
       "initial_price": 60900,
-      "current_price": 60900,
+      "current_price": 42927,
       "year": 2022,
       "mileage": 37481,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ij4In.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-03",
+      "last_seen": "2026-11-05",
       "first_scrape_timestamp": 1793712166,
-      "last_scrape_timestamp": 1793712166,
+      "last_scrape_timestamp": 1793886475,
       "price_readings": [
         [
           1793712166,
           60900
+        ],
+        [
+          1793886475,
+          42927
         ]
       ],
-      "price_change": 0,
-      "active": false,
+      "price_change": -17973,
+      "active": true,
       "version": "Pure",
       "fuel_type": "petrol",
       "gearbox": "manual",
       "engine_power": 235,
       "engine_capacity": 2387,
       "location": "Kraków",
-      "created_at": "2026-11-03T13:16:51Z"
+      "created_at": "2026-11-05T10:29:56Z"
     }
   }
 }
