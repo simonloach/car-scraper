@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-08T12:32:54.959532",
+    "last_updated": "2026-11-09T14:50:11.003303",
     "total_listings": 22,
     "model": "toyota-gr86"
   },
@@ -501,9 +501,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhuKy.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-14",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1791975448,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1791975448,
@@ -565,9 +565,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ii7FR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-22",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1792666565,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1792666565,
@@ -594,9 +594,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhN9a.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1793275368,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1793275368,
@@ -622,22 +622,26 @@
       "internal_id": 20,
       "title": "Toyota GR86",
       "initial_price": 127000,
-      "current_price": 127000,
+      "current_price": 115000,
       "year": 2022,
       "mileage": 10564,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IiPPR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-31",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1793446180,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1793446180,
           127000
+        ],
+        [
+          1794235811,
+          115000
         ]
       ],
-      "price_change": 0,
+      "price_change": -12000,
       "active": true,
       "short_description": "Toyota GR86 stan idealny",
       "fuel_type": "petrol",
@@ -660,9 +664,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ij4In.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1793712166,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1793712166,
@@ -694,9 +698,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IjpqS.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-08",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-09",
       "first_scrape_timestamp": 1794141174,
-      "last_scrape_timestamp": 1794141174,
+      "last_scrape_timestamp": 1794235811,
       "price_readings": [
         [
           1794141174,
