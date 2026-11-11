@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-10T14:02:08.816899",
+    "last_updated": "2026-11-11T13:20:04.497503",
     "total_listings": 22,
     "model": "toyota-gr86"
   },
@@ -501,9 +501,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhuKy.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-14",
-      "last_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
       "first_scrape_timestamp": 1791975448,
-      "last_scrape_timestamp": 1794319328,
+      "last_scrape_timestamp": 1794403204,
       "price_readings": [
         [
           1791975448,
@@ -565,9 +565,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ii7FR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-22",
-      "last_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
       "first_scrape_timestamp": 1792666565,
-      "last_scrape_timestamp": 1794319328,
+      "last_scrape_timestamp": 1794403204,
       "price_readings": [
         [
           1792666565,
@@ -594,9 +594,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhN9a.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
       "first_scrape_timestamp": 1793275368,
-      "last_scrape_timestamp": 1794319328,
+      "last_scrape_timestamp": 1794403204,
       "price_readings": [
         [
           1793275368,
@@ -628,9 +628,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IiPPR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-31",
-      "last_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
       "first_scrape_timestamp": 1793446180,
-      "last_scrape_timestamp": 1794319328,
+      "last_scrape_timestamp": 1794403204,
       "price_readings": [
         [
           1793446180,
@@ -658,15 +658,15 @@
       "internal_id": 21,
       "title": "Toyota GR86 Pure",
       "initial_price": 60900,
-      "current_price": 42927,
+      "current_price": 26279,
       "year": 2022,
       "mileage": 37481,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ij4In.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
       "first_scrape_timestamp": 1793712166,
-      "last_scrape_timestamp": 1794319328,
+      "last_scrape_timestamp": 1794403204,
       "price_readings": [
         [
           1793712166,
@@ -675,9 +675,13 @@
         [
           1793886475,
           42927
+        ],
+        [
+          1794403204,
+          26279
         ]
       ],
-      "price_change": -17973,
+      "price_change": -16648,
       "active": true,
       "version": "Pure",
       "fuel_type": "petrol",
@@ -708,7 +712,7 @@
         ]
       ],
       "price_change": 0,
-      "active": true,
+      "active": false,
       "version": "2.4 Executive",
       "short_description": "Toyota GR86 2.4 Boxer 234 KM | Manual | Polski salon | Uszkodzony",
       "fuel_type": "petrol",
