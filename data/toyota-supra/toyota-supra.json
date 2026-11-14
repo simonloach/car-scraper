@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-13T13:43:30.959719",
+    "last_updated": "2026-11-14T12:47:44.503509",
     "total_listings": 15,
     "model": "toyota-supra"
   },
@@ -233,9 +233,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6I5rlG.html",
       "model": "toyota-supra",
       "first_seen": "2026-06-19",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "first_scrape_timestamp": 1781895792,
-      "last_scrape_timestamp": 1794577410,
+      "last_scrape_timestamp": 1794660464,
       "price_readings": [
         [
           1781895792,
@@ -555,22 +555,26 @@
       "internal_id": 15,
       "title": "Toyota Supra 3.0 Turbo Executive",
       "initial_price": 319900,
-      "current_price": 319900,
+      "current_price": 309900,
       "year": 2023,
       "mileage": 7630,
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-supra-ID6IgReo.html",
       "model": "toyota-supra",
       "first_seen": "2026-10-06",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-14",
       "first_scrape_timestamp": 1791289917,
-      "last_scrape_timestamp": 1794577410,
+      "last_scrape_timestamp": 1794660464,
       "price_readings": [
         [
           1791289917,
           319900
+        ],
+        [
+          1794660464,
+          309900
         ]
       ],
-      "price_change": 0,
+      "price_change": -10000,
       "active": true,
       "version": "3.0 Turbo Executive",
       "short_description": "Toyota Supra 3.0 Turbo Executive, Benzyna, salon Polska, ASO, FV MARŻA",
