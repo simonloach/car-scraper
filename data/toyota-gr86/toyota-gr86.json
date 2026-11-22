@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-21T13:58:20.705453",
+    "last_updated": "2026-11-22T13:51:57.669934",
     "total_listings": 24,
     "model": "toyota-gr86"
   },
@@ -598,9 +598,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhN9a.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "first_scrape_timestamp": 1793275368,
-      "last_scrape_timestamp": 1795269500,
+      "last_scrape_timestamp": 1795355517,
       "price_readings": [
         [
           1793275368,
@@ -632,9 +632,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IiPPR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-31",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "first_scrape_timestamp": 1793446180,
-      "last_scrape_timestamp": 1795269500,
+      "last_scrape_timestamp": 1795355517,
       "price_readings": [
         [
           1793446180,
@@ -668,9 +668,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ij4In.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "first_scrape_timestamp": 1793712166,
-      "last_scrape_timestamp": 1795269500,
+      "last_scrape_timestamp": 1795355517,
       "price_readings": [
         [
           1793712166,
@@ -739,9 +739,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhEPY.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-13",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "first_scrape_timestamp": 1794577412,
-      "last_scrape_timestamp": 1795269500,
+      "last_scrape_timestamp": 1795355517,
       "price_readings": [
         [
           1794577412,
@@ -772,9 +772,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IjToT.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-15",
-      "last_seen": "2026-11-21",
+      "last_seen": "2026-11-22",
       "first_scrape_timestamp": 1794748520,
-      "last_scrape_timestamp": 1795269500,
+      "last_scrape_timestamp": 1795355517,
       "price_readings": [
         [
           1794748520,
