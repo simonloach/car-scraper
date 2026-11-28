@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-27T15:55:17.831276",
+    "last_updated": "2026-11-28T14:51:08.374829",
     "total_listings": 24,
     "model": "toyota-gr86"
   },
@@ -598,9 +598,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhN9a.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "first_scrape_timestamp": 1793275368,
-      "last_scrape_timestamp": 1795794917,
+      "last_scrape_timestamp": 1795877468,
       "price_readings": [
         [
           1793275368,
@@ -619,7 +619,7 @@
       "engine_power": 235,
       "engine_capacity": 2387,
       "location": "Warszawa",
-      "created_at": "2026-10-29T10:35:21Z"
+      "created_at": "2026-11-28T11:43:55Z"
     },
     "6151444939": {
       "id": "6151444939",
@@ -632,9 +632,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IiPPR.html",
       "model": "toyota-gr86",
       "first_seen": "2026-10-31",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "first_scrape_timestamp": 1793446180,
-      "last_scrape_timestamp": 1795794917,
+      "last_scrape_timestamp": 1795877468,
       "price_readings": [
         [
           1793446180,
@@ -668,9 +668,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6Ij4In.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "first_scrape_timestamp": 1793712166,
-      "last_scrape_timestamp": 1795794917,
+      "last_scrape_timestamp": 1795877468,
       "price_readings": [
         [
           1793712166,
@@ -743,9 +743,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IhEPY.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-13",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "first_scrape_timestamp": 1794577412,
-      "last_scrape_timestamp": 1795794917,
+      "last_scrape_timestamp": 1795877468,
       "price_readings": [
         [
           1794577412,
@@ -776,9 +776,9 @@
       "url": "https://www.otomoto.pl/osobowe/oferta/toyota-gr86-ID6IjToT.html",
       "model": "toyota-gr86",
       "first_seen": "2026-11-15",
-      "last_seen": "2026-11-27",
+      "last_seen": "2026-11-28",
       "first_scrape_timestamp": 1794748520,
-      "last_scrape_timestamp": 1795794917,
+      "last_scrape_timestamp": 1795877468,
       "price_readings": [
         [
           1794748520,
